@@ -195,6 +195,8 @@ test.describe("Investigations Category", () => {
       await page.waitForTimeout(1000);
       //await InvestigationsExtraDetails.selectAddCreateLabRequest()
       await page.waitForTimeout(1000);
+
+      
       //await page.getByLabel('', { exact: true }).click();
       await InvestigationsExtraDetails.collectSampleCheckbox()
       await page.waitForTimeout(1000);
