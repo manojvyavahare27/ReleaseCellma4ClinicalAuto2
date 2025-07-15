@@ -1,0 +1,132 @@
+[
+  {
+    "pattod_id": 1930,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "VRA",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1931,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Pure tone",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1932,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Air Conduction",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1933,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "transducerUsed",
+    "pattod_var_value": "Headphones",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1934,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Play Audiometry",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1935,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Warble",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1936,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Bone Conduction",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1937,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Behavioural Observation Audiometry",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1938,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Narrowband noise",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1939,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Unaided Soundfield",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1940,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Patient Response Button",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1941,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "White noise",
+    "pacr_clinic_date": "13/07/2025"
+  },
+  {
+    "pattod_id": 1942,
+    "patto_tool_pacr_id": 80133,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88267,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Aided Soundfield",
+    "pacr_clinic_date": "13/07/2025"
+  }
+]
