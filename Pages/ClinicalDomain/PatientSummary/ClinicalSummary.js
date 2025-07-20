@@ -41,7 +41,7 @@ class ClinicalSummary {
         
         // Favourites & Order sets
         // this.orderSetName = "xpath=//h1[text()='Conditions Order Sets']//..//..//button[@aria-label='Condyloma latum']"
-        this.orderSetNameDementia = page.locator("xpath=//div[contains(text(),'Dementia')]")
+        this.orderSetNameMUGTest = page.locator("xpath=//div[contains(text(),'MUG test')]")
         this.orderSetItemGastritis =page.locator("xpath=//a[@aria-label='Gastritis']")
         // this.favouriteName = "xpath=//h1[text()='Conditions Favourites']//..//..//button[@aria-label='Condyloma latum']"
         this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Mental Health')]")
@@ -157,9 +157,9 @@ class ClinicalSummary {
      }
 
      //Add order sets diagnosis
-        async clickOnOrderSetDementia()
+        async clickOnOrderSetMUGTest()
         {
-            await this.orderSetNameDementia.click()
+            await this.orderSetNameMUGTest.click()
         }
 
         async clickOnOrderSetItemGastritis()
