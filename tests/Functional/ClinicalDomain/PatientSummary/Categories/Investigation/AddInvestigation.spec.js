@@ -159,7 +159,7 @@ test.describe("Investigations Category", () => {
       await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
       await InvestigationsExtraDetails.enterInvDateOfUpload(jsonData.AddInvestigation[index].date);
       await InvestigationsExtraDetails.selectInvPatLocation(jsonData.AddInvestigation[index].location);
-      await page.pause()
+      //await page.pause()
      // await InvestigationsExtraDetails.enterInvCompletedDate(jsonData.AddInvestigation[index].dateCompleted);
       await InvestigationsExtraDetails.enterInvReviewDate(jsonData.AddInvestigation[index].dateReview);
       await InvestigationsExtraDetails.selectInvPriority(jsonData.AddInvestigation[index].priority);
@@ -287,7 +287,7 @@ test.describe("Investigations Category", () => {
       await page.waitForTimeout(500);
       await Investigations.closeWindow();
       await page.waitForTimeout(500);
-      await page.pause()
+     // await page.pause()
      
       // await page.waitForTimeout(500);
       await Investigations.clickOnItemHighlightNone();
@@ -303,7 +303,7 @@ test.describe("Investigations Category", () => {
      // await Investigations.clickOnLevelThreeExtraDetails();
       await Investigations.clickOnLevelOneExtraDetails();
 
- await page.pause()
+ //await page.pause()
   //     ////// Database comparison - Patient Clinical Records - UPDATE Investigations RISK/////////
   //    sqlQuery =
   //    "select pacr_risk from patient_clinical_records where pacr_id=" + pacrId;
