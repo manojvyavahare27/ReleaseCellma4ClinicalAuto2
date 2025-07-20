@@ -127,7 +127,7 @@ test.describe("Examination Category", () => {
       await page.waitForTimeout(2000);
       await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
       await page.waitForTimeout(2000);  
-      await page.pause()
+      //await page.pause()
       //Add Recommendation
       //const flag = false;
       //await patientsummary.clickOniconRecommendation();
