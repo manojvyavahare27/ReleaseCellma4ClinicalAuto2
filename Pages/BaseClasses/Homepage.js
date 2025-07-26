@@ -31,7 +31,7 @@ class Homepage{
         this.sideIconAppointment=page.locator("xpath=//div[@data-testid='appointments']")
         this.sideIconLetters=page.getByTestId('letters')
         this.sideIconReferrals=page.getByTestId('referrals')
-        this.sideIconPatient=page.locator("xpath=//img[@alt='Patients Image Avatar']")
+        this.sideIconPatient=page.locator("xpath=//div[@data-testid='moduleDrawerPatients']")
         this.sideIconStock=page.locator("xpath=//ul[@class='MuiList-root MuiList-padding css-1wduhak']//div[@aria-label='Stock']")
        // this.sideIconRejectedReferral=page.getByTestId('ourRejectedReferrals')
         

@@ -159,7 +159,7 @@ test.describe("Investigations Category", () => {
       await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
       await InvestigationsExtraDetails.enterInvDateOfUpload(jsonData.AddInvestigation[index].date);
       await InvestigationsExtraDetails.selectInvPatLocation(jsonData.AddInvestigation[index].location);
-      //await page.pause()
+      await page.pause()
      // await InvestigationsExtraDetails.enterInvCompletedDate(jsonData.AddInvestigation[index].dateCompleted);
       await InvestigationsExtraDetails.enterInvReviewDate(jsonData.AddInvestigation[index].dateReview);
       await InvestigationsExtraDetails.selectInvPriority(jsonData.AddInvestigation[index].priority);
@@ -241,7 +241,8 @@ test.describe("Investigations Category", () => {
     await Investigations.toggleSearchSection(); //Close the search section
       
       //await Investigations.clickOnItemDiv(jsonData.EditInvestigation[index].pacr_que_name);
-      await Investigations.clickOnItemEdit();
+      ////await Investigations.clickOnItemEdit();
+      await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
       //await InvestigationsExtraDetails.clickOnClincialItemCollapsable();
       await InvestigationsExtraDetails.selectInvStatus(jsonData.EditInvestigation[index].status);
       await InvestigationsExtraDetails.enterInvResult(jsonData.EditInvestigation[index].result);      
@@ -318,7 +319,8 @@ test.describe("Investigations Category", () => {
 
      ///////// Deleting Item ////////////
 
-      await Investigations.clickOnItemEdit();
+      //await Investigations.clickOnItemEdit();
+       await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
       await InvestigationsExtraDetails.clickOnDelete();
       await InvestigationsExtraDetails.clickOnCancelDelete();
       await InvestigationsExtraDetails.clickOnDelete();

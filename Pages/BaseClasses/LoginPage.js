@@ -4,7 +4,7 @@ class LoginPage {
         this.userName = page.getByRole('textbox', { name: 'Username' })
         this.passWord = page.getByRole('textbox', { name: 'Password' })
         this.emailaddress = page.locator("xpath=//input[@id='Email Address']")
-        this.loginButton = page.locator("xpath=//button[@aria-label='Login']")
+        this.loginButton = page.locator("xpath=//button[@data-testid='Login']")
         this.message = page.getByText('Your username/password combination has not been recognised. Please try again.')
 
         //Forgot Password Page

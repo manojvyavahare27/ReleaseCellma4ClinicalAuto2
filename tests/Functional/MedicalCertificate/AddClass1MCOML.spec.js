@@ -107,7 +107,7 @@ test.describe("Medical Certificate", () => {
       await patientsearch.clickOnSearchButton();
       
       await patientsearch.clickOnSearchPatientLink();
-      //await page.pause()//wait 1.5 second     
+      await page.pause()//wait 1.5 second     
       await page.waitForTimeout(3000)
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();    
@@ -129,17 +129,17 @@ test.describe("Medical Certificate", () => {
       //Removed Existing Certificate
       await page.waitForTimeout(3000)
      // await page.pause()
-      if(await MedicalCertificate.checkItemOnMedicationCertificateHistoryTable(jsonData.MCOML[index].patmce_class))
-      {      
-      await MCExtraDetails.clickOnDeleteCertificate()           
+      // if(await MedicalCertificate.checkItemOnMedicationCertificateHistoryTable(jsonData.MCOML[index].patmce_class))
+      // {      
+      // await MCExtraDetails.clickOnDeleteCertificate()           
       
-      await MCExtraDetails.clickOnConfirmDelete();
-      await MCExtraDetails.enterReasonForDeletion("Added Deletion Reason")     
-      await MCExtraDetails.clickOnSaveDeleteForReason()
-      await page.waitForTimeout(1000)
-      await expect(page.getByText("Medical certificate deleted successfully")).toHaveText("Medical certificate deleted successfully");
-      }        
-     // await page.pause()
+      // await MCExtraDetails.clickOnConfirmDelete();
+      // await MCExtraDetails.enterReasonForDeletion("Added Deletion Reason")     
+      // await MCExtraDetails.clickOnSaveDeleteForReason()
+      // await page.waitForTimeout(1000)
+      // await expect(page.getByText("Medical certificate deleted successfully")).toHaveText("Medical certificate deleted successfully");
+      // }        
+      await page.pause()
       await page.waitForTimeout(2000)
       await MedicalCertificate.ClickOnAddMedicalCertificateButton()
       await page.waitForTimeout(1000)

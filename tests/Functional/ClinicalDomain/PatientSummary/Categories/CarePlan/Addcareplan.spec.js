@@ -158,7 +158,7 @@ test.describe("Care Plan Category", () => {
 
       ////////ADD NEW Care plan/////
       
-      //await page.pause();
+      await page.pause();
       await carePlan.selectandAddClinicalItem(jsonData.AddCarePlan[index].pacr_que_name);       
      
       await carePlanExtraDetails.clickOnSaveExtraDetails();

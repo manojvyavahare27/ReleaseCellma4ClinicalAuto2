@@ -144,7 +144,8 @@ test.describe("Diagnosis Category", () => {
 
         //Add OrderSet
 
-        await diagnosis.clickOnOrderSetDementia()
+        await page.pause()
+        await diagnosis.clickOnOrderSetMUGTest()
       await diagnosis.clickOnOrderSetItemGastritis()
       await diagnosisExtraDetails.enterOnSetDate(jsonData.EditDiagnosis[index].diag_date_onset.toString());
       await diagnosisExtraDetails.enterDiagnosedDate(jsonData.EditDiagnosis[index].diag_date_diagnosed.toString());
@@ -160,8 +161,6 @@ test.describe("Diagnosis Category", () => {
         await diagnosisExtraDetails.enterDeleteReason('Deleted Existing item');
         await diagnosisExtraDetails.clickOnSaveDeleteReason();
         await expect(page.getByText('Diagnosis deleted successfully')).toHaveText('Diagnosis deleted successfully')
-
-
       await diagnosis.selectCategoryFromList(jsonData.AddDiagnosis[index].pacr_category);
       await page.waitForTimeout(2000)
      
@@ -213,7 +212,7 @@ test.describe("Diagnosis Category", () => {
       await diagnosisExtraDetails.enterDiagnosedDate(jsonData.AddDiagnosis[index].diag_date_diagnosed.toString());
       //await diagnosisExtraDetails.enterDiagnosis1stSeenDate.fill("");
       await diagnosisExtraDetails.enterDiagnosis1stSeenDate(jsonData.AddDiagnosis[index].diag_date_firstseen)
-      //await page.pause()
+      await page.pause()
       await diagnosisExtraDetails.selectSeverity(jsonData.AddDiagnosis[index].diag_severity)
       //await diagnosisExtraDetails.selectStatus(jsonData.AddDiagnosis[index].diag_diagnosis_status)
      

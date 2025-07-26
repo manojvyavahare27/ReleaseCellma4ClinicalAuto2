@@ -83,6 +83,7 @@ test.describe("Allergy Category", () => {
       await page.goto(environment.Test);
       await loginpage.enterUsername(jsonData.loginDetails[0].username);
       logger.info("Username enter successfully");
+      await page.pause()
       await loginpage.enter_Password(jsonData.loginDetails[0].password);
       logger.info("Password enter successfully");
       await loginpage.clickOnLogin();
