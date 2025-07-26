@@ -190,8 +190,8 @@ test.describe("Procedure Category", () => {
       await ProceduresExtraDetails.clickOnSaveExtraDetails();
       //await page.getByLabel('saveChecklist').click()
      // await page.waitForTimeout(2000);     
-      //await page.getByLabel('saveChecklist').click() 
-      await page.pause()    
+      await page.getByLabel('saveChecklist').click() 
+     // await page.pause()    
       await page.waitForTimeout(500);
       await expect(page.getByText("Procedure record added successfully")).toHaveText("Procedure record added successfully");
      

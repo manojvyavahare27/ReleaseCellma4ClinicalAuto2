@@ -249,27 +249,27 @@ if (formattedDate==dbDate){
       //Switch Patient Details record history
       await patientDetailshome.recordHistory()
  ////// Database comparison - Patient Clinical Records - Edit Patient Details/////////
- sqlQuery =
- "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date," + 
- " pad_notes from patient_clinical_records join patient_clinical_records_details"+
- " on pacr_id=pacrd_pacr_id join patient_details on pacr_id=pad_pacr_id where pacr_record_status='approved'"+
- " and pacrd_record_status='approved' and pad_record_status='approved' and pacr_id=" + pacrId +
- " and pacr_record_status='approved'";
+//  sqlQuery =
+//  "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date," + 
+//  " pad_notes from patient_clinical_records join patient_clinical_records_details"+
+//  " on pacr_id=pacrd_pacr_id join patient_details on pacr_id=pad_pacr_id where pacr_record_status='approved'"+
+//  " and pacrd_record_status='approved' and pad_record_status='approved' and pacr_id=" + pacrId +
+//  " and pacr_record_status='approved'";
       
-sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
-results = await executeQuery(sqlQuery, sqlFilePath);
+// sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
+// results = await executeQuery(sqlQuery, sqlFilePath);
 
-console.log("\n Patient Clinical Records stored into the database: \n", results);
-var match = await compareJsons(sqlFilePath, null, jsonData.EditPatientDetails[index]);
-if (match) {
- console.log(
-   "\n Update Patient Clinical Records Comparision: Parameters from both JSON files match!\n"
- );
-} else {
- console.log(
-   "\n Update Patient Clinical Records Comparision: Parameters from both JSON files do not match!\n"
- );
-}
+// console.log("\n Patient Clinical Records stored into the database: \n", results);
+// var match = await compareJsons(sqlFilePath, null, jsonData.EditPatientDetails[index]);
+// if (match) {
+//  console.log(
+//    "\n Update Patient Clinical Records Comparision: Parameters from both JSON files match!\n"
+//  );
+// } else {
+//  console.log(
+//    "\n Update Patient Clinical Records Comparision: Parameters from both JSON files do not match!\n"
+//  );
+// }
 
   
       

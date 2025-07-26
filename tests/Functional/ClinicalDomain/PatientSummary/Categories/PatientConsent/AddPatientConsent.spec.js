@@ -106,7 +106,8 @@ test.describe("Patient Consent Category", () => {
               await consentPage.clickOnDeleteButton();
               await page.getByTestId('Ok').click();
             }
-            await page.pause()
+           
+            
             //Document upload through playwright still does not function correctly on this page
             //Please note document upload on Cellma itself functions correctly
 
@@ -173,7 +174,7 @@ test.describe("Patient Consent Category", () => {
             const patId = results[0].paa_pat_id;
             console.log("Patient Accessed by User:" + patId);
 
-            await page.pause()
+            
             ///////// Database comparison- Patient Consent Records - ADDING NEW Consent from patient /////////
             sqlQuery =
             "SELECT pac_id, pac_consent_given_by, pac_consent_type, pac_consent_status, pac_consent_start, pac_consent_end, pac_notes, pac_consent_details_json "+
@@ -205,7 +206,7 @@ test.describe("Patient Consent Category", () => {
               );
             }
             await page.waitForTimeout(5000);
-              await page.pause()
+             // await page.pause()
             //Edit Consent
             await consentPage.clickOnEditButton()
             await consentPage.fillConsentStatus(jsonData.EditPatientConsent[index].pac_consent_status_input);
@@ -236,7 +237,7 @@ test.describe("Patient Consent Category", () => {
             await consentPage.fillNotes(jsonData.EditPatientConsent[index].pac_notes);
             await consentPage.checkCheckboxConsent();
             await consentPage.clickWithdrawConsentBtn();
-await page.pause()
+
             ///////// Database comparison- Patient Consent Records - Editing Consent from patient /////////
             sqlQuery =
             "SELECT pac_id, pac_consent_given_by, pac_consent_type, pac_consent_status, pac_consent_start, pac_consent_end, pac_withdraw_date, pac_notes, pac_consent_details_json "+
@@ -268,12 +269,12 @@ await page.pause()
               );
             }
             await page.waitForTimeout(5000);
-await page.pause()
+
             //Delete consent
             await consentPage.clickOnDeleteButton();
             await page.getByTestId('Ok').click();
 
-            await page.pause()
+           
             ///////// Database comparison- Patient Consent Records - Deleting Consent from patient /////////
             sqlQuery =
             "SELECT pac_id, pac_consent_given_by, pac_consent_type, pac_consent_status, pac_consent_start, pac_consent_end, pac_withdraw_date, pac_notes, pac_record_status, pac_deleted "+

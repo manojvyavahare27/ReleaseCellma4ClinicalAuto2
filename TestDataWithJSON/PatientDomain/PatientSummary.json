@@ -940,7 +940,7 @@
   ],
   "AddPatientConsent": [
     {
-      "pac_consent_given_by": "Wednesday Tester (Next Of Kin)",
+      "pac_consent_given_by": "manoj gaikwad (Next Of Kin)",
       "pac_consent_type": "Contact by Email",
       "pac_consent_status": "Given",
       "pac_consent_start": "01/04/2025",
