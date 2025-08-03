@@ -83,7 +83,7 @@ test.describe("Device Category", () => {
             await patientsearch.enterFamilyName(data.pat_surname);
             logger.info("Family Name entered successfully");
            // await patientsearch.selectSexAtBirth(data.pat_sex);
-            await patientsearch.selectBornDate(data.pat_dob);
+           // await patientsearch.selectBornDate(data.pat_dob);
             //await patientsearch.selectBornDate(formattedDate);
             await patientsearch.clickOnSearchButton();
             await patientsearch.clickOnSearchPatientLink();
@@ -93,7 +93,7 @@ test.describe("Device Category", () => {
             await page.waitForTimeout(1000);
             await confirmexisting.clickOnConfirmExistingDetails();
             
-<<<<<<< HEAD
+            
             // const alert = page.getByRole('heading', { name: 'Alerts' }).isVisible()
             // if (alert) {
             //   await Devices.clickPopup();              
@@ -102,7 +102,7 @@ test.describe("Device Category", () => {
             await contacthistory.selectContactReason("Data Entry");
             await contacthistory.selectContactLocation("Cardio Location");
             await contacthistory.clickOnAddContact();
-=======
+
            await page.waitForTimeout(5000);
       const alertPopup= await page.locator("xpath=//h2[text()='Alerts']").isVisible()      
       if(alertPopup==true)
@@ -110,15 +110,14 @@ test.describe("Device Category", () => {
           await allergy.closePopUp()
         }
       await page.waitForTimeout(2000);
+      await page.pause()
+      //  await contacthistory.clickOnShowFilter()  
+      // await contacthistory.selectServiceFilter("General Medicine Automation");
+      // await contacthistory.selectContactReasonFilter("Assessments");      
+      // await contacthistory.selectContactReason("Assessments");
+      // await contacthistory.selectContactLocation("Cardio Location");
       
-       await contacthistory.clickOnShowFilter()  
-      await contacthistory.selectServiceFilter("General Medicine Automation");
-      await contacthistory.selectContactReasonFilter("Assessments");
-      //await contacthistory.enterContactDate("24-06-2024");
-      await contacthistory.selectContactReason("Assessments");
-      await contacthistory.selectContactLocation("Cardio Location");
-      
->>>>>>> 02660fbd0ce9bfe41fb5f240c4e59ac2ac14792d
+
             await SummaryPage.selectCategoryFromList("Devices");
 
             ////////REVIEW EXISTING ITEM AND DELETE/////

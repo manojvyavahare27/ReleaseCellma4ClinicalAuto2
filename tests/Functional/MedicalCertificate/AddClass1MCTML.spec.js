@@ -102,7 +102,7 @@ test.describe("Medical Certificate", () => {
       await patientsearch.enterFamilyName(data.pat_surname);
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);
-      await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
+     // await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       

@@ -118,7 +118,7 @@ test.describe("riskFactor Category", () => {
       await riskFactor.selectCategoryFromList("Risk Factors");
       await page.waitForTimeout(2000)
 
-      await page.pause()
+      
        ////////REVIEW EXISTING ITEM AND DELETE/////
        if(await riskFactor.checkItemOnHistoryTable(jsonData.AddRiskFactor[index].pacr_que_name)){
         //await riskFactor.clickOnItemReview(jsonData.AddRiskFactor[index].pacr_que_name);
@@ -173,6 +173,8 @@ test.describe("riskFactor Category", () => {
            
     sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
     results = await executeQuery(sqlQuery, sqlFilePath);
+     //await page.pause()
+    console.log("PACR Id is:"+  results[0].pacr_id);
     const pacrId = results[0].pacr_id;
     console.log("\n Patient Clinical Records stored into the database: \n", results);
     var match = await compareJsons(sqlFilePath, null, jsonData.AddRiskFactor[index]);

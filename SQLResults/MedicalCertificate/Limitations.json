@@ -30,11 +30,11 @@
     "patmcsn_revalidate_by": null,
     "patmcsn_non_tml_valid_from": null,
     "patmcsn_non_tml_valid_to": null,
-    "patmcsn_record_status": "approved",
+    "patmcsn_record_status": "updated",
     "patmcsn_created": "21/07/2025",
     "patmcsn_created_by": "release.manoj",
-    "patmcsn_updated": null,
-    "patmcsn_updated_by": null,
+    "patmcsn_updated": "21/07/2025",
+    "patmcsn_updated_by": "release.manoj",
     "patmcsn_imported": null,
     "patmcsn_imported_method": null
   }

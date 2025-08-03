@@ -30,6 +30,14 @@ class ClinicalExtraDetails {
     this.updatedNotesForExtraDetails=page.locator("xpath=//textarea[@id='updatedNotesForExtraDetails']")
 
 
+    //condition
+     //condition ED
+    this.conditionScore=page.locator("xpath=//input[contains(@id, 'Score')]")
+    this.haveYouStoppedAnyMedications=page.locator("xpath=//input[@name='haveYouStoppedAnyMedications']")
+    this.dateOfCondition=page.locator("xpath=//input[@data-testid='Date Of Diagnosis']")
+    this.previousCondition=page.locator("xpath=//input[@name='previousCondition']")
+    this.conditionnotes=page.locator("xpath=//textarea[@name='notes']")
+    this.saveButton=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
 
 
 
@@ -108,8 +116,8 @@ class ClinicalExtraDetails {
     this.deleteCertificate = page.locator("xpath=//button[@aria-label='Delete']");
     this.cancelDelete = page.locator("xpath=//button[@data-testid='Cancel']");
     this.confirmDelete = page.locator("xpath=//button[@data-testid='Ok']");
-    this.deleteReason = page.locator("xpath=//textarea[@aria-label='Reason']");
-    this.saveDeleteReason = page.locator("xpath=//div[@class='MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 MuiGrid2-spacing-xs-2 css-5kwuk3']//button[@data-testid='Save']");
+    this.deleteReason = page.locator("xpath=//textarea[@id='Reason']");
+    this.saveDeleteReason = page.locator("xpath=//button[@data-testid='Save']");
 
     //Medication Certificate
     // this.confirm = page.locator("xpath=//button[@aria-label='Confirm']");
@@ -862,6 +870,36 @@ async EnterUpdateNotes(carpd_type_notes) {
   async enterOnSetDate(date) {
     await typeText(this.page, this.onSetDate, date);
   }
+
+  //Condition Methods.
+
+  async enterConditionScore(score) {
+    await this.conditionScore.fill(score);
+}
+
+async selectHaveYouStoppedAnyMedications(option) {
+    // option should be either 'Yes' or 'No'
+    await this.haveYouStoppedAnyMedications.click()
+    await this.page.getByRole('option', { name: 'No' }).click()
+}
+
+async enterDateOfCondition(date) {
+    await this.dateOfCondition.fill(date);
+}
+
+async enterPreviousCondition(condition) {
+    await this.previousCondition.click()
+    await this.page.getByRole('option', { name: 'No' }).click()
+
+}
+
+async enterCoditionNotes(cond_notes) {
+    await this.conditionnotes.fill(cond_notes);
+}
+
+async clickSaveButton() {
+    await this.saveButton.click();
+}
 
   //Presenting Problems
 

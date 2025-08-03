@@ -144,9 +144,9 @@ test.describe("Diagnosis Category", () => {
 
         //Add OrderSet
 
-        await page.pause()
-        await diagnosis.clickOnOrderSetMUGTest()
-      await diagnosis.clickOnOrderSetItemGastritis()
+       
+        await diagnosis.clickOnOrderSetAutismSpectrumDisorder()
+      await diagnosis.clickOnOrderSetItemocardialinfarction()
       await diagnosisExtraDetails.enterOnSetDate(jsonData.EditDiagnosis[index].diag_date_onset.toString());
       await diagnosisExtraDetails.enterDiagnosedDate(jsonData.EditDiagnosis[index].diag_date_diagnosed.toString());
       await page.waitForTimeout(1500)
@@ -155,7 +155,7 @@ test.describe("Diagnosis Category", () => {
       await diagnosisExtraDetails.selectActivity(jsonData.EditDiagnosis[index].diag_activity)
       await diagnosisExtraDetails.enterDiagnosisNotes(jsonData.EditDiagnosis[index].diag_notes);
       await diagnosisExtraDetails.clickOnSaveFavourites();
-        await diagnosis.clickOnItemEdit('Gastritis');
+        await diagnosis.clickOnItemEdit('myocardial infarction');
         await diagnosisExtraDetails.clickOnDelete();
         await diagnosisExtraDetails.clickOnConfirmDelete();
         await diagnosisExtraDetails.enterDeleteReason('Deleted Existing item');

@@ -122,7 +122,7 @@ test.describe("PatientScan Category", () => {
       //await page.locator("xpath=//input[@id='allCategory']").click()
       //await page.locator("xpath=//li[@id='allCategory-option-18']").click()
       await page.waitForTimeout(2000)
-await page.pause()
+
       //Review
       if(await patientScan.checkItemOnHistoryTable(jsonData.AddPatientScan[index].pacr_que_name)){
         //await patientScan.clickOnItemReview(jsonData.AddPatientScan[index].pacr_que_name);
@@ -140,7 +140,7 @@ await page.pause()
         console.log('\x1b[31mItem was deleted successfully\x1b[0m'); //Red
         console.log('\x1b[32mItem was deleted successfully\x1b[0m');   // Green
         console.log('\x1b[90mItem was deleted successfully\x1b[0m');    // Grey
-        await page.pause()
+       
    //////Fetch Patient Details/////////
    var sqlQuery =
    "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username + 
@@ -186,7 +186,7 @@ await page.pause()
      " and pacr_record_status='approved' and pacr_que_name='" + jsonData.AddPatientScan[index].pacr_que_name +
      "' and pacr_category='Patient Scan' order by 1 desc limit 1";
     console.log("Patient Scan query"+sqlQuery)       
-    await page.pause()
+  
    sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
    results = await executeQuery(sqlQuery, sqlFilePath);
    const pacrId = results[0].pacr_id;
@@ -269,7 +269,7 @@ await page.pause()
       await patientScan.clickOnLevelOneExtraDetails();
       await page.waitForTimeout(1000);
 
-      await page.pause()
+      
       ///////// Deleting Item ////////////
 
       await patientScan.clickOnItemEdit('Forearm DEXA scan');

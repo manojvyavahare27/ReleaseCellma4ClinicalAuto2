@@ -105,14 +105,16 @@ test.describe("condition Category", () => {
       await patientsearch.clickOnSearchButton();
          
       await patientsearch.clickOnSearchPatientLink();
+      await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await page.waitForTimeout(1500);
       await confirmexisting.clickOnConfirmExistingDetails();   
 
-      await page.waitForTimeout(5000);
-      const alertPopup= await page.locator("xpath=//h2[text()='Alerts']").isVisible()      
-      if(alertPopup==true)
-        {       
-          await condition.closePopUp()
+      await page.waitForTimeout(4000);
+      const alertPopup = page.locator("xpath=//h2[text()='Alerts']");
+      if (await alertPopup.isVisible()) {
+         const cancelButton = page.locator("xpath=//button[@aria-label='cancelIcon']");
+          await cancelButton.waitFor({ state: 'visible', timeout: 5000 });
+          await cancelButton.click();
         }
       await page.waitForTimeout(2000);
       
@@ -161,7 +163,7 @@ test.describe("condition Category", () => {
       const patId = results[0].paa_pat_id;
       console.log("Patient Accessed by User:" + patId);
 
-    /// await page.pause()
+     await page.pause()
 
 ////////ADD NEW condition/////
 
@@ -176,6 +178,7 @@ test.describe("condition Category", () => {
       await condition.selectandAddClinicalItem(jsonData.AddCondition[index].pacr_que_name);
       //await diagnosisExtraDetails.clickOnClincialItemCollapsable();
       await page.waitForTimeout(1000);
+      
       await conditionExtraDetails.enterDateOfCondition(jsonData.AddCondition[0].cond_date_diagnosed);
       await conditionExtraDetails.enterPreviousCondition(jsonData.AddCondition[0].con_previous);
       await conditionExtraDetails.enterCoditionNotes(jsonData.AddCondition[0].cond_notes);               
@@ -288,7 +291,7 @@ test.describe("condition Category", () => {
 
      ///////// Deleting Item ////////////
 
-      
+     
       await condition.clickOnItemEdit();
       await conditionExtraDetails.clickOnDelete();
       await conditionExtraDetails.clickOnCancelDelete();

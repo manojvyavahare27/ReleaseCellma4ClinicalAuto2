@@ -87,7 +87,7 @@ test.describe("Excel Conversion Patient Details Category", () => {
       logger.info("Password enter successfully");
       await loginpage.clickOnLogin();
       logger.info("Clicked on Login button successfully");
-      await homepage.clickOnSideIconPatient()
+      await homepage.clickOnPatientIcon();
       logger.info("Clicked on Patient Icon successfully");
       await patientsearch.clickOnSearchButton();
       logger.info("Clicked on Search button successfully");

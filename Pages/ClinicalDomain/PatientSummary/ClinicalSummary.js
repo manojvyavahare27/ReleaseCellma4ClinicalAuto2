@@ -41,8 +41,8 @@ class ClinicalSummary {
         
         // Favourites & Order sets
         // this.orderSetName = "xpath=//h1[text()='Conditions Order Sets']//..//..//button[@aria-label='Condyloma latum']"
-        this.orderSetNameMUGTest = page.locator("xpath=//div[contains(text(),'MUG test')]")
-        this.orderSetItemGastritis =page.locator("xpath=//a[@aria-label='Gastritis']")
+        this.orderSetNameAutismSpectrumDisorder = page.locator("xpath=//div[contains(text(),'Autism Spectrum Disorder')]")
+        this.orderSetItemmyocardialinfarction =page.locator("xpath=//a[@aria-label='myocardial infarction']")
         // this.favouriteName = "xpath=//h1[text()='Conditions Favourites']//..//..//button[@aria-label='Condyloma latum']"
         this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Mental Health')]")
         this.FavouriteItemDipression=page.locator("xpath=//a[@aria-label='Depression']")
@@ -157,14 +157,14 @@ class ClinicalSummary {
      }
 
      //Add order sets diagnosis
-        async clickOnOrderSetMUGTest()
+        async clickOnOrderSetAutismSpectrumDisorder()
         {
-            await this.orderSetNameMUGTest.click()
+            await this.orderSetNameAutismSpectrumDisorder.click()
         }
 
-        async clickOnOrderSetItemGastritis()
+        async clickOnOrderSetItemocardialinfarction()
         {
-            await this.orderSetItemGastritis.click()
+            await this.orderSetItemmyocardialinfarction.click()
         }
 
      //Examination

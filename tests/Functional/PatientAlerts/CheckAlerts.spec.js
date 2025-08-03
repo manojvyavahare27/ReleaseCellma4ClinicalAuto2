@@ -99,11 +99,12 @@ test.describe("Alerts Category", () => {
       
       await page.pause()
       await patientAlert.clickOnSidebarDrawer()
+      await page.waitForTimeout(2000)
       await patientAlert.clickOnSidebarDrawer()      
       await patientAlert.clickOnLinksLink()
       await patientAlert.clickOnMyTaskLink()
       await AlertDetails.clickPopup()
-
+      await patientAlert.clickOnLinksLink()
       await patientAlert.clickOnServiceAppReminder()
       await AlertDetails.clickPopup()
       

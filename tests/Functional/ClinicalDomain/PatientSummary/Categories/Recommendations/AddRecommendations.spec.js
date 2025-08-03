@@ -178,7 +178,10 @@ test.describe("Recommendations Category", () => {
     console.log("Manoj:  "+ sqlQuery);
            
     sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
+    
+    
     results = await executeQuery(sqlQuery, sqlFilePath);
+   
     const pacrId = results[0].pacr_id;
     console.log("\n Patient Clinical Records stored into the database: \n", results);
     var match = await compareJsons(sqlFilePath, null, jsonData.AddRecommendations[index]);

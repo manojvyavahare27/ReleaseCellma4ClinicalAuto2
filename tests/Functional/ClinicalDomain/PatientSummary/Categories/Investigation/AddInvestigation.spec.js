@@ -159,7 +159,7 @@ test.describe("Investigations Category", () => {
       await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
       await InvestigationsExtraDetails.enterInvDateOfUpload(jsonData.AddInvestigation[index].date);
       await InvestigationsExtraDetails.selectInvPatLocation(jsonData.AddInvestigation[index].location);
-      await page.pause()
+      //await page.pause()
      // await InvestigationsExtraDetails.enterInvCompletedDate(jsonData.AddInvestigation[index].dateCompleted);
       await InvestigationsExtraDetails.enterInvReviewDate(jsonData.AddInvestigation[index].dateReview);
       await InvestigationsExtraDetails.selectInvPriority(jsonData.AddInvestigation[index].priority);

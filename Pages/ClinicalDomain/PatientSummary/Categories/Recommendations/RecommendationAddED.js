@@ -15,7 +15,7 @@ class RecommendationAddED
         this.checkboxAddToFavourites=page.getByRole('checkbox', { name: 'Add To Favourites' })
         this.checkboxAddToOrderSet=page.getByRole('checkbox', { name: 'Add To Order Set' })
         this.textboxNotes=page.locator("xpath=//textarea[@name='notes']")
-        this.buttonsave=page.getByTestId('Save')
+        this.buttonsave=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     }
     async clickOnExpandRecommendation()
     {

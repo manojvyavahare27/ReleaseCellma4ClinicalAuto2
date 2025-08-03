@@ -3,7 +3,7 @@ const fs = require('fs');
 const { config } = require('process');
 
 const XLSX = require('xlsx');
-const path = 'C:/Riomed/Cellma4Automation'
+const path = 'D:/Riomed/Release_Server/Cellma4ClinicalAuto2'
 var flag=false;
 
 // module.exports = async config => {
