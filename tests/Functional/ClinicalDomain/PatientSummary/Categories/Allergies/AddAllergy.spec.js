@@ -35,6 +35,7 @@ let jsonData;
 
 test.describe("Excel Conversion Allergy Category", () => {
   test("Extract Patient Summary Details", async ({ }) => {
+    
     const excelFilePath =
       process.env.EXCEL_FILE_PATH || "./ExcelFiles/PatientSummary.xlsx";
     const jsonFilePath = "./TestDataWithJSON/PatientDomain/PatientSummary.json";
@@ -49,6 +50,7 @@ test.describe("Excel Conversion Allergy Category", () => {
     );
     if (conversionSuccess) {
       // jsonData = require("../../../TestDataWithJSON/PatientDomain/PatientDetails.json");
+     
       jsonData = require("../../../../../../TestDataWithJSON/PatientDomain/PatientSummary.json");
       console.log("Excel file has been converted successfully!");
       console.log("jsonData:", jsonData); // Log the loaded JSON data
