@@ -115,9 +115,31 @@ class PatientSummary
          this.expandTask= page.getByRole('cell', { name: 'expandRowIconundefined' }).first()
          
         
-        
+        //Communication
+
+        this.btnTextEmail= page.locator("xpath=//button[@aria-label='Text/Email']")
+        this.typeOfComm = page.locator("xpath=//input[@id='typeOfCommunication']")
+        this.emailHeader= page.locator("xpath=//input[@data-testid='Email Header']")
+        this.stdContent= page.locator("xpath=//input[@id='standard']")
+        //this.content= page.locator("xpath=//textarea[@id='Content']")
+        this.content= page.locator("xpath=//textarea[@data-testid='Content']")
+        this.checkboxSendToPatient= page.locator("xpath=//span[@data-testid='Send To Patient']//input[@type='checkbox']")
+        //this.btnSend= page.locator("xpath=//button[@aria-label='Send']")
+        this.btnSend= page.locator("xpath=//button[@aria-label='sendPatientComm']")
+        this.emailSection= page.locator("xpath=//button[normalize-space()='Email']")
+        this.textSection= page.locator("xpath=//button[normalize-space()='Text']")
+        this.allCommSection= page.locator("xpath=//button[normalize-space()='All']")
+        this.showLinkFirst= page.locator('a').first()
+        this.showLinkSecond= page.locator('.MuiDataGrid-virtualScrollerRenderZone > div:nth-child(2) > div:nth-child(8) > .MuiTypography-root')
+        this.cellmaLink= page.locator("xpath=//img[@alt='Cellma Image Avatar']")
+        this.expandComm= page.getByRole('cell', { name: 'expandRowIconundefined' }).first()
+        this.expandComm2= page.getByRole('cell', { name: 'expandRowIconundefined' }).nth(1)
+
 
     }
+
+
+
     async clickOniconExaminationsCategory()
     {
         await this.iconExaminationsCategory.click()
@@ -297,6 +319,80 @@ class PatientSummary
     }
         
 
+    //////Methods for communications
+ 
+///////*****Communication*****
+    async clickOnTextEmailBtn()
+    {
+        await clickElement(this.page, this.btnTextEmail)
+    }
+    async selectTypeOfCom(csd_communication_medium_type)
+    {
+        await selectFromDropdown(this.page, this.typeOfComm, csd_communication_medium_type)
+    }
+    async enterEmailHeader(email_header)
+    {
+        await typeText(this.page, this.emailHeader, email_header)
+    }
+    async selectStdContent(std_Content)
+    {
+        await selectFromDropdown(this.page, this.stdContent, std_Content)
+    }
+    async enterContent(com_content)
+    {
+        await typeText(this.page, this.content, com_content)
+    }
+ 
+    async clickOnSendComm()
+    {
+        await clickElement(this.page, this.btnSend)
+    }
+ 
+    async clickOnEmailSection()
+    {
+        await clickElement(this.page, this.emailSection)
+    }
+ 
+    async clickOnTextSection()
+    {
+        await clickElement(this.page, this.textSection)
+    }
+ 
+    async clickOnAllCommSection()
+     {
+        await clickElement(this.page, this.allCommSection)
+     }
+    async closePopUp()
+    {
+        await clickElement(this.page, this.closeTaskPopup)
+    }
+    async clickOnFirstShowLink()
+    {
+        await clickElement(this.page, this.showLinkFirst)
+    }
+ 
+    async clickOnSecondShowLink()
+    {
+        await clickElement(this.page, this.showLinkSecond)
+    }
+ 
+    async clickOnCellma()
+    {
+        await clickElement(this.page, this.cellmaLink)
+    }
+ 
+    async expandFisrtCom()
+    {
+        await clickElement(this.page, this.expandComm)
+    }
+    async expandSecondCom()
+    {
+        await clickElement(this.page, this.expandComm2)
+    }
+ 
+        async sendToPatientCheckbox() {
+    await clickElement(this.page, this.checkboxSendToPatient);}
+    
      
 }
 module.exports=PatientSummary
