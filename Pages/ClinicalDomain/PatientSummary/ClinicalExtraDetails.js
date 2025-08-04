@@ -70,6 +70,30 @@ class ClinicalExtraDetails {
     this.procedureCheckBoxSetAsDefault = page.locator("xpath=//span[@data-testid='Set As Default']");
     this.procedureTextareaNotes = page.locator("xpath=//textarea[@name='notes']");
 
+    //Pregnancy
+        this.pregGravida= page.locator("xpath=//input[@id='gravida']")
+        this.pregFetusNo= page.locator("xpath=//input[@name='noOfFetus']")
+        this.pregExpandFirstFetus= page.locator("xpath= //div[contains(text(),'1st Fetus Details')]")
+        this.pregExpandSecondFetus= page.locator("xpath=//div[contains(text(),'2nd Fetus Details')]")
+        this.pregOutcome= page.locator("xpath=//div[@data-testid='outcome']")
+        //input[@data-testid='Birth Place']
+        this.pregGestWeek= page.locator("xpath=//input[@data-testid='Gestation Weeks']")
+        this.pregGestDays= page.locator("xpath=//input[@data-testid='Gestation Plus Days']")
+        this.pregDevliveryMethod= page.locator("xpath=//div[@data-testid='deliveryMethod']")
+        this.pregDateOfDelivery= page.locator("xpath=//input[@name='dateOfDelivery']")
+        //this.pregTimeOfDelivery= page.locator("xpath=//input[@id=':rre:']")
+        this.pregTimeOfDelivery= page.getByPlaceholder('hh:mm')
+        this.pregWeight= page.locator("xpath=//input[@data-testid='Weight(kg)']")
+        this.pregSex= page.locator("xpath=//div[@data-testid='sex']")
+        this.pregBabyName= page.locator("xpath=//input[@data-testid='Baby Name']")
+        this.pregBirtPlace= page.locator("xpath=//input[@data-testid='Birth Place']")
+        this.pregFeedingMethod= page.locator("xpath=//input[@name='feedingMethod']")
+           //label[contains(text(),'No of Fetus')]
+        this.pregSocialWorkAssigned= page.locator("xpath=//input[@name='socialWorkerAssigned']")
+        this.pregComplications= page.locator("xpath=//input[@name='complications']")
+        this.pregNotes= page.locator("xpath=//label[contains(text(),'Notes')]")
+        this.pregSave= page.locator("xpath=//div[contains(text(),'Save')]")
+
     //lifestyle
 
     this.lifeStyleNotes=page.locator("xpath=//textarea[@name='notes']")
@@ -952,6 +976,150 @@ async clickSaveButton() {
       await this.link.click()
       await this.closePopup.click()
 
+  }
+  
+  //Pregnancy Methods
+
+
+   async enterPregGravida(gravida)
+  {
+    await typeText(this.page, this.pregGravida, gravida);
+  }
+
+  async selectNoOfFetus(fetus_no)
+  {
+    await selectFromDropdown(this.page,this.pregFetusNo.nth(0), fetus_no)
+  }
+  async expandFetusDrawer()
+  {
+    await clickElement(this.page, this.pregExpandFirstFetus.nth(0))
+  }
+  async expandFetusDrawerSecond()
+  {
+    await clickElement(this.page, this.pregExpandSecondFetus)
+  }
+  async selectPregOutcome(outcome)
+  {
+    await selectFromDropdown(this.page,this.pregOutcome.nth(0), outcome)
+  }
+  async enterPregWeek(preg_week)
+  {
+    await typeText(this.page,this.pregGestWeek.nth(0), preg_week)
+  }
+
+  async enterGestationDays(gestation_days)
+  {
+      await typeText(this.page, this.pregGestDays.nth(0), gestation_days)
+  }
+  async selectDeliveryMethod(delivery_method)
+  {
+    await selectFromDropdown(this.page,this.pregDevliveryMethod.nth(0), delivery_method)
+  }
+
+  async enterDateOfDelivery(date)
+  {
+      await typeText(this.page, this.pregDateOfDelivery.nth(0), date)
+  }
+  async enterTimeOfDelivery(time)
+  {
+      await typeText(this.page, this.pregTimeOfDelivery.nth(0), time)
+  }
+  async enterweightOfBaby(weight)
+  {
+      await typeText(this.page, this.pregWeight.nth(0), weight)
+  }
+  async selectSexOfBaby(sex)
+  {
+    await selectFromDropdown(this.page,this.pregSex.nth(0), sex)
+  }
+  async enterBabyName(name)
+  {
+    await typeText(this.page, this.pregBabyName.nth(0), name)
+  }
+  async enterBirthPlace(birthplace)
+  {
+    await typeText(this.page, this.pregBirtPlace.nth(0), birthplace)
+  }
+  async selectFeedingMethod(feeding_method)
+  {
+    await selectFromDropdown(this.page,this.pregFeedingMethod.nth(0), feeding_method)
+  }
+
+  async selectSocialWorkerAssigned(worker_assigned)
+  {
+    await selectFromDropdown(this.page,this.pregSocialWorkAssigned.nth(0),worker_assigned )
+  }
+  async selectComplications(complications)
+  {
+    await selectFromDropdown(this.page,this.pregComplications.nth(0),complications )
+  }
+  async enterPregnancyNotes(notes)
+  {
+    await typeText(this.page, this.pregNotes.nth(0), notes)
+  }
+  async savePregnancy()
+  {
+    await clickElement(this.page, this.pregSave.nth(0))
+  }
+
+  async selectPregOutcome1(outcome1)
+  {
+    await selectFromDropdown(this.page,this.pregOutcome.nth(1), outcome1)
+  }
+  async enterPregWeek1(preg_week1)
+  {
+    await typeText(this.page,this.pregGestWeek.nth(1), preg_week1)
+  }
+
+  async enterGestationDays1(gestation_days1)
+  {
+      await typeText(this.page, this.pregGestDays.nth(1), gestation_days1)
+  }
+  async selectDeliveryMethod1(delivery_method1)
+  {
+    await selectFromDropdown(this.page,this.pregDevliveryMethod.nth(1), delivery_method1)
+  }
+
+  async enterDateOfDelivery1(date1)
+  {
+      await typeText(this.page, this.pregDateOfDelivery.nth(1), date1)
+  }
+  async enterTimeOfDelivery1(time1)
+  {
+      await typeText(this.page, this.pregTimeOfDelivery.nth(1), time1)
+  }
+  async enterweightOfBaby1(weight1)
+  {
+      await typeText(this.page, this.pregWeight.nth(1), weight1)
+  }
+  async selectSexOfBaby1(sex1)
+  {
+    await selectFromDropdown(this.page,this.pregSex.nth(1), sex1)
+  }
+  async enterBabyName1(name1)
+  {
+    await typeText(this.page, this.pregBabyName.nth(1), name1)
+  }
+  async enterBirthPlace1(birthplace1)
+  {
+    await typeText(this.page, this.pregBirtPlace.nth(1), birthplace1)
+  }
+  async selectFeedingMethod1(feeding_method1)
+  {
+    await selectFromDropdown(this.page,this.pregFeedingMethod.nth(1), feeding_method1)
+  }
+
+  async selectSocialWorkerAssigned1(worker_assigned1)
+  {
+    await selectFromDropdown(this.page,this.pregSocialWorkAssigned.nth(1),worker_assigned1 )
+  }
+  async selectComplications1(complications1)
+  {
+    await selectFromDropdown(this.page,this.pregComplications.nth(1),complications1 )
+  }
+  async enterPregnancyNotes1(notes1)
+  {
+    await typeText(this.page, this.pregNotes.nth(1), notes1)
   }
   
   //Overview
