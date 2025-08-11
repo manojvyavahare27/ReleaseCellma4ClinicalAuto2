@@ -230,7 +230,7 @@ test.describe("Diagnosis Category", () => {
      // await diagnosisExtraDetails.selectFrequency("1");
      //await page.pause()
       await diagnosisExtraDetails.enterDiagnosisNotes(jsonData.AddDiagnosis[index].diag_notes);
-      await diagnosisExtraDetails.clickOnSaveExtraDetails();
+      await diagnosisExtraDetails.clickOnextraDetailsSaveButton();
       //await page.pause()
       await page.waitForTimeout(1000);
      // await page.getByTestId('Check All').click()
@@ -271,7 +271,7 @@ test.describe("Diagnosis Category", () => {
       await diagnosisExtraDetails.selectActivity(jsonData.EditDiagnosis[index].diag_activity)
       await diagnosisExtraDetails.enterDiagnosisNotes(jsonData.EditDiagnosis[index].diag_notes);
       //await page.pause()
-      await diagnosisExtraDetails.clickOnSaveExtraDetails();      
+      await diagnosisExtraDetails.clickOnextraDetailsSaveButton();      
       await expect(page.getByText('Diagnosis record updated successfully')).toHaveText('Diagnosis record updated successfully')
  
        ////// Database comparison - Patient Clinical Records - UPDATE Diagnosis/////////

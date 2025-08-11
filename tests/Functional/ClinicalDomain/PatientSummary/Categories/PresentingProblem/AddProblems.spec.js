@@ -153,7 +153,7 @@ test.describe("Problems Category", () => {
       await problemsExtraDetails.clickOPrivateRecord();
       await page.waitForTimeout(500);     
       await problemsExtraDetails.enterProblemNotes(jsonData.AddProblems[index].prp_notes);
-      await problemsExtraDetails.clickOnSaveExtraDetails();
+      await problemsExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(3000);
      // await page.pause()
@@ -192,7 +192,7 @@ test.describe("Problems Category", () => {
       await problemsExtraDetails.selectProblemSeverity(jsonData.EditProblems[index].prp_severity);
       await problemsExtraDetails.enterRating(jsonData.EditProblems[index].prp_rating);
       await problemsExtraDetails.enterProblemNotes(jsonData.EditProblems[index].prp_notes);
-      await problemsExtraDetails.clickOnSaveExtraDetails();
+      await problemsExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(1000);
 

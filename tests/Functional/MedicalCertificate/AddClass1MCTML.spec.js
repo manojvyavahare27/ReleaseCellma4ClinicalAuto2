@@ -107,7 +107,7 @@ test.describe("Medical Certificate", () => {
       await patientsearch.clickOnSearchButton();
       
       await patientsearch.clickOnSearchPatientLink();
-      //await page.pause()//wait 1.5 second     
+      await page.pause()//wait 1.5 second     
       await page.waitForTimeout(3000)
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();   

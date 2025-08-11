@@ -200,10 +200,6 @@ test.describe("Medications Category", () => {
       await MedicationsExtraDetails.enterDeleteReason(jsonData.DeleteMedication[index].pacr_delete_reason);
       await MedicationsExtraDetails.clickOnSaveDeleteReason();
 
-     
-
-      
-
         // Add New Medication
       await Medications.selectandAddClinicalItem(jsonData.AddMedication[index].pacr_que_name)
       await page.waitForTimeout(2000);      
@@ -253,9 +249,9 @@ test.describe("Medications Category", () => {
       await MedicationsExtraDetails.enterMedicationNotes(jsonData.AddMedication[index].medi_notes) 
       
 
-      await MedicationsExtraDetails.clickOnSaveExtraDetails();      
+      await MedicationsExtraDetails.clickOnextraDetailsSaveButton();      
       await page.waitForTimeout(200);           
-     await Medications.clickOnCheckallCheckListcheckbox()  
+      await Medications.clickOnCheckallCheckListcheckbox()  
       await MedicationsExtraDetails.clickOnSaveChecklistButton()
       await expect(page.getByText("Medication record added successfully")).toHaveText("Medication record added successfully");
        
@@ -301,7 +297,7 @@ test.describe("Medications Category", () => {
      await MedicationsExtraDetails.selectCurrentLocation(jsonData.EditMedication[index].pcl_location_name)      
       await MedicationsExtraDetails.enterMedicationNotes(jsonData.EditMedication[index].medi_notes) 
       //await page.pause()
-      await MedicationsExtraDetails.clickOnSaveExtraDetails();      
+      await MedicationsExtraDetails.clickOnextraDetailsSaveButton();      
       await page.waitForTimeout(1500);     
       await Medications.clickOnCheckallCheckListcheckbox()
       await MedicationsExtraDetails.clickOnSaveChecklistButton()

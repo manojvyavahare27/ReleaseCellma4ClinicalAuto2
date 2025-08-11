@@ -132,7 +132,8 @@ class ClinicalExtraDetails {
     this.saveCheckList = page.locator("xpath=//button[@aria-label='saveChecklist']");
     //this.saveExtraDetails = page.locator("xpath=//button[@aria-label='saveCategoryExtraDetails']");
     this.saveExtraDetails = page.locator("xpath=//button[@data-testid='Save']");
-    this.saveandCreateRequest=page.locator("xpath=//button[@data-testid='Save and Create Request']")
+    this.extraDetailsSaveButton=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
+    this.saveandCreateRequest=page.locator("xpath=//button[@data-testid='saveAndCreateLabRequest']")
 
     this.saveCheckListButton=page.locator("xpath=//div[@class='MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 mui-n0wno2']//button[@data-testid='Save']")
     this.saveFavourites=page.locator("xpath=//div[@role='dialog']//button[normalize-space()='Save']")
@@ -787,6 +788,10 @@ async enterSocialNotes(soci_notes)
     await clickElement(this.page, this.saveExtraDetails);
   }
 
+  async clickOnextraDetailsSaveButton()
+  {
+    await clickElement(this.page, this.extraDetailsSaveButton)
+  }
   async clickOnSaveCreateRequest()
   {
     await clickElement(this.page, this.saveandCreateRequest)

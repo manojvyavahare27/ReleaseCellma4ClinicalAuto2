@@ -1,12 +1,14 @@
 [
   {
-    "pac_id": 257591,
+    "pac_id": 257676,
     "pac_consent_given_by": "manoj gaikwad (Next Of Kin)",
     "pac_consent_type": "Contact by Email",
-    "pac_consent_status": "Given",
+    "pac_consent_status": "withdrawn",
     "pac_consent_start": "01/04/2025",
-    "pac_consent_end": "01/05/2025",
-    "pac_notes": "Data entry test.",
-    "pac_consent_details_json": "{\"patientDetails\":{\"patSurname\":\"\",\"patFirstName\":\"\",\"patDateOfBirth\":\"Invalid date\",\"patGender\":\"\",\"patNhsNumber\":\"\",\"patPid\":\"\",\"specialRequirements\":\"This is a special requirement\",\"proposedProcedures\":{},\"briefExplanationMedicalTerm\":\"Brief explanation of term used\"},\"statementOfHealthProfessional\":{\"explainedIntendedBenefits\":\"This is an intended benefit\",\"significantUnavoidableRisks\":\"This is a risk that occurs often\",\"extraProcedures\":{\"bloodTransfusion\":true,\"details\":\"Details for blood transfusion\",\"proceduresChecked\":true,\"otherProcedures\":[{},{\"details\":\"Details of procedure\"}]},\"providedInformation\":true,\"details\":\"These are risks\",\"involvedProcedureDetails\":{\"generalAnaesthesia\":false,\"localAnaesthesia\":false,\"sedation\":false,\"responsibleHealthProfessional\":{\"name\":\"\",\"jobTitle\":\"\",\"registrationNumber\":\"\",\"signature\":\"\"},\"healthProfessionalName\":\"\",\"jobTitle\":\"\",\"date\":\"03/08/2025\"}},\"statementOfInterpreter\":{\"signature\":\"\",\"interpreterName\":\"\",\"date\":\"03/08/2025\"},\"statementOfParent\":{\"details\":\"\",\"removelOfTissueOrBloodDuringOperation\":\"Yes\",\"forResearchInConnectionWithDisorders\":\"Yes\",\"forScientificOrMedicalInformation\":\"Yes\",\"parentDetails\":{\"patientSignature\":\"\",\"patientName\":\"undefined undefined\",\"date\":null},\"witnessDetails\":{\"patientSignature\":\"\",\"patientName\":\"\",\"date\":null}},\"confirmationOfConsent\":{\"healthProfessional\":{\"signature\":\"\",\"name\":\"\",\"jobTitle\":\"\",\"date\":null},\"parent\":{\"signature\":\"\",\"name\":\"undefined undefined\",\"date\":null}},\"withdrawalOfConsentDetails\":{\"patientName\":\"undefined undefined\",\"date\":null}}"
+    "pac_consent_end": "18/06/2025",
+    "pac_withdraw_date": "18/06/2025",
+    "pac_notes": "Record edit test",
+    "pac_record_status": "wrong",
+    "pac_deleted": "11/08/2025"
   }
 ]

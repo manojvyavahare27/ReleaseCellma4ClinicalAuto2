@@ -154,7 +154,7 @@ test.describe("LifeStyle Category", () => {
   await lifestyleExtraDetails.clickOPrivateRecord();
   await page.waitForTimeout(500);   
   await lifestyleExtraDetails.enterLifestyleNotes(jsonData.AddLifestyle[index].life_notes);
-  await lifestyleExtraDetails.clickOnSaveExtraDetails();
+  await lifestyleExtraDetails.clickOnextraDetailsSaveButton();
   await page.waitForTimeout(2000);
     
  sqlQuery="select * from patient_clinical_records where pacr_pat_id=" + patId
@@ -179,7 +179,7 @@ if (match) {
      // await lifestyleExtraDetails.clickOnClincialItemCollapsable();
      // await lifestyleExtraDetails.selectClinicalItemSubcategory(jsonData.EditLifestyle[index].eli_text);      
       await lifestyleExtraDetails.enterLifestyleNotes(jsonData.EditLifestyle[index].life_notes);
-      await lifestyleExtraDetails.clickOnSaveExtraDetails();
+      await lifestyleExtraDetails.clickOnextraDetailsSaveButton();
       await page.waitForTimeout(1000); 
 
               ////// Database comparison - Patient Clinical Records - UPDATE Patient Scans/////////

@@ -152,7 +152,7 @@ test.describe("Interpretations Category", () => {
       //await page.getByRole('checkbox', { name: 'Set as default' }).click()
     
       await InterpretationsExtraDetails.enterInterpretationNotes(jsonData.AddInterpretation[index].inte_notes);
-      await InterpretationsExtraDetails.clickOnSaveExtraDetails();
+      await InterpretationsExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
      // await page.waitForTimeout(1000);
       await expect(page.getByText("Interpretation record added successfully")).toHaveText("Interpretation record added successfully");
@@ -189,7 +189,7 @@ test.describe("Interpretations Category", () => {
      // await InterpretationsExtraDetails.selectClinicalItemSubcategory(jsonData.EditInterpretation[index].eli_text);
       await InterpretationsExtraDetails.enterInterpretationOutcome(jsonData.EditInterpretation[index].inte_outcome_eli_text);      
       await InterpretationsExtraDetails.enterInterpretationNotes(jsonData.EditInterpretation[index].inte_notes);
-      await InterpretationsExtraDetails.clickOnSaveExtraDetails();
+      await InterpretationsExtraDetails.clickOnextraDetailsSaveButton();
       await expect(page.getByText("Interpretation record updated successfully")).toHaveText("Interpretation record updated successfully");
       await page.waitForTimeout(1000);
 

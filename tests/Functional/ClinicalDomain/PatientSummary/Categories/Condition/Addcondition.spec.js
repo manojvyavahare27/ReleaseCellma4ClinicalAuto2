@@ -183,7 +183,7 @@ test.describe("condition Category", () => {
       await conditionExtraDetails.enterPreviousCondition(jsonData.AddCondition[0].con_previous);
       await conditionExtraDetails.enterCoditionNotes(jsonData.AddCondition[0].cond_notes);               
        
-      await conditionExtraDetails.clickOnSaveExtraDetails();      
+      await conditionExtraDetails.clickOnextraDetailsSaveButton();      
       await expect(page.getByText("Condition record added successfully")).toHaveText("Condition record added successfully");
           
       ////// Database comparison- Patient Clinical Records - ADDING Conditions /////////
@@ -227,7 +227,7 @@ test.describe("condition Category", () => {
       //await allergyExtraDetails.enterClinicalItemNotes("Updated Allergy Notes From Playwright");
      
       //await page.locator("xpath=//button[@aria-label='saveExtraDetails']").click()
-      await conditionExtraDetails.clickOnSaveExtraDetails();
+      await conditionExtraDetails.clickOnextraDetailsSaveButton();
       
       //await expect(page.getByText('condition record updated successfully')).toHaveText('condition record updated successfully')
       

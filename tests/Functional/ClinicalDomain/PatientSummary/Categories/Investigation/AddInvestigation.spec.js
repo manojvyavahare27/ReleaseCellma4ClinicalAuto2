@@ -180,6 +180,7 @@ test.describe("Investigations Category", () => {
       //await InvestigationsExtraDetails.deselectShareOnPortal()
       //await page.waitForTimeout(1000)
       //await InvestigationsExtraDetails.selectShareOnPortal()
+      await page.pause()
       await InvestigationsExtraDetails.clickOPrivateRecord()
       await InvestigationsExtraDetails.clickOnSetAsDefault()
       await InvestigationsExtraDetails.enterInvNotes(jsonData.AddInvestigation[index].notes);
@@ -258,7 +259,7 @@ test.describe("Investigations Category", () => {
       await page.getByRole('textbox', { name: 'valueundefinedsubTest1' }).fill('1.2');
       await page.getByRole('textbox', { name: 'targetnullsubTest1' }).click();
       await page.getByRole('textbox', { name: 'targetnullsubTest1' }).fill('1.8');
-      await InvestigationsExtraDetails.clickOnSaveExtraDetails();
+      await InvestigationsExtraDetails.clickOnextraDetailsSaveButton();
       //await expect(page.getByText("Investigation record updated successfully")).toHaveText("Investigation record updated successfully");
       await page.waitForTimeout(1000);
 

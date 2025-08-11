@@ -160,7 +160,7 @@ test.describe("Recommendations Category", () => {
       await page.getByRole('checkbox', { name: 'Set as default' }).click()
       //await RecommendationsExtraDetails.enterClinicalItemNotes(jsonData.AddRecommendations[index].recom_notes);
       await recommendationEd.enterNotes();
-      await RecommendationsExtraDetails.clickOnSaveExtraDetails();
+      await RecommendationsExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(1000);
       await expect(page.getByText("Recommendation record added successfully")).toHaveText("Recommendation record added successfully");
@@ -200,7 +200,7 @@ test.describe("Recommendations Category", () => {
       await RecommendationsExtraDetails.enterReviewDate(jsonData.EditRecommendations[index].recom_review_date.toString());      
       //await RecommendationsExtraDetails.enterClinicalItemNotes(jsonData.EditRecommendations[index].recom_notes);
       await recommendationEd.enterNotes();
-      await RecommendationsExtraDetails.clickOnSaveExtraDetails();
+      await RecommendationsExtraDetails.clickOnextraDetailsSaveButton();
       await page.waitForTimeout(1000);
 
        ////// Database comparison - Patient Clinical Records - UPDATE Recommendations/////////

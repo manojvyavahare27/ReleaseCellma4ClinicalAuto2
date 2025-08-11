@@ -187,7 +187,7 @@ test.describe("Procedure Category", () => {
       await ProceduresExtraDetails.selectProcedureCheckboxPrivateRecord()  
                 
       await ProceduresExtraDetails.enterProcedureNotes(jsonData.AddProcedure[index].proc_notes) 
-      await ProceduresExtraDetails.clickOnSaveExtraDetails();
+      await ProceduresExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
      // await page.waitForTimeout(2000);     
       await page.getByLabel('saveChecklist').click() 
@@ -229,7 +229,7 @@ test.describe("Procedure Category", () => {
       await ProceduresExtraDetails.selectProcedureLevel(jsonData.AddProcedure[index].proc_procedure_level)
       await ProceduresExtraDetails.selectProcedureStatus(jsonData.AddProcedure[index].pacr_status)
       await ProceduresExtraDetails.selectProcedureOutcome(jsonData.AddProcedure[index].proc_outcome)
-      await ProceduresExtraDetails.clickOnSaveExtraDetails();      
+      await ProceduresExtraDetails.clickOnextraDetailsSaveButton();      
       await page.waitForTimeout(1500);     
       //await page.getByRole('button', { name: 'Save' }).click()
       //await page.waitForTimeout(1500);

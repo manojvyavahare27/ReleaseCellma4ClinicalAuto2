@@ -55,14 +55,14 @@ class PatientDetailsHomePage
 
       //Patient Details page overview icons
       this.iconOverview=page.locator("xpath=//button[@aria-label='overviewIconButton']")
-      this.iconUploadFile=page.locator("xpath=//button[@aria-label='Upload File']")
-      this.iconClosePopupsecond=page.locator("xpath=//button[@aria-label='cancelIcon']").nth(1)
-      this.iconAddedDocument=page.locator("xpath=//button[@aria-label='Added Documents']")
-      this.iconAddtoTask=page.locator("xpath=//button[@aria-label='Add To Task']")
-      this.iconAddtoWorklist=page.locator("xpath=//button[@aria-label='Add To Worklist']")
-      this.iconAddPathway=page.locator("xpath=//button[@aria-label='Add Pathway']")
-      this.iconLink=page.locator("xpath=//button[@aria-label='Link']")
-      this.iconClosePopup=page.locator("xpath=//button[@aria-label='cancelIcon']").nth(0)
+      this.iconUploadFile=page.locator("xpath=//button[@aria-label='categoryUploadFile']")
+      this.iconClosePopupsecond=page.locator("xpath=//button[@aria-label='cancelIcon']")
+      this.iconAddedDocument=page.locator("xpath=//button[@aria-label='categoryAddedDocuments']")
+      this.iconAddtoTask=page.locator("xpath=//button[@aria-label='categoryAddToTask']")
+      this.iconAddtoWorklist=page.locator("xpath=//button[@aria-label='categoryAddToWorklist']")
+      this.iconAddPathway=page.locator("xpath=//button[@aria-label='categoryAddPathway']")
+      this.iconLink=page.locator("xpath=//button[@aria-label='categoryLink']")
+      this.iconClosePopup=page.locator("xpath=//button[@aria-label='cancelIcon']")
       
       //Patient Details page other icons
       this.iconWorklist=page.locator("xpath=//button[@aria-label='worklistIconButton']")
@@ -176,8 +176,8 @@ class PatientDetailsHomePage
       await this.iconOverview.click()
       await this.iconUploadFile.click()
       await this.iconClosePopupsecond.click()
-      await this.iconAddedDocument.click()
-      await this.iconClosePopupsecond.click()
+      // await this.iconAddedDocument.click()
+      // await this.iconClosePopupsecond.click()
       await this.iconAddtoTask.click()
       await this.iconClosePopupsecond.click()
       await this.iconAddtoWorklist.click()

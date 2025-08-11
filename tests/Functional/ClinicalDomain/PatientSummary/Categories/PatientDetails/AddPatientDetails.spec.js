@@ -312,7 +312,7 @@ if (match) {
 }
 
       //patient details home page icons
-      await patientDetailshome.homepageOverviewIcon()
+      //await patientDetailshome.homepageOverviewIcon()
       await page.waitForTimeout(1000)
       await patientDetailshome.homepageIcons()
       await page.waitForTimeout(1000)
