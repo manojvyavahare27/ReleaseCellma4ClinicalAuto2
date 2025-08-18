@@ -132,6 +132,7 @@ class ClinicalExtraDetails {
     this.saveCheckList = page.locator("xpath=//button[@aria-label='saveChecklist']");
     //this.saveExtraDetails = page.locator("xpath=//button[@aria-label='saveCategoryExtraDetails']");
     this.saveExtraDetails = page.locator("xpath=//button[@data-testid='Save']");
+    this.saveSocialED=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     this.extraDetailsSaveButton=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     this.saveandCreateRequest=page.locator("xpath=//button[@data-testid='saveAndCreateLabRequest']")
 
@@ -786,6 +787,10 @@ async enterSocialNotes(soci_notes)
 
   async clickOnSaveExtraDetails() {
     await clickElement(this.page, this.saveExtraDetails);
+  }
+  async clickOnSaveExtradetailsForSocial()
+  {
+    await this.saveSocialED.click()
   }
 
   async clickOnextraDetailsSaveButton()
