@@ -23,6 +23,7 @@ class Homepage{
 
 
         //SideIcon
+        this.container = page.locator("//div[@class='MuiGrid2-root MuiGrid2-direction-xs-row mui-xbeygp']");
         this.homeDashboard=page.locator("xpath=//img[@alt='homeDashboard']")
         this.homeicon=page.locator("xpath=//img[@alt='homeDashboard']")
         this.sideIconTask=page.getByTestId('tasks')
@@ -91,7 +92,10 @@ class Homepage{
 
     async clickOnHomeDashboardIcon()
     {
+       await this.container.scrollIntoViewIfNeeded();
+       await this.homeDashboard.scrollIntoViewIfNeeded();
        await this.homeDashboard.click()
+
     }
     async clickOnSidebarAppointmentIcon()
     {
