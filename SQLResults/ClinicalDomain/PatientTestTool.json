@@ -1,11 +1,47 @@
 [
   {
-    "pattod_pacr_id": 82407,
+    "pattod_pacr_id": 84114,
+    "pattod_pat_id": 88350,
+    "pattod_var_name": "crp",
+    "pattod_var_value": "65",
+    "pacr_que_name": "DAS28",
+    "patto_notes": "DAS Examination notes",
+    "pattom_notes": "Patient marker functionality test"
+  },
+  {
+    "pattod_pacr_id": 84114,
+    "pattod_pat_id": 88350,
+    "pattod_var_name": "esr",
+    "pattod_var_value": "87",
+    "pacr_que_name": "DAS28",
+    "patto_notes": "DAS Examination notes",
+    "pattom_notes": "Patient marker functionality test"
+  },
+  {
+    "pattod_pacr_id": 84114,
+    "pattod_pat_id": 88350,
+    "pattod_var_name": "healthState",
+    "pattod_var_value": "33",
+    "pacr_que_name": "DAS28",
+    "patto_notes": "DAS Examination notes",
+    "pattom_notes": "Patient marker functionality test"
+  },
+  {
+    "pattod_pacr_id": 84114,
     "pattod_pat_id": 88350,
     "pattod_var_name": "tender",
-    "pattod_var_value": "2",
-    "pacr_que_name": "DAS78",
-    "patto_notes": "DAS 78 New tool",
-    "pattom_notes": "Patient marker for DAS 78"
+    "pattod_var_value": "3",
+    "pacr_que_name": "DAS28",
+    "patto_notes": "DAS Examination notes",
+    "pattom_notes": "Patient marker functionality test"
+  },
+  {
+    "pattod_pacr_id": 84114,
+    "pattod_pat_id": 88350,
+    "pattod_var_name": "swollen",
+    "pattod_var_value": "3",
+    "pacr_que_name": "DAS28",
+    "patto_notes": "DAS Examination notes",
+    "pattom_notes": "Patient marker functionality test"
   }
 ]

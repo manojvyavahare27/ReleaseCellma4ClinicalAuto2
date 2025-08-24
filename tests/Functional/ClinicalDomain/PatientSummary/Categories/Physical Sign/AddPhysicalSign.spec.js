@@ -34,7 +34,7 @@ const consoleLogs = [];
 let jsonData;
 
 test.describe("Excel Conversion Physical Sign Category", () => {
-  test("Extract Patient Summary Details", async ({}) => {
+  test("Extract Patient Summary Details", async ({ }) => {
     const excelFilePath =
       process.env.EXCEL_FILE_PATH || "./ExcelFiles/PatientSummary.xlsx";
     const jsonFilePath = "./TestDataWithJSON/PatientDomain/PatientSummary.json";
@@ -71,9 +71,9 @@ test.describe("Physical Sign Category", () => {
       const confirmexisting = new ConfirmExisting(page);
       const contacthistory = new ContactHistory(page);
       const patientsearch = new PatientSearch(page);
-      const Medications = new ClinicalSummary(page);
-      const MedicationsExtraDetails = new ClinicalExtraDetails(page);
-      
+      const Physical = new ClinicalSummary(page);
+      const PhysicalExtraDetails = new ClinicalExtraDetails(page);
+
 
       const menu = new Menu(page);
       await page.goto(environment.Test);
@@ -81,7 +81,7 @@ test.describe("Physical Sign Category", () => {
       logger.info("Username enter successfully");
       await loginpage.enter_Password(jsonData.loginDetails[0].password);
       logger.info("Password enter successfully");
-      await loginpage.clickOnLogin();      
+      await loginpage.clickOnLogin();
       logger.info("Clicked on Login button successfully");
       await homepage.clickOnHomeDashboardIcon()
       await homepage.clickOnPatientIcon();
@@ -95,19 +95,16 @@ test.describe("Physical Sign Category", () => {
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);
 
-    await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
+      await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
+      //await page.pause()
       await page.waitForTimeout(1500);
-      await patientsearch.ClickOnYesConfirmLegitimateRelationship()
-      await confirmexisting.clickOnConfirmExistingDetails();     
+      await confirmexisting.clickOnConfirmExistingDetails();
 
-      await page.waitForTimeout(2000);
-      await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
-      await page.waitForTimeout(2000);
-      
-       await contacthistory.clickOnShowFilter()
+     // await page.pause()
+      await contacthistory.clickOnShowFilter()
       await contacthistory.selectServiceFilter("General Medicine Automation");
       await contacthistory.selectContactReasonFilter("Assessments");
       //await contacthistory.enterContactDate("26/04/2024");
@@ -115,263 +112,69 @@ test.describe("Physical Sign Category", () => {
       await contacthistory.selectContactLocation("Cardio Location");
       //await contacthistory.enterContactWith("Dr Sathya");
       await contacthistory.clickOnAddContact();
-      await Medications.clickOnViewContactItemsMenu();
-      await Medications.clickOnPinContactItemsMenu();
-      await Medications.selectCategoryFromList("Medications");
+      //await page.pause()
+      await Physical.selectCategoryFromList("Physical Signs");
       await page.waitForTimeout(2000)
 
-       ////////REVIEW EXISTING ITEM AND DELETE/////
-       if(await Medications.checkItemOnHistoryTable(jsonData.AddMedication[index].pacr_que_name)){
-        await Medications.clickOnItemReview(jsonData.AddMedication[index].pacr_que_name);
-        console.log("Item reviewed before deleting");
-        await Medications.clickOnItemEdit(jsonData.AddMedication[index].pacr_que_name);
-        await MedicationsExtraDetails.clickOnDelete();
-        await MedicationsExtraDetails.clickOnConfirmDelete();
-        await MedicationsExtraDetails.enterDeleteReason('Deleted Existing item');
-        await MedicationsExtraDetails.clickOnSaveDeleteReason();
-        console.log('\x1bItem was deleted successfully\x1b[0m');
-        }
-        await page.waitForTimeout(2000)
 
-
-       
-       //////Fetch Patient Details/////////
-      var sqlQuery =
-      "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username + 
-      "' and paa_type='selected' order by 1 desc limit 1";
-      var sqlFilePath = "SQLResults/PatientDomain/PatientAudit.json";
-      var results = await executeQuery(sqlQuery, sqlFilePath);
-      console.log("\n Patient Details stored into the database: \n", results);
-      const patId = results[0].paa_pat_id;
-      console.log("Patient Accessed by User:" + patId);
-
-
-
-////////ADD NEW Medications/////
-      await Medications.selectandAddClinicalItem(jsonData.AddMedication[index].pacr_que_name); //This searches item and clicks on add button
-      await page.waitForTimeout(2000);      
-      await page.getByLabel('cancelIcon').click();
-      //await MedicationsExtraDetails.clickOnClincialItemCollapsable();
-      await Medications.selectandAddClinicalItem(jsonData.AddMedication[index].pacr_que_name);
-      await page.waitForTimeout(1000);
-      //await page.pause()
-      await MedicationsExtraDetails.selectClinicalItemSubcategory(jsonData.AddMedication[index].eli_text);
-      await MedicationsExtraDetails.enterOnDose(jsonData.AddMedication[index].medi_dose)
-      await MedicationsExtraDetails.selectFrequency(jsonData.AddMedication[index].medi_frequency)
-      await MedicationsExtraDetails.selectRoute(jsonData.AddMedication[index].medi_route)
-      await MedicationsExtraDetails.enterDays(jsonData.AddMedication[index].medi_duration)
-      await MedicationsExtraDetails.selectSite(jsonData.AddMedication[index].meded_value)
-      await MedicationsExtraDetails.selectPrescribeBy(jsonData.AddMedication[index].medi_prescribed_by)
-      await MedicationsExtraDetails.enterStartDate(jsonData.AddMedication[index].medi_start_date)
-      //await MedicationsExtraDetails.enterReviewDate(jsonData.AddMedication[index].medi_start_date)  
-      await MedicationsExtraDetails.enterStopDate(jsonData.AddMedication[index].medi_stop_date)
-      await MedicationsExtraDetails.selectSideEffects(jsonData.AddMedication[index].mse_text)  
-      await MedicationsExtraDetails.selectStatus(jsonData.AddMedication[index].pacr_status)
-      await MedicationsExtraDetails.selectIndication(jsonData.AddMedication[index].meded_value)      
-      await MedicationsExtraDetails.selectStoppedReason(jsonData.AddMedication[index].medi_stopped_reason_eli_text)
-      await MedicationsExtraDetails.selectPGDPSD(jsonData.AddMedication[index].meded_value_PGD)
-      //await page.pause()
-      await MedicationsExtraDetails.enterMedicationGradeForAdministrator(jsonData.AddMedication[index].meded_value_Administrator)
-      await MedicationsExtraDetails.selectMaxReffills(jsonData.AddMedication[index].meded_value_MaxReffills)       
-      await MedicationsExtraDetails.selectQuantity(jsonData.AddMedication[index].meded_value_Quantity)
-      //await page.pause()
-      await MedicationsExtraDetails.enterUnit(jsonData.AddMedication[index].meded_value_Unit)
-      await MedicationsExtraDetails.selectCurrentLocation(jsonData.AddMedication[index].pcl_location_name)
-      await MedicationsExtraDetails.enterLinkTiDiagnosis(jsonData.AddMedication[index].pacr_que_name_Diagnosis)
-      await MedicationsExtraDetails.selectAdherent(jsonData.AddMedication[index].meded_value_Adherent)
-      await MedicationsExtraDetails.clickOnAddToPrescribe()
-      await MedicationsExtraDetails.selectEndoserment(jsonData.AddMedication[index].paprd_endorsement) 
-      //await page.pause() 
-
-      await MedicationsExtraDetails.selectForCondition(jsonData.AddMedication[index].que_display_text)
-      await MedicationsExtraDetails.enterPriceCheckQuantity(jsonData.AddMedication[index].meded_value_Price_check_quantity)  
-      await MedicationsExtraDetails.enterClinicalItemNotes(jsonData.AddMedication[index].medi_notes) 
-      
-      
-
-      //await page.pause()
-
-      await MedicationsExtraDetails.clickOnSave();
-      await page.waitForTimeout(1500);
-      //await page.pause()
-      await page.getByRole('button', { name: 'Save' }).click()
-      //await MedicationsExtraDetails.clickOnSave();
-      await page.waitForTimeout(500);
-      await expect(page.getByText("Medication added successfully")).toHaveText("Medication added successfully");
-      //await expect(page.getByText(`${clinicaCatergory} Record Added Successfully`)).toHaveText(`${clinicaCatergory} Record Added Successfully`); 
+      //Add Physical sign
+      await Physical.selectandAddClinicalItem("Height and weight"); //This searches item and clicks on add button
+      await page.waitForTimeout(2000);
+      await PhysicalExtraDetails.addPhysicalSignButton()
      // await page.pause()
-      ////// Database comparison- Patient Clinical Records - ADDING NEW Medications/////////
-      sqlQuery =
-      "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, medi_notes"+
-      " from patient_clinical_records join patient_clinical_records_details on pacr_id=pacrd_pacr_id join Medications on pacr_id=medi_pacr_id where pacr_record_status='approved'"+
-      " and pacr_pat_id=" + patId +
-      " and pacr_record_status='approved' and pacr_que_name='" + jsonData.AddMedication[index].pacr_que_name +
-      "' and pacr_category='Medication' order by 1 desc limit 1";
+
+     for (const field of jsonData.PhysicalSign) {
+  console.log(`Label: ${field.Label}, Value: ${field.Value}`);
+  await PhysicalExtraDetails.enterAirorOxygen(field.Label, field.Value);
+}
+
+      // await PhysicalExtraDetails.enterAirorOxygen(jsonData.PhysicalSign[index].label, jsonData.PhysicalSign[index].value);
+      // await PhysicalExtraDetails.enterAirorOxygen('Blood Pressure Diastolic (mmHg)', '75');
+      // await PhysicalExtraDetails.enterAirorOxygen('Blood Pressure Diastolic (mmHg) (12)', '80');
+      // await PhysicalExtraDetails.enterAirorOxygen('Blood Pressure Systolic (mmHg)', '125');
+      // await PhysicalExtraDetails.enterAirorOxygen('Blood Pressure Systolic (mmHg) (mmHg )', '99');
+      // await PhysicalExtraDetails.enterAirorOxygen('BMI (body mass index) centile', '99');
+      // await PhysicalExtraDetails.enterAirorOxygen('Capillary refill time (seconds)', '2');
+      // await PhysicalExtraDetails.enterAirorOxygen('Foetal heart rate', '72');
+      // await PhysicalExtraDetails.enterAirorOxygen('Fundal height of uterus', '68');
+
+      // await PhysicalExtraDetails.enterAirorOxygen('Halo sign', '52');
+      // await PhysicalExtraDetails.enterAirorOxygen('Height', '162');
+      // await PhysicalExtraDetails.enterAirorOxygen('Height (cm) (cm)', '168');
+      // await PhysicalExtraDetails.enterAirorOxygen('Height and weight', '61');
+
+      // await PhysicalExtraDetails.enterAirorOxygen('News Score', '100');
+      // await PhysicalExtraDetails.enterAirorOxygen('O2 (L/Min)', '18');
+      // await PhysicalExtraDetails.enterAirorOxygen('Oxygen (12)', '102');
+      // await PhysicalExtraDetails.enterAirorOxygen('Oxygen Saturation Scale 1 (%)', '98');
+
+      // await PhysicalExtraDetails.enterAirorOxygen('Oxygen Saturation Scale 2 (%)', '99');
+      // await PhysicalExtraDetails.enterAirorOxygen('PEWS score', '55');
+      // await PhysicalExtraDetails.enterAirorOxygen('Physical', '69');
+
+      // await PhysicalExtraDetails.enterAirorOxygen('Pulse (Beats per minute)', '298');
+      // await PhysicalExtraDetails.enterAirorOxygen('Pulse-resting-rate(bpm)', '78');
+      // await PhysicalExtraDetails.enterAirorOxygen('Respiratory Rate (Breaths per minute)', '48');
+      // await PhysicalExtraDetails.enterAirorOxygen('Respiratory Rate', '298');
+
+      // await PhysicalExtraDetails.enterAirorOxygen('Serum neutralization test', '19');
+      // await PhysicalExtraDetails.enterAirorOxygen('SPO2', '65');
+      // await PhysicalExtraDetails.enterAirorOxygen('Structure of epiphyseal plate', '89');
+      // await PhysicalExtraDetails.enterAirorOxygen('Temperature (degree C)', '36');
+      // await PhysicalExtraDetails.enterAirorOxygen('Weight (kg) (kg)', '58');
+     // await page.pause()
+      await page.locator("xpath=//button[@data-testid='Save']").click()
+      await expect(page.getByText('Physical Signs added successfully')).toHaveText('Physical Signs added successfully')
+      
 
 
-    console.log("Manoj add Medications:  "+ sqlQuery);           
-    sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
-    results = await executeQuery(sqlQuery, sqlFilePath);
-    const pacrId = results[0].pacr_id;
-    console.log("\n Patient Clinical Records stored into the database: \n", results);
-    var match = await compareJsons(sqlFilePath, null, jsonData.AddMedication[index]);
-    if (match) {
-      console.log("\n Patient Clinical Records Comparision adding new Medications: Parameters from both JSON files match!\n");
-    } else {
-      console.log("\n Patient Clinical Records Comparision adding new Medications: Parameters from both JSON files do not match!\n");
-    }
-   
-    //await page.pause()
-      // await Medications.toggleSearchSection();       
-      // await Medications.clickOnItemDiv(jsonData.EditMedication[index].pacr_que_name);
-
-      // if(await Medications.checkItemOnHistoryTable(jsonData.EditMedication[index].pacr_que_name)){
-      //   await Medications.clickOnItemDiv(jsonData.EditMedication[index].pacr_que_name)
-      //   if(await Medications.checkItemOnHistoryTable( null, true)){
-      //     console.log("Newly added item is not reviewed before updating the record");
-      //   }
-      //   else{
-      //     console.error("Newly added item is reviewed before updating the record.");
-      //   }
-      // }
-      //await page.pause()
-      await Medications.clickOnItemEdit();
-      await MedicationsExtraDetails.clickOnClincialItemCollapsable();
-      await MedicationsExtraDetails.selectClinicalItemSubcategory(jsonData.EditMedication[index].eli_text);
-      await MedicationsExtraDetails.enterOnDose(jsonData.EditMedication[index].medi_dose)
-      await MedicationsExtraDetails.selectFrequency(jsonData.EditMedication[index].medi_frequency)
-      await MedicationsExtraDetails.selectRoute(jsonData.EditMedication[index].medi_route)
-      await MedicationsExtraDetails.enterDays(jsonData.EditMedication[index].medi_duration)
-      await MedicationsExtraDetails.selectSite(jsonData.EditMedication[index].meded_value)
-      //await MedicationsExtraDetails.selectSite(jsonData.EditMedication[index].meded_value)
-      await MedicationsExtraDetails.selectPrescribeBy(jsonData.EditMedication[index].medi_prescribed_by)
-      await MedicationsExtraDetails.enterStartDate(jsonData.EditMedication[index].medi_start_date)
-      //await MedicationsExtraDetails.enterReviewDate(jsonData.EditMedication[index].medi_start_date)  
-      await MedicationsExtraDetails.enterStopDate(jsonData.EditMedication[index].medi_stop_date)
-      //await MedicationsExtraDetails.selectSideEffects(jsonData.EditMedication[index].mse_text)  
-      // await MedicationsExtraDetails.selectStatus(jsonData.EditMedication[index].pacr_status)
-      // await MedicationsExtraDetails.selectIndication(jsonData.EditMedication[index].meded_value)      
-      // await MedicationsExtraDetails.selectStoppedReason(jsonData.EditMedication[index].medi_stopped_reason_eli_text)
-       await MedicationsExtraDetails.selectPGDPSD(jsonData.EditMedication[index].meded_value_PGD)
-      // await MedicationsExtraDetails.enterMedicationGradeForAdministrator(jsonData.EditMedication[index].meded_value_Administrator)
-       await MedicationsExtraDetails.selectMaxReffills(jsonData.EditMedication[index].meded_value_MaxReffills)       
-      await MedicationsExtraDetails.selectQuantity(jsonData.EditMedication[index].meded_value_Quantity)
-      //await page.pause()
-      // await MedicationsExtraDetails.enterUnit(jsonData.EditMedication[index].meded_value_Unit)
-     await MedicationsExtraDetails.selectCurrentLocation(jsonData.EditMedication[index].pcl_location_name)
-      // await MedicationsExtraDetails.enterLinkTiDiagnosis(jsonData.EditMedication[index].pacr_que_name_Diagnosis)
-      // await MedicationsExtraDetails.selectAdherent(jsonData.EditMedication[index].meded_value_Adherent)
-      // await MedicationsExtraDetails.selectEndoserment(jsonData.EditMedication[index].paprd_endorsement)  
-      // await MedicationsExtraDetails.selectForCondition(jsonData.EditMedication[index].que_display_text)
-      // await MedicationsExtraDetails.enterPriceCheckQuantity(jsonData.EditMedication[index].meded_value_Price_check_quantity)  
-      await MedicationsExtraDetails.enterClinicalItemNotes(jsonData.EditMedication[index].medi_notes) 
-      await MedicationsExtraDetails.clickOnSave();      
-      await page.waitForTimeout(1500);     
-      await page.getByRole('button', { name: 'Save' }).click()
-
-       ////// Database comparison - Patient Clinical Records - UPDATE Physical Sign/////////
-     sqlQuery =
-     "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, medi_notes"+
-     " from patient_clinical_records join patient_clinical_records_details"+
-     " on pacr_id=pacrd_pacr_id join Medications on pacr_id=medi_pacr_id where pacr_record_status='approved'"+
-     " and pacrd_record_status='approved' and medi_record_status='approved' and pacr_id=" + pacrId +
-     " and pacr_record_status='approved'";
-          
-     console.log("Manoj Edit query Medications: "+sqlQuery);
-   sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
-   results = await executeQuery(sqlQuery, sqlFilePath);
-
-   console.log("\n Patient Clinical Records stored into the database: \n", results);
-   var match = await compareJsons(sqlFilePath, null, jsonData.EditMedication[index]);
-   if (match) {
-     console.log("\n Update Patient Clinical Records Comparision Edit Physical Sign: Parameters from both JSON files match!\n");
-   } else {
-     console.log("\n Update Patient Clinical Records Comparision Edit Physical Sign: Parameters from both JSON files do not match!\n");
-   }
-
-   //await page.pause()
-   ////////AUTO UPDATE RISK AFTER UPDATING OUTCOME /////
-      await Medications.clickOnItemHistory();
-      await Medications.clickOnHistoryItemDiv();
-      await page.waitForTimeout(500);
-      await Medications.closeWindow();
-      await page.waitForTimeout(500);
-     
-     
-      // await page.waitForTimeout(500);
-      await Medications.clickOnItemHighlightNone();
-      await page.waitForTimeout(500);
-      await Medications.selectLowRiskLevel();
-      await page.waitForTimeout(500);
-      await Medications.selectModerateRiskLevel();
-      await page.waitForTimeout(500);
-      await Medications.selectHighRiskLevel();
-      await page.waitForTimeout(500);
-      await Medications.selectAllRiskLevel();
-      await Medications.clickOnLevelTwoExtraDetails();
-     // await Interpretations.clickOnLevelThreeExtraDetails();
-      await Medications.clickOnLevelOneExtraDetails();
 
 
-      ////// Database comparison - Patient Clinical Records - UPDATE Physical Sign RISK/////////
-     sqlQuery =
-     "select pacr_risk from patient_clinical_records where pacr_id=" + pacrId;
-          
-   sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
-   results = await executeQuery(sqlQuery, sqlFilePath);
-   if(results[0].pacr_risk == jsonData.EditMedication[index].pacr_risk){
-    console.log(
-      "\n Patient Clinical Records Comparision for Edit Physical Sign Risk: RISK Updated Successfully! \n"
-    );
-   } else {
-    console.log(
-      "\n Patient Clinical Records Comparision for Edit Physical Sign Risk: RISK Update Failed! \n"
-    );
-  }
 
-     ///////// Deleting Item ////////////
 
-      await Medications.clickOnItemEdit();
-      await MedicationsExtraDetails.clickOnDelete();
-      await MedicationsExtraDetails.clickOnCancelDelete();
-      await MedicationsExtraDetails.clickOnDelete();
-      await MedicationsExtraDetails.clickOnConfirmDelete();
-      await MedicationsExtraDetails.enterDeleteReason(jsonData.DeleteMedication[index].pacr_delete_reason);
-      await MedicationsExtraDetails.clickOnSaveDeleteReason();
-      await page.waitForTimeout(1000)
-     // await page.pause();
 
-       ////// Database comparison- Patient Clinical Records - DELETE Physical Sign/////////
-       sqlQuery ="select pacr_que_name, pacr_delete_reason from patient_clinical_records where pacr_id=" +
-       pacrId +
-       " and pacr_record_status='wrong'";
 
-     sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";
-     results = await executeQuery(sqlQuery, sqlFilePath);
-     //  pacrId=results[0].pacr_id;
-     console.log("\n Patient Details stored into the database: \n", results);
-     var match = await compareJsons(
-       sqlFilePath,
-       null,
-       jsonData.DeleteMedication[index]
-     );
-     if (match) {
-       console.log(
-         "\n  Patient Clinical Records Comparision for Delete Physical Sign: Parameters from both JSON files match!\n"
-       );
-     } else {
-       console.log(
-         "\n  Patient Clinical Records Comparision for Delete Physical Sign: Parameters from both JSON files do not match!\n"
-       );
-     }        
-      await Medications.clickOnMigratedItemsSection();
-      await Medications.clickOnDeletedItemsSection();
-      await page.waitForTimeout(1000);
-      await Medications.clickOnArchivedItemsSection();
-      await Medications.clickOnAllItemsSection();
-      await Medications.toggleHistorySection(); // Close the history section
-   
-     // await page.pause();
+
     }
   });
 });

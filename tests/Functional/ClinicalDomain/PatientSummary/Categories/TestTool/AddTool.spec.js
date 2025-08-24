@@ -504,6 +504,7 @@ test.describe("Test and Tool Category", () => {
 
             index++;
             // Add New Tool DAS 28 Examination Tool
+            await page.pause();
             await SummaryPage.selectTestToolItem(jsonData.AddTool[index].clinicItem);
             await SummaryPage.clickOnAddButton()
             await TestTool.clickOnSwollen1()
@@ -590,6 +591,7 @@ test.describe("Test and Tool Category", () => {
             await page.waitForTimeout(5000);
             await SummaryPage.selectCategoryFromList("Devices");
             await SummaryPage.selectCategoryFromList("Test Tools");
+            await page.pause();
             await TestTool.clickOnExtraDetailsView2();
 
             // Edit Tool
@@ -603,6 +605,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.enterTender(jsonData.EditTool[index].pattod_var_value_3);
             await TestTool.enterSwollen(jsonData.EditTool[index].pattod_var_value_4);
             await TestTool.clickOnCalculateButton();
+            await page.pause();
             await TestTool.enterDeviceNotes(jsonData.EditTool[index].patto_notes);
             await TestTool.clickOnSaveTool();
             await page.waitForTimeout(1000);
@@ -742,7 +745,7 @@ test.describe("Test and Tool Category", () => {
             }
             await page.waitForTimeout(5000);
             index++;
-
+await page.pause();
             // Add New Tool DAS 78 Examination Tool
             await SummaryPage.selectTestToolItem(jsonData.AddTool[index].clinicItem);
             await SummaryPage.clickOnAddButton()
@@ -757,6 +760,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.enterMarkerNotes(jsonData.AddTool[index].pattom_notes);
             await TestTool.clickOnSaveNotes();
             await TestTool.enterDeviceNotes(jsonData.AddTool[index].patto_notes);
+            await page.pause();
             await TestTool.clickOnSaveTool();
 
             ////////////////////////// FRONT END COMPARISON OF ENTERED INFORMAION //////////////////////////      
@@ -810,7 +814,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.clickOnExtraDetailsView2();
 
             // Edit Tool
-            //await page.pause();
+            await page.pause();
             await TestTool.clickOnEditIcon();
             await TestTool.enterReviewDate(jsonData.EditTool[index].patto_review_date);
             await TestTool.enterLastReviewed(jsonData.EditTool[index].patto_last_reviewed);
