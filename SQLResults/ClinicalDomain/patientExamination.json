@@ -1,15 +1,15 @@
 [
   {
-    "exam_id": 2546,
+    "exam_id": 2576,
     "exam_est_id": 4,
-    "exam_sgr_id": 283640,
+    "exam_sgr_id": 286531,
     "exam_pat_id": 88350,
-    "exam_pacr_id": 82348,
+    "exam_pacr_id": 84136,
     "exam_outcome": "Abnormal",
     "exam_record_status": "approved",
     "exam_notes": "Edited for Notes",
     "exam_risk": "moderate",
-    "exam_updated": "11/08/2025",
+    "exam_updated": "24/08/2025",
     "exam_updated_by": "release.manoj",
     "exam_imported": null,
     "exam_imported_method": null

@@ -105,7 +105,7 @@ test.describe("Physical Sign Category", () => {
       await confirmexisting.clickOnConfirmExistingDetails();
       await page.waitForTimeout(1000);
       await page.getByLabel('cancelIcon').click()
-     // await page.pause()
+      await page.pause()
       await contacthistory.clickOnShowFilter()
       await contacthistory.selectServiceFilter("General Medicine Automation");
       await contacthistory.selectContactReasonFilter("Assessments");
@@ -124,7 +124,7 @@ test.describe("Physical Sign Category", () => {
       await page.waitForTimeout(2000);
       await PhysicalExtraDetails.addPhysicalSignButton()
      // await page.pause()
-
+await page.pause()
      for (const field of jsonData.PhysicalSign) {
   console.log(`Label: ${field.Label}, Value: ${field.Value}`);
   await PhysicalExtraDetails.enterAirorOxygen(field.Label, field.Value);
