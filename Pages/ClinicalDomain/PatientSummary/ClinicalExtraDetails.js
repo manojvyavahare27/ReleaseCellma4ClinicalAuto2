@@ -4,6 +4,7 @@ const {
   clickElement,
   typeText,
   selectFromDropdown,
+  fillTextBoxByLabel,
 } = require("../../../UtilFiles/StaticUtility.js");
 const {
   selectFromSearchResults,
@@ -721,6 +722,17 @@ async enterSocialNotes(soci_notes)
     await typeText(this.page, this.allergyTextArea, alrg_notes);
   }
 
+  //Physical Sign
+
+  async addPhysicalSignButton()
+  {
+    await this.page.locator("xpath=//button[@data-testid='addPhysicalSignAccordion']").click()
+  }
+
+  async enterAirorOxygen(PSName, PSValue)
+  {    
+     await fillTextBoxByLabel(this.page, PSName, PSValue);   
+  }
   ///////////Procedure Functions////////////////////
 
   async enterDateOfProcedure(date) {

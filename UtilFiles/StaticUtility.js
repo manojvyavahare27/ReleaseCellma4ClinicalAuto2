@@ -7,6 +7,14 @@
 //   await elementLocator.click();
 // }
 
+//Physical Sign
+
+  async function fillTextBoxByLabel(page, labelText, value) {   
+  const inputLocator = page.locator(`//tr[td[normalize-space(text())='${labelText}']]//input[@type='text']`); 
+  console.log("value is:"+ value);  
+  await inputLocator.fill(value);
+  }
+
 async function clickElement(page, elementLocator) {
   let element;
  // await page.pause()
@@ -72,4 +80,4 @@ async function selectFromDropdown(page, dropdownLocator, listItem) {
 
 
 
-module.exports = { clickElement, typeText, selectFromDropdown};
+module.exports = { clickElement, typeText, selectFromDropdown,fillTextBoxByLabel};

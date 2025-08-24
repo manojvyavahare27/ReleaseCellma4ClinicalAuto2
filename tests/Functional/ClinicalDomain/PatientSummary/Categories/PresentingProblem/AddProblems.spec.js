@@ -81,7 +81,7 @@ test.describe("Problems Category", () => {
       logger.info("Password enter successfully");
       await loginpage.clickOnLogin();
       logger.info("Clicked on Login button successfully");
-      //await page.pause()
+      
       // await homepage.redirectsToHomePage();
       // logger.info("Redirected To Home Page Successfully")
       await homepage.clickOnPatientIcon();

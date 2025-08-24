@@ -90,7 +90,7 @@ test.describe("Physical Sign Category", () => {
       logger.info("Clicked on Search button successfully");
       await patientsearch.enterGivenName(data.pat_firstname);
       logger.info("Given Name entered successfully");
-      //await page.pause()
+      await page.pause()
       await patientsearch.enterFamilyName(data.pat_surname);
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);
@@ -99,10 +99,12 @@ test.describe("Physical Sign Category", () => {
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
-      //await page.pause()
+      await page.waitForTimeout(1500);
+      await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await page.waitForTimeout(1500);
       await confirmexisting.clickOnConfirmExistingDetails();
-
+      await page.waitForTimeout(1000);
+      await page.getByLabel('cancelIcon').click()
      // await page.pause()
       await contacthistory.clickOnShowFilter()
       await contacthistory.selectServiceFilter("General Medicine Automation");
@@ -118,7 +120,7 @@ test.describe("Physical Sign Category", () => {
 
 
       //Add Physical sign
-      await Physical.selectandAddClinicalItem("Height and weight"); //This searches item and clicks on add button
+      await Physical.selectandAddClinicalItem("BMI"); //This searches item and clicks on add button
       await page.waitForTimeout(2000);
       await PhysicalExtraDetails.addPhysicalSignButton()
      // await page.pause()

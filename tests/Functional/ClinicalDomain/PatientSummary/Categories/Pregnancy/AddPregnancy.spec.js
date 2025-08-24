@@ -98,6 +98,8 @@ test.describe("Pregnancy Category", () => {
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
+await page.waitForTimeout(1500);
+      await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await page.waitForTimeout(1500);
       await confirmexisting.clickOnConfirmExistingDetails();    
        await contacthistory.clickOnShowFilter()
