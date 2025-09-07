@@ -90,7 +90,7 @@ test.describe("Problems Category", () => {
       logger.info("Clicked on Search button successfully");
       await patientsearch.enterGivenName(data.pat_firstname);
       logger.info("Given Name entered successfully");
-      //await page.pause()
+      await page.pause()
       await patientsearch.enterFamilyName(data.pat_surname);
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);  
@@ -123,7 +123,7 @@ test.describe("Problems Category", () => {
         console.log('\x1bItem was deleted successfully\x1b[0m');
       }
 
-
+await page.pause()
       //////Fetch Patient Details/////////
       var sqlQuery =
         "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username +
@@ -156,7 +156,7 @@ test.describe("Problems Category", () => {
       await problemsExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(3000);
-     // await page.pause()
+      await page.pause()
 
       ////// Database comparison- Patient Clinical Records - ADDING NEW PRESENTING PROBLEMS/////////
       sqlQuery =

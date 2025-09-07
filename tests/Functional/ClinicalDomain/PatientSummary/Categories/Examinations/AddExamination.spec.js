@@ -95,7 +95,7 @@ test.describe("Examination Category", () => {
       //   document.body.style.zoom = '70%';
       // });
 
-      await page.pause()
+      //await page.pause()
       await loginpage.enterUsername(jsonData.loginDetails[0].username);
       logger.info("Username enter successfully");
       await loginpage.enter_Password(jsonData.loginDetails[0].password);
@@ -122,7 +122,7 @@ test.describe("Examination Category", () => {
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
       await page.waitForTimeout(1000);
-      await page.pause()
+    //  await page.pause()
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();
       await page.waitForTimeout(2000);
@@ -147,7 +147,7 @@ test.describe("Examination Category", () => {
         //await recommendationEd.selectCheckboxPrivateRecord();
         await recommendationEd.selectCheckboxSetAsDefault();
         await recommendationEd.enterNotes();
-        await page.pause()
+        //await page.pause()
         await recommendationEd.clickOnSaveButton();
         await page.waitForTimeout(500);
        

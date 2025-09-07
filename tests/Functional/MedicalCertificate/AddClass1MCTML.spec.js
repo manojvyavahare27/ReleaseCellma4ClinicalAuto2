@@ -107,7 +107,7 @@ test.describe("Medical Certificate", () => {
       await patientsearch.clickOnSearchButton();
       
       await patientsearch.clickOnSearchPatientLink();
-      await page.pause()//wait 1.5 second     
+      //await page.pause()//wait 1.5 second     
       await page.waitForTimeout(3000)
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();   
@@ -209,6 +209,7 @@ await page.waitForTimeout(1000)
         await MCExtraDetails.clickOnConsultedCAA()
         await MCExtraDetails.enterReasonForLimitation(jsonData.Limitation[index].patmcsn_reason)
         await page.waitForTimeout(1000)
+        //  await page.pause()
         await MCExtraDetails.clickOnAddLimitationButton()
         await page.waitForTimeout(1000)
         await expect(page.getByText('Limitation added successfully.')).toHaveText('Limitation added successfully.')        
@@ -217,6 +218,7 @@ await page.waitForTimeout(1000)
         await MCExtraDetails.clickOnConsultedCAA()
         await MCExtraDetails.enterReasonForLimitation(jsonData.Limitation[index].patmcsn_reason)
         await page.waitForTimeout(1000)
+         // await page.pause()
         await MCExtraDetails.clickOnAddLimitationButton()
         await page.waitForTimeout(1000)
         await expect(page.getByText('Limitation added successfully.')).toHaveText('Limitation added successfully.') 
