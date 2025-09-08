@@ -1,12 +1,10 @@
 [
   {
-    "pattod_pacr_id": 84114,
-    "pattod_pat_id": 88350,
-    "pattod_var_name": "crp",
-    "pattod_var_value": "65",
-    "pacr_que_name": "DAS28",
-    "patto_notes": "DAS Examination notes",
-    "patto_review_date": null,
-    "patto_last_reviewed": null
+    "pattes_test_pacr_id": 183498,
+    "pattes_pat_id": 88350,
+    "pattes_tests_question_que_name": "PHQ-9",
+    "pattes_notes": "Edit PHQ-9 Test",
+    "pattes_review_date": "08/09/2025",
+    "pattes_last_reviewed": "04/04/2025"
   }
 ]

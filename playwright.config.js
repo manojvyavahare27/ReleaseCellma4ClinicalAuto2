@@ -60,7 +60,11 @@ module.exports = defineConfig({
               '**/Functional/PharmacyPortal/AddRefAndDetails.spec.js',
               '**/tests/Functional/ClinicalDomain/PatientSummary/Document/AddDocument.spec.js',
               '**/tests/Functional/ClinicalDomain/PatientSummary/Document/testDoc.spec.js',
-              '**/tests/Functional/ClinicalDomain/PatientSummary/MyDetails/CheckMyDetails.spec.js'
+              '**/tests/Functional/ClinicalDomain/PatientSummary/MyDetails/CheckMyDetails.spec.js',
+
+              //Pharmacy Portal
+              '**/Functional/PharmacyPortal/RegisterPharmacyPatient.spec.js',
+              '**/Functional/PharmacyPortal/AddRefAndDetails.spec.js'
 
 
               
