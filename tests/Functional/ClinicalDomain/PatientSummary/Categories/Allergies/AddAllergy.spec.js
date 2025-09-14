@@ -171,7 +171,7 @@ test.describe("Allergy Category", () => {
       await allergyExtraDetails.selectReaction(jsonData.AddAllergy[index].eli_text)
       await allergyExtraDetails.selectReactionSevirity(jsonData.AddAllergy[index].alrg_reaction_severity)
       await allergyExtraDetails.enterallergyTextArea(jsonData.AddAllergy[index].alrg_notes)   
-      await page.pause()  
+     
       await allergyExtraDetails.clickOnSaveExtraDetails();
       await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(500);      

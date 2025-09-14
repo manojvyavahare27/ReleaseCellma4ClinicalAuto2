@@ -147,7 +147,7 @@ test.describe("Examination Category", () => {
         //await recommendationEd.selectCheckboxPrivateRecord();
         await recommendationEd.selectCheckboxSetAsDefault();
         await recommendationEd.enterNotes();
-        //await page.pause()
+        await page.pause()
         await recommendationEd.clickOnSaveButton();
         await page.waitForTimeout(500);
        

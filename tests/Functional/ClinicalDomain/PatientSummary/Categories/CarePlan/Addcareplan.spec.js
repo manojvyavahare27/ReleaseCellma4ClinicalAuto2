@@ -100,7 +100,7 @@ test.describe("Care Plan Category", () => {
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
 
-     //await page.pause();
+     
       await patientsearch.clickOnSearchPatientLink();
       await page.waitForTimeout(200);
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
@@ -178,6 +178,7 @@ test.describe("Care Plan Category", () => {
       await carePlanExtraDetails.EnterEvaluations(jsonData.AddCarePlan[index].carpd_notes_evaluations);
       await carePlanExtraDetails.EnterUpdateNotes(jsonData.AddCarePlan[index].carpd_type_notes);
       await page.waitForTimeout(2000)
+      
       await carePlanExtraDetails.clickOnSaveExtraDetails();
       await page.waitForTimeout(2000)
       await expect(page.getByText('Care Plans record added successfully')).toHaveText('Care Plans record added successfully')      
@@ -201,7 +202,7 @@ test.describe("Care Plan Category", () => {
       } else {
         console.log("\n Patient Clinical Records Comparision adding new Allergy: Parameters from both JSON files do not match!\n");
       }
-     await page.pause()
+     
       await carePlan.toggleSearchSection(); //Close the search section
 
       await carePlan.clickOnItemDiv(jsonData.EditCarePlan[index].pacr_que_name);
@@ -219,7 +220,7 @@ test.describe("Care Plan Category", () => {
             
       await carePlanExtraDetails.EnterEvaluations(jsonData.EditCarePlan[index].carpd_notes_evaluations);
       await carePlanExtraDetails.EnterUpdateNotes(jsonData.EditCarePlan[index].carpd_type_notes);
-      await page.pause()
+      
       await carePlanExtraDetails.clickOnSaveExtraDetails();
       await expect(page.getByText('Care Plans record updated successfully')).toHaveText('Care Plans record updated successfully')      
       
