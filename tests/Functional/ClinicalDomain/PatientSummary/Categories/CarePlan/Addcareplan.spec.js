@@ -125,7 +125,7 @@ test.describe("Care Plan Category", () => {
       //await contacthistory.enterContactWith("Dr Sathya");
       //await page.pause();
       await contacthistory.clickOnAddContact();
-      await page.pause()
+      //await page.pause()
       await carePlan.selectCategoryFromList(jsonData.AddCarePlan[index].pacr_category);
       await page.waitForTimeout(2000);
 

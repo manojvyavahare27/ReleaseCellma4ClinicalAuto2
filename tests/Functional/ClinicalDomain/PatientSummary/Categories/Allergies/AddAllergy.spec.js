@@ -109,7 +109,7 @@ test.describe("Allergy Category", () => {
       await page.waitForTimeout(1500);
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();
-      // await page.pause()
+       await page.pause()
       // await page.waitForTimeout(3000);      
       // const alertVisible = await page.locator("xpath=//h2[text()='Alerts']").isVisible().catch(() => false);
       // if (alertVisible) {
@@ -170,7 +170,8 @@ test.describe("Allergy Category", () => {
       await allergyExtraDetails.enterAllergyEndDate(jsonData.AddAllergy[index].alrg_end_date)
       await allergyExtraDetails.selectReaction(jsonData.AddAllergy[index].eli_text)
       await allergyExtraDetails.selectReactionSevirity(jsonData.AddAllergy[index].alrg_reaction_severity)
-      await allergyExtraDetails.enterallergyTextArea(jsonData.AddAllergy[index].alrg_notes)     
+      await allergyExtraDetails.enterallergyTextArea(jsonData.AddAllergy[index].alrg_notes)   
+      await page.pause()  
       await allergyExtraDetails.clickOnSaveExtraDetails();
       await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(500);      

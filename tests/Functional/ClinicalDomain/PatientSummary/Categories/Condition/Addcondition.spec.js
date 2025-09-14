@@ -113,7 +113,7 @@ test.describe("condition Category", () => {
       const alertPopup = page.locator("xpath=//h2[text()='Alerts']");
       if (await alertPopup.isVisible()) {
          const cancelButton = page.locator("xpath=//button[@aria-label='cancelIcon']");
-          await cancelButton.waitFor({ state: 'visible', timeout: 5000 });
+          await cancelButton.waitFor({ state: 'visible', timeout: 2000 });
           await cancelButton.click();
         }
       await page.waitForTimeout(2000);

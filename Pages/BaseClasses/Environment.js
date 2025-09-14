@@ -9,8 +9,9 @@ class Environment{
         //this.Test="http://10.0.0.63:3000/cellmaUser/login";
         //this.Test="https://10.0.0.63/cellmaUser/login"
         // this.Test1="https://10.0.0.99/cellmaUserAPI/swagger-ui/index.html"
-        // this.Test="https://10.0.0.63/cellmaUser/login"
+        // this.Test="https://10.0.0.63/cellmaUser/login"PharmacyPortal
         this.RefPortal="http://10.0.0.106:8080/cellmaPortal/portal"
+        this.PharmacyPortal = "https://c4portal.riomed.com/cellmaPortal/portal"
         // this.Test="http://10.0.0.106:3001/cellmaPortal/portal/home"
         // this.Test="http://localhost:3001/cellmaUser/login"
     }     

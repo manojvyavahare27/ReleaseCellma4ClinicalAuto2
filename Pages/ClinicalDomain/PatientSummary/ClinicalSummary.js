@@ -144,6 +144,16 @@ class ClinicalSummary {
           
      }
 
+     //Pharmacy portal.
+     async selectAndAddMedication(clinicalItemName) {
+
+        console.log("Item Name is:"+clinicalItemName);
+        
+        //await page.pause()
+        await selectFromSearchResults(this.page, this.searchMedication, clinicalItemName, this.addClinicalItem);  
+   
+    }
+
      //Add favourites
      //Diagnosis
      async clickOnFavouritesQuestion()
