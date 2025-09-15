@@ -43,23 +43,23 @@ class AddReferralDetails
        //Service Referral Tab
        this.btnserviceReferralAccordion=page.getByTestId('referralServiceDetailsAccordion')
        this.dropdownestiblishment=page.getByTestId('establishment').getByLabel('Open')
-       this.dropdownService=page.getByTestId('service').getByLabel('Open')
-       this.dropdownClinicType=page.getByTestId('clinicType').getByLabel('Open')
-       this.dropdownClinicLocation=page.getByTestId('clinicLocation').getByLabel('Open')
+       this.dropdownService=page.locator("xpath=//div[@data-testid='Service']")
+       this.dropdownClinicType=page.locator("xpath=//input[@id='serviceDetails_clinicType']")
+       this.dropdownClinicLocation=page.locator("xpath=//input[@id='serviceDetails_clinicLocation']")
        this.txtboxDateOfReferral=page.getByLabel('Date of Referral *')
        this.txtboxTimeOfReferral=page.getByPlaceholder('hh:mm')
-       this.dropdownConsultant=page.getByTestId('consultant').getByLabel('Open')
-       this.dropdownClinicalPriority=page.getByTestId('clinicalPriority').getByLabel('Open')
-       this.dropdownReferralType=page.getByTestId('referralType').getByLabel('Open')
-       this.dropdownReferralReason=page.getByTestId('referralReason').getByLabel('Open')
-       this.txtboxReferralNotes=page.getByTestId('Referral Notes')
+       this.dropdownConsultant=page.locator("xpath=//input[@id='serviceDetails[0].consultant']")
+       this.dropdownClinicalPriority=page.locator("xpath=//input[@id='serviceDetails_clinicalPriority']")
+       this.dropdownReferralType=page.locator("xpath=//input[@id='referralServiceReferralType']")
+       this.dropdownReferralReason=page.locator("xpath=//input[@id='referralServiceReferralReason']")
+       this.txtboxReferralNotes=page.locator("xpath=//textarea[@id='Referral Notes']")
 
 
        //ReferralDocument Tab
-       this.btnreferralDocumentAccordion=page.getByTestId('referralDocumentsAccordion')         
+       this.btnreferralDocumentAccordion=page.getByRole('button', { name: 'Referral Documents' })      
        
        //Track Referral
-       this.btnTrackReferral=page.getByTestId('Track Referral')
+       this.btnTrackReferral=page.getByTestId('CommonCellmaPopup').getByTestId('Track Referral')
     }
 
     //Track Referral
@@ -85,7 +85,7 @@ class AddReferralDetails
     async selectReferralReason()
     {
         await this.dropdownReferralReason.click()
-        await this.page.getByRole('option', { name: 'Vision test' }).click()
+        await this.page.getByRole('option', { name: 'Consultation Needed' }).click()
     }
     async selectReferralType()
     {
@@ -113,7 +113,7 @@ class AddReferralDetails
     async selectClinicLocation()
     {
         await this.dropdownClinicLocation.click()
-        await this.page.locator('#referralServiceClinicLocation-option-0').click()
+        await this.page.locator('#serviceDetails_clinicLocation-option-0').click()
     }
 
     async selectClinicType()
@@ -124,7 +124,7 @@ class AddReferralDetails
     async selectService()
     {
         await this.dropdownService.click()
-        await this.page.getByRole('option', { name: 'Cardiology' }).click()
+        await this.page.getByText('Cardiology').nth(1).click()
     }
     async clickOnServiceReferralAccordion()
     {

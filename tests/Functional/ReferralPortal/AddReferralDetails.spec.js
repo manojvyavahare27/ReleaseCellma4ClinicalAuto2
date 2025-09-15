@@ -27,7 +27,7 @@ test('Add Referral Details @ReferralPortal',async ({page})=>{
     
 
     await page.goto(environment.RefPortal)   
-    await page.pause() 
+    
     await portalhome.clickOnReferralPortalButton()
     await loginpage.enterReferralPortalUserName(logindata.username)    
     await loginpage.enterRefrralPortalPassword(logindata.password);
@@ -63,27 +63,28 @@ test('Add Referral Details @ReferralPortal',async ({page})=>{
     await addreferraldetails.clickOnPatientDetailsAccordion()
     await addreferraldetails.clickOnCreatePatientButton()
 
-    await addreferraldetails.enterIdentifer(addreferraldetailsdata.Identifier)
+    //await addreferraldetails.enterIdentifer(addreferraldetailsdata.Identifier)
     await addreferraldetails.selectTitle()
-    await addreferraldetails.enterGivenName(addreferraldetailsdata.GivenName)
-    await addreferraldetails.enterFamilyName(addreferraldetailsdata.FamilyName)
+    // await addreferraldetails.enterGivenName(addreferraldetailsdata.GivenName)
+    // await addreferraldetails.enterFamilyName(addreferraldetailsdata.FamilyName)
     await addreferraldetails.selectSex()
     await addreferraldetails.enterBornDate(addreferraldetailsdata.BornDate)
     await addreferraldetails.clickOnCreatePatientButton()
-    await page.pause()
+   
 
 
     //Service Referral Accordion
-
+ 
     await addreferraldetails.clickOnServiceReferralAccordion()
     await addreferraldetails.clickOnServiceReferralAccordion()
     await addreferraldetails.selectEstablishment()
     await addreferraldetails.selectService()
-    await page.pause()
+   
     await addreferraldetails.selectClinicType()
     await addreferraldetails.selectClinicLocation()
     //await addreferraldetails.enterDateOfReferral()
     await addreferraldetails.enterTimeOfReferral()
+    
     await addreferraldetails.selectConsultant()
     await addreferraldetails.selectPriority()
     await addreferraldetails.selectReferralType()
@@ -91,16 +92,17 @@ test('Add Referral Details @ReferralPortal',async ({page})=>{
     await addreferraldetails.enterReferralNotes()
 
     // Referral Document Accordion
+   
     await addreferraldetails.clickOnReferralDocumentTab()
     await addreferraldetails.clickOnReferralDocumentTab()
-    await page.pause()
+    
     await addreferraldetails.clickOnReferPatientButton()
     await expect(page.getByText('Referral Added Successfully')).toHaveText('Referral Added Successfully')
     
     await page.waitForTimeout(1000)
     await addreferraldetails.clickOnTrackReferralButton()
     
-    await page.pause()
+
 
 
 
