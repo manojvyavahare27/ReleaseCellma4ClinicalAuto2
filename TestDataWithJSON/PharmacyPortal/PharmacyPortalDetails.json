@@ -7,9 +7,9 @@
   ],
   "addPatient": [
     {
-      "pat_hospital_ref": "href05Reco012",
+      "pat_hospital_ref": "href05Reco019",
       "pat_title": "Mr",
-      "pat_firstname": "PharmPatientBH",
+      "pat_firstname": "PharmPatientBO",
       "pat_surname": "Test",
       "pat_sex": "Male",
       "pat_dob": "23/06/1982",

@@ -992,116 +992,60 @@
       "Value": "120"
     },
     {
-      "Label": "Blood Pressure Diastolic (mmHg)",
-      "Value": "75"
+      "Label": "Blood pressure",
+      "Value": "90"
     },
     {
-      "Label": "Blood Pressure Diastolic (mmHg) (12)",
+      "Label": "Blood Pressure - BP (mmHg)",
       "Value": "80"
     },
     {
-      "Label": "Blood Pressure Systolic (mmHg)",
-      "Value": "125"
+      "Label": "Height (cm)",
+      "Value": "160"
     },
     {
-      "Label": "Blood Pressure Systolic (mmHg) (mmHg )",
-      "Value": "99"
+      "Label": "Height(cm) (cm)",
+      "Value": "162"
     },
     {
-      "Label": "BMI (body mass index) centile",
-      "Value": "99"
-    },
-    {
-      "Label": "Capillary refill time (seconds)",
-      "Value": 2
-    },
-    {
-      "Label": "Foetal heart rate",
-      "Value": 72
-    },
-    {
-      "Label": "Fundal height of uterus",
-      "Value": 68
-    },
-    {
-      "Label": "Halo sign",
-      "Value": 52
-    },
-    {
-      "Label": "Height",
-      "Value": 162
-    },
-    {
-      "Label": "Height (cm) (cm)",
-      "Value": 168
-    },
-    {
-      "Label": "Height and weight",
-      "Value": 61
-    },
-    {
-      "Label": "News Score (No unit)",
-      "Value": 100
+      "Label": "O/E - respiratory rate (bpm)",
+      "Value": "100"
     },
     {
       "Label": "O2 (L/Min)",
-      "Value": 18
+      "Value": "98"
     },
     {
-      "Label": "Oxygen (12)",
-      "Value": 102
-    },
-    {
-      "Label": "Oxygen Saturation Scale 1 (%)",
-      "Value": 98
-    },
-    {
-      "Label": "Oxygen Saturation Scale 2 (%)",
-      "Value": 99
+      "Label": "Pain Level",
+      "Value": "85"
     },
     {
       "Label": "PEWS score",
-      "Value": 55
-    },
-    {
-      "Label": "Physical",
-      "Value": 69
+      "Value": "82"
     },
     {
       "Label": "Pulse (Beats per minute)",
-      "Value": 298
+      "Value": "170"
     },
     {
       "Label": "Pulse-resting-rate(bpm)",
-      "Value": 78
+      "Value": "102"
     },
     {
-      "Label": "Respiratory Rate (Breaths per minute)",
-      "Value": 48
+      "Label": "Rnagetext",
+      "Value": "95"
     },
     {
-      "Label": "Respiratory Rate",
-      "Value": 298
+      "Label": "Test Weight",
+      "Value": "65"
     },
     {
-      "Label": "Serum neutralization test",
-      "Value": 19
+      "Label": "Vital",
+      "Value": "60"
     },
     {
-      "Label": "SPO2",
-      "Value": 65
-    },
-    {
-      "Label": "Structure of epiphyseal plate",
-      "Value": 89
-    },
-    {
-      "Label": "Temperature (degree C)",
-      "Value": 36
-    },
-    {
-      "Label": "Weight (kg) (kg)",
-      "Value": 58
+      "Label": "weighting",
+      "Value": "72"
     }
   ]
 }

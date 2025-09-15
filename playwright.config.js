@@ -66,6 +66,8 @@ module.exports = defineConfig({
               '**/Functional/PharmacyPortal/RegisterPharmacyPatient.spec.js',
               '**/Functional/PharmacyPortal/AddRefAndDetails.spec.js'
 
+              
+
 
               
 

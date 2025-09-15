@@ -121,14 +121,16 @@ test.describe("Physical Sign Category", () => {
 
 
       //Add Physical sign
+     
       await Physical.selectandAddClinicalItem("BMI"); //This searches item and clicks on add button
       await page.waitForTimeout(2000);
       await PhysicalExtraDetails.addPhysicalSignButton()
      // await page.pause()
-//await page.pause()
+
      for (const field of jsonData.PhysicalSign) {
   console.log(`Label: ${field.Label}, Value: ${field.Value}`);
   await PhysicalExtraDetails.enterAirorOxygen(field.Label, field.Value);
+  
 }
 
       // await PhysicalExtraDetails.enterAirorOxygen(jsonData.PhysicalSign[index].label, jsonData.PhysicalSign[index].value);

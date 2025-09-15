@@ -145,6 +145,9 @@ class ClinicalSummary {
      }
 
      //Pharmacy portal.
+     async changeRiskLevel(risk){
+        await this.page.getByRole('button', { name: risk }).click();
+    }
      async selectAndAddMedication(clinicalItemName) {
 
         console.log("Item Name is:"+clinicalItemName);

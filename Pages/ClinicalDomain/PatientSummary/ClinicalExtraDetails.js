@@ -578,7 +578,39 @@ class ClinicalExtraDetails {
     this.interpretationHistoryPopUp = page.getByRole('heading', { name: 'Interpretations History', exact: true })
     this.recommedationHistoryPopUp = page.getByRole('heading', { name: 'Recommendations History', exact: true })
     this.pregnancyHistoryPopUp = page.getByRole('heading', { name: 'Pregnancies History', exact: true })
+
+// Pharmacy Portal
+    this.savePortal = page.locator("xpath=//button[@data-testid='Save']");
+    this.saveChecklistPortal = page.locator("xpath=//button[@aria-label='saveChecklist']");
+    this.editDays = page.locator("xpath=//input[@id='Duration']");
+     this.editPrescribed = page.locator("xpath=//input[@id='Prescribed By']")
+      this.popUpNotes = page.getByTestId('CommonCellmaPopup').getByTestId('Notes')
 }
+
+// Pharmacy Portal
+
+async enterEditMedicationNotes(medi_notes){
+    await typeText(this.page, this.popUpNotes, medi_notes);
+  }
+
+async selectEditPrescribeBy(prescribeBy) {
+    await selectFromDropdown(this.page, this.editPrescribed, prescribeBy);
+  }
+
+async enterEditDays(days) {
+    await typeText(this.page, this.editDays, days);
+  }
+
+async clickOnPortalSaveBtn() {
+    await clickElement(this.page, this.savePortal)
+  }
+
+  async clickOnSavePortalChecklistButton()
+  {
+    await this.saveChecklistPortal.click()
+  }
+
+  
 
 //Riskfactor
 async enterRiskFactorNotes(risk_notes)

@@ -99,13 +99,9 @@ test.describe("New Patient", () => {
       await page.goto(environment.PharmacyPortal);
       await portalhome.clickOnPharmacyPortalButton();
       await page.waitForTimeout(1500)
-      await loginpage.enterReferralPortalUserName(
-        jsonData.loginDetails[0].username
-      );
+      await loginpage.enterReferralPortalUserName(jsonData.loginDetails[0].username);
       await page.waitForTimeout(1500)
-      await loginpage.enterRefrralPortalPassword(
-        jsonData.loginDetails[0].password
-      );
+      await loginpage.enterRefrralPortalPassword(jsonData.loginDetails[0].password);
       await page.waitForTimeout(3000)
       await loginpage.clickOnReferralPortalLoginButton();
       //await expect(page.getByText('Login success')).toHaveText('Login success');
@@ -113,9 +109,7 @@ test.describe("New Patient", () => {
       await findPatient.clickOnSearchButton();
       logger.info("Clicked on Search button successfully");
 
-      await findPatient.enterGivenName(
-        jsonData.addPatient[index].pat_firstname
-      );
+      await findPatient.enterGivenName(jsonData.addPatient[index].pat_firstname);
       logger.info("Given Name entered successfully");
 
       await findPatient.enterFamilyName(jsonData.addPatient[index].pat_surname);
@@ -123,7 +117,7 @@ test.describe("New Patient", () => {
 
       await findPatient.enterSex(data.pat_sex);
       await findPatient.enterBorn(jsonData.addPatient[index].pat_dob);
-
+await page.pause()
       await findPatient.clickOnSearchButton();
       await page.waitForTimeout(5000);
       await findPatient.clickOnAddPatientButton();
@@ -134,40 +128,26 @@ test.describe("New Patient", () => {
       // await expect(page.getByText("Photo Identification ID required")).toHaveText("Photo Identification ID required");
       // await expect(page.getByText("Middle name(s) is required")).toHaveText("Middle name(s) is required");
 
-      await expect(page.getByText("Title required")).toHaveText(
-        "Title required"
-      );
-      await expect(page.getByText("Sex at Birth required")).toHaveText(
-        "Sex at Birth required"
-      );
+      await expect(page.getByText("Title required")).toHaveText("Title required");
+      await expect(page.getByText("Sex at Birth required")).toHaveText("Sex at Birth required");
 
       await findPatient.selectTitle(jsonData.addPatient[index].pat_title);
       await findPatient.selectSex(jsonData.addPatient[index].pat_sex);
       await page.waitForTimeout(2000);
       await findPatient.clickOnCreatePatientButton();
-
-      await Medications.selectAndAddMedication(
-        jsonData.AddMedication[index].pacr_que_name
-      );
+await page.pause()
+      await Medications.selectAndAddMedication(jsonData.AddMedication[index].pacr_que_name);
       await page.waitForTimeout(2000);
       await page.getByLabel("cancelIcon").click();
       //await MedicationsExtraDetails.clickOnClincialItemCollapsable();
-      await Medications.selectAndAddMedication(
-        jsonData.AddMedication[index].pacr_que_name
-      );
+      await Medications.selectAndAddMedication(jsonData.AddMedication[index].pacr_que_name);
       await page.waitForTimeout(1000);
 
       //await MedicationsExtraDetails.selectClinicalItemSubcategory(jsonData.AddMedication[index].eli_text);
-      await MedicationsExtraDetails.enterOnDose(
-        jsonData.AddMedication[index].medi_dose
-      );
+      await MedicationsExtraDetails.enterOnDose(jsonData.AddMedication[index].medi_dose);
       //await page.getByTestId('Ok').click()
-      await MedicationsExtraDetails.enterForm(
-        jsonData.AddMedication[index].medi_form
-      );
-      await MedicationsExtraDetails.selectFrequency(
-        jsonData.AddMedication[index].medi_frequency
-      );
+      await MedicationsExtraDetails.enterForm(jsonData.AddMedication[index].medi_form);
+      await MedicationsExtraDetails.selectFrequency(jsonData.AddMedication[index].medi_frequency);
       await MedicationsExtraDetails.selectRoute(
         jsonData.AddMedication[index].medi_route
       );
@@ -240,12 +220,12 @@ test.describe("New Patient", () => {
       );
 
       await page.waitForTimeout(2000);
-      await MedicationsExtraDetails.clickOnPortalSaveBtn();
+      //await MedicationsExtraDetails.clickOnPortalSaveBtn();
+      await MedicationsExtraDetails.clickOnSave()
       await page.waitForTimeout(200);
       await Medications.clickOnCheckallCheckListcheckbox();
       await MedicationsExtraDetails.clickOnSavePortalChecklistButton();
-      await expect(
-        page.getByText("Medication record added successfully")
+      await expect(page.getByText("Medication record added successfully")
       ).toHaveText("Medication record added successfully");
 
       //await expect(page.getByText(`${clinicaCatergory} Record Added Successfully`)).toHaveText(`${clinicaCatergory} Record Added Successfully`);
