@@ -155,7 +155,7 @@ test.describe("riskFactor Category", () => {
       await page.getByRole('checkbox', { name: 'Private record' }).click()
       await page.getByRole('checkbox', { name: 'Set as default' }).click()
       await riskFactorExtraDetails.enterRiskFactorNotes(jsonData.AddRiskFactor[index].risk_notes);
-      await riskFactorExtraDetails.clickOnSaveExtraDetails();
+      await riskFactorExtraDetails.clickOnSaveExtradetailsForSocial();
       await page.waitForTimeout(1000);
      // await expect(page.getByText("Recommendation Record Added Successfully")).toHaveText("Recommendation Record Added Successfully");
       //await expect(page.getByText(`${clinicaCatergory} Record Added Successfully`)).toHaveText(`${clinicaCatergory} Record Added Successfully`); 
@@ -192,7 +192,7 @@ test.describe("riskFactor Category", () => {
       //await riskFactorExtraDetails.selectClinicalItemSubcategory(jsonData.EditRiskFactor[index].eli_text);
             
       await riskFactorExtraDetails.enterRiskFactorNotes(jsonData.EditRiskFactor[index].risk_notes);
-      await riskFactorExtraDetails.clickOnSaveExtraDetails();
+      await riskFactorExtraDetails.clickOnSaveExtradetailsForSocial();
       await page.waitForTimeout(1000);
 
        ////// Database comparison - Patient Clinical Records - UPDATE riskFactor/////////
