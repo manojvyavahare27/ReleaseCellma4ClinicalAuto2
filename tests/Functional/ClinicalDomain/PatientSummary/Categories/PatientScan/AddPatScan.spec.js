@@ -93,7 +93,7 @@ test.describe("PatientScan Category", () => {
       logger.info("Clicked on Search button successfully");
       await patientsearch.enterGivenName(data.pat_firstname);
       logger.info("Given Name entered successfully");
-      await page.pause()
+      
       await patientsearch.enterFamilyName(data.pat_surname);
       logger.info("Family Name entered successfully");
      // await patientsearch.selectSex(data.pat_sex);
@@ -117,7 +117,7 @@ test.describe("PatientScan Category", () => {
       await contacthistory.clickOnAddContact();
       await patientScan.clickOnViewContactItemsMenu();
       await patientScan.clickOnPinContactItemsMenu();
-     await page.pause()
+     
       await patientScan.selectCategoryFromList("Patient's Scans");
       //await page.locator("xpath=//input[@id='allCategory']").click()
       //await page.locator("xpath=//li[@id='allCategory-option-18']").click()

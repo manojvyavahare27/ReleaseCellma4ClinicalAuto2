@@ -122,7 +122,7 @@ test.describe("Examination Category", () => {
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
       await page.waitForTimeout(1000);
-    //  await page.pause()
+      await page.pause()
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();
       await page.waitForTimeout(2000);
@@ -147,7 +147,7 @@ test.describe("Examination Category", () => {
         //await recommendationEd.selectCheckboxPrivateRecord();
         await recommendationEd.selectCheckboxSetAsDefault();
         await recommendationEd.enterNotes();
-        await page.pause()
+        
         await recommendationEd.clickOnSaveButton();
         await page.waitForTimeout(500);
        
@@ -211,9 +211,12 @@ test.describe("Examination Category", () => {
       await examinationEd.SelectOutcome(jsonData.AddExamination[index].exam_outcome);
       await examinationEd.SelectRecommendation(jsonData.AddExamination[index].pacr_que_name_recommendation);
       await examinationEd.selectCheckboxes();
-      await examinationEd.EnterNotes(jsonData.AddExamination[index].exam_notes);      
+      await examinationEd.EnterNotes(jsonData.AddExamination[index].exam_notes);   
+      await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
-      await page.waitForTimeout(500);
+      await examinationExtraDetails.clickOncheckAll()
+      await examinationExtraDetails.clickOnSaveCheckList()
+      //await page.waitForTimeout(500);
 
       //await page.getByTestId('Check All').click()
       //await page.getByLabel('saveChecklist').click()
@@ -310,11 +313,12 @@ test.describe("Examination Category", () => {
       //await examinationEd.selectSubCategory(jsonData.AddExamination[index].pacr_subcategory);
       await examinationEd.SelectOutcome(jsonData.EditExamination[index].exam_outcome);
       await examinationEd.EnterNotes(jsonData.EditExamination[index].exam_notes);
+      await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
-      await page.waitForTimeout(500);
+     
       //await page.getByTestId('Check All').click()
       //await page.getByLabel('saveChecklist').click()
-      await page.waitForTimeout(500);
+      
       await expect(page.getByText("Examination record updated successfully")).toHaveText("Examination record updated successfully");
 
       ////// Database comparison- Patient Clinical Records/////////

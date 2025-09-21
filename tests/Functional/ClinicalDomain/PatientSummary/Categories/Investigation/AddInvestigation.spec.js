@@ -115,7 +115,7 @@ test.describe("Investigations Category", () => {
       await Investigations.clickOnPinContactItemsMenu();
       await Investigations.selectCategoryFromList("Investigations");
       await page.waitForTimeout(2000)
-       //await page.pause()
+       await page.pause()
        ////////REVIEW EXISTING ITEM AND DELETE/////
        if(await Investigations.checkItemOnHistoryTable(jsonData.AddInvestigation[index].pacr_que_name)){
        // await Investigations.clickOnItemReview(jsonData.AddInvestigation[index].pacr_que_name);
@@ -243,7 +243,7 @@ test.describe("Investigations Category", () => {
       
       //await Investigations.clickOnItemDiv(jsonData.EditInvestigation[index].pacr_que_name);
       ////await Investigations.clickOnItemEdit();
-      await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
+      await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']").click()
       //await InvestigationsExtraDetails.clickOnClincialItemCollapsable();
       await InvestigationsExtraDetails.selectInvStatus(jsonData.EditInvestigation[index].status);
       await InvestigationsExtraDetails.enterInvResult(jsonData.EditInvestigation[index].result);      
@@ -319,7 +319,7 @@ test.describe("Investigations Category", () => {
   // }
 
      ///////// Deleting Item ////////////
-
+await page.pause()
       //await Investigations.clickOnItemEdit();
        await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
       await InvestigationsExtraDetails.clickOnDelete();

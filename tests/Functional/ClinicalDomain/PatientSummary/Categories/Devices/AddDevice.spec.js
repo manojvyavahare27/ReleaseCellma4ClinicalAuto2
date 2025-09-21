@@ -89,8 +89,8 @@ test.describe("Device Category", () => {
             await patientsearch.clickOnSearchPatientLink();
             //await page.waitForTimeout(4000);
             //page.waitForSelector("xpath=//button[@data-testid='Confirm Existing Details']");
-            await confirmexisting.btn_confirmExistingDetails.waitFor();
-            await page.waitForTimeout(1000);
+           await page.waitForTimeout(1500);
+           await patientsearch.ClickOnYesConfirmLegitimateRelationship()
             await confirmexisting.clickOnConfirmExistingDetails();
             
             
@@ -103,7 +103,7 @@ test.describe("Device Category", () => {
             await contacthistory.selectContactLocation("Cardio Location");
             await contacthistory.clickOnAddContact();
 
-           await page.waitForTimeout(5000);
+           await page.waitForTimeout(2000);
       const alertPopup= await page.locator("xpath=//h2[text()='Alerts']").isVisible()      
       if(alertPopup==true)
         {       
@@ -122,7 +122,7 @@ test.describe("Device Category", () => {
 
             ////////REVIEW EXISTING ITEM AND DELETE/////
             await Devices.clickOnExtraDetailsView3();
-            await page.waitForTimeout(8000);
+            await page.waitForTimeout(4000);
             if (
               await SummaryPage.checkItemOnHistoryTable(
                 jsonData.AddDevice[index].dev_name
@@ -204,6 +204,7 @@ test.describe("Device Category", () => {
               count++
             }
       
+            await page.pause()
             if (ded_laterality){
               await expect.soft(Devices.deviceLaterality).toContainText(jsonData.AddDevice[index].ded_laterality);
               console.log('Displayed device laterality matched: ' + jsonData.AddDevice[index].ded_laterality)
@@ -281,7 +282,7 @@ test.describe("Device Category", () => {
                 "\n Patient - Add new device: Parameters from both JSON files do not match!\n"
               );
             }
-            await page.waitForTimeout(5000);
+            await page.waitForTimeout(2000);
 
             // Edit Device
             await Devices.clickOnEditDevice();
@@ -338,17 +339,17 @@ test.describe("Device Category", () => {
                 "\n Patient - Edit device: Parameters from both JSON files do not match!\n"
               );
             }
-            await page.waitForTimeout(5000);
+            await page.waitForTimeout(2000);
 
 
             //Request Order
             await Devices.clickOnExtraDetailsView3();
-            await page.waitForTimeout(5000);
+            await page.waitForTimeout(2000);
             await Devices.clickOnRequestLink();
             await Devices.clickOnRequestButton();
             await Devices.clickOnExtraDetailsView2();
             await Devices.clickOnExtraDetailsView3();
-            await page.waitForTimeout(5000);
+            await page.waitForTimeout(2000);
             await expect.soft(Devices.displayOrderStatus, 'Order Status name should match').toContainText('Awaiting Approval');
 
             ///////// Database display- Patient Device Records - Order Status /////////

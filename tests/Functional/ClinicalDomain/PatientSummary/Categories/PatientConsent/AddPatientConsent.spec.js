@@ -152,7 +152,7 @@ test.describe("Patient Consent Category", () => {
             await consentPage.fillProcedureDetails(jsonData.AddPatientConsent[index].pac_procedures)
             await consentPage.checkFollowingInformation()
             await consentPage.fillRiskDetails(jsonData.AddPatientConsent[index].pac_risks)
-await page.pause()
+
 
             await consentPage.clickStatementOfInterpreter()
             await consentPage.clickStatementOfParent()
@@ -206,7 +206,7 @@ await page.pause()
               );
             }
             await page.waitForTimeout(5000);
-             await page.pause()
+             
             //Edit Consent
             await consentPage.clickOnEditButton()
             await consentPage.fillConsentStatus(jsonData.EditPatientConsent[index].pac_consent_status_input);

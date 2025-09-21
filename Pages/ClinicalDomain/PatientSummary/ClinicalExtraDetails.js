@@ -138,6 +138,8 @@ class ClinicalExtraDetails {
     this.extraDetailsSaveButton=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     this.saveandCreateRequest=page.locator("xpath=//button[@data-testid='saveAndCreateLabRequest']")
 
+    this.checkAllButton=page.locator("xpath=//button[@data-testid='Check All']")
+    ////div[@class="MuiGrid2-root MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 MuiGrid2-grid-sm-12 MuiGrid2-grid-md-12 mui-kqf8ps"]//button[@data-testid='Save']
     this.saveCheckListButton=page.locator("xpath=//div[@class='MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 mui-n0wno2']//button[@data-testid='Save']")
     this.saveFavourites=page.locator("xpath=//div[@role='dialog']//button[normalize-space()='Save']")
     this.delete = page.locator("xpath=//button[@data-testid='Delete']");
@@ -370,7 +372,7 @@ class ClinicalExtraDetails {
     this.txtDeviceSerialNumber = page.getByTestId('Serial Number');
     this.txtDeviceExpiryDate = page.getByTestId('Expiry Date');
     this.txtDeviceNotes = page.getByTestId('Notes');
-    this.btnSaveDevice = page.locator("xpath=//button[@aria-label='saveCategoryExtraDetails']");
+    this.btnSaveDevice = page.locator("xpath=//button[@data-testid='extraDetailsSave']  ");
     this.extraDetailLevel2 = page.locator("xpath=//button[@data-testid='levelTwo']")
     this.extraDetailLevel = page.locator("xpath=//button[@data-testid='levelThree']")
     this.btnEditDevice = page.locator("xpath=//button[@aria-label='edit']");
@@ -849,6 +851,10 @@ async enterSocialNotes(soci_notes)
   async clickOnSaveFavourites()
   {
     await this.saveFavourites.click()
+  }
+  async clickOncheckAll()
+  {
+    await this.checkAllButton.click()
   }
 
   async clickOnSaveExamFavourites()
