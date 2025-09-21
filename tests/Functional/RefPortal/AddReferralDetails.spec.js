@@ -77,7 +77,7 @@ test('Add Referral Details @ReferralPortal',async ({page})=>{
     await addreferraldetails.clickOnServiceReferralAccordion()
     await addreferraldetails.selectEstablishment()
     await addreferraldetails.selectService()
-    await page.pause()
+  
     await addreferraldetails.selectClinicType()
     await addreferraldetails.selectClinicLocation()
     //await addreferraldetails.enterDateOfReferral()
