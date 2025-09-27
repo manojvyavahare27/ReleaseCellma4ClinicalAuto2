@@ -19,7 +19,7 @@ class PatientDetailsAddED
        
         //Delete patient details
         this.btnDeletePatientDetails=page.locator("xpath=//div[contains(text(),'Delete')]")
-        this.btnCancelDeletePatientDetails=page.locator("xpath=//button[@aria-label='Cancel']")
+        this.btnCancelDeletePatientDetails=page.locator("xpath=//button[@aria-label='cancelReason']")
         this.btnOkDeletePatientDetails=page.locator("//button[@data-testid='Ok']")
         this.txtboxDeletePatientDetailsReason=page.locator("xpath=//textarea[@id='Reason']")
        // [use .nth(0).click for indexing]
