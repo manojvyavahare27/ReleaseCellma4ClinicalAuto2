@@ -122,7 +122,7 @@ test.describe("Examination Category", () => {
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
       await page.waitForTimeout(1000);
-      await page.pause()
+      
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();
       await page.waitForTimeout(2000);
@@ -212,7 +212,7 @@ test.describe("Examination Category", () => {
       await examinationEd.SelectRecommendation(jsonData.AddExamination[index].pacr_que_name_recommendation);
       await examinationEd.selectCheckboxes();
       await examinationEd.EnterNotes(jsonData.AddExamination[index].exam_notes);   
-      await page.pause()
+      //await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
       await examinationExtraDetails.clickOncheckAll()
       await examinationExtraDetails.clickOnSaveCheckList()
@@ -313,7 +313,7 @@ test.describe("Examination Category", () => {
       //await examinationEd.selectSubCategory(jsonData.AddExamination[index].pacr_subcategory);
       await examinationEd.SelectOutcome(jsonData.EditExamination[index].exam_outcome);
       await examinationEd.EnterNotes(jsonData.EditExamination[index].exam_notes);
-      await page.pause()
+     /// await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
      
       //await page.getByTestId('Check All').click()
