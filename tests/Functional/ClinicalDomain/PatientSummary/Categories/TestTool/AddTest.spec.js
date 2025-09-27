@@ -71,7 +71,7 @@ test.describe("Test and Tool Category", () => {
             logger.info("Password enter successfully");
             await loginpage.clickOnLogin();
             logger.info("Clicked on Login button successfully");
-            await homepage.clickOnHomeDashboardIcon();
+            
             await homepage.clickOnPatientIcon();
             logger.info("Clicked on Patient Icon successfully");
             await patientsearch.clickOnSearchButton();
@@ -683,7 +683,7 @@ test.describe("Test and Tool Category", () => {
               );
             }
             await page.waitForTimeout(5000);
-
+await page.pause()
             // Edit Test Falls Risk Assessment Scale
             await TestTool.clickOnEditIcon();
             await TestTool.enterReviewDate(jsonData.EditTest[index].pattes_review_date);
@@ -835,6 +835,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.selectTroubleConcentrating(jsonData.AddTest[index].pattes_answer_6);
             await TestTool.selectMovingSlowly(jsonData.AddTest[index].pattes_answer_7);
             await TestTool.selectThoughtsOfDeath(jsonData.AddTest[index].pattes_answer_8);
+           
             await TestTool.clickOnCalculateButton();
             await TestTool.enterNotes(jsonData.AddTest[index].pattes_notes);
             await TestTool.clickOnSaveTest();
@@ -938,6 +939,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.selectTiredLittleEnergy(jsonData.EditTest[index].pattes_answer_3);
             await TestTool.selectPoorAppetite(jsonData.EditTest[index].pattes_answer_4);
             await TestTool.selectFeelingBadAboutYourself(jsonData.EditTest[index].pattes_answer_5);
+            
             await TestTool.selectTroubleConcentrating(jsonData.EditTest[index].pattes_answer_6);
             await TestTool.selectMovingSlowly(jsonData.EditTest[index].pattes_answer_7);
             await TestTool.selectThoughtsOfDeath(jsonData.EditTest[index].pattes_answer_8);

@@ -134,6 +134,7 @@ class ClinicalExtraDetails {
     //this.saveExtraDetails = page.locator("xpath=//button[@aria-label='saveCategoryExtraDetails']");
     this.saveExtraDetails = page.locator("xpath=//button[@data-testid='Save']");
     ////button[@data-testid='Save']
+    //button[@data-testid='extraDetailsSave']
     this.saveSocialED=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     this.extraDetailsSaveButton=page.locator("xpath=//button[@data-testid='extraDetailsSave']")
     this.saveandCreateRequest=page.locator("xpath=//button[@data-testid='saveAndCreateLabRequest']")
@@ -2099,11 +2100,11 @@ async enterPatientScanNotes(pascn_notes)
   }
   
   async selectMovingSlowly(ans) {
-    await this.page.getByText(ans, { exact: true }).first().click();
+    await this.page.getByLabel('Yes').first().click();
   }
 
   async selectThoughtsOfDeath(ans) {
-    await this.page.getByText(ans, { exact: true }).nth(1).click();
+    await this.page.getByLabel('Yes').nth(1).click();
   }
 
   //Tools

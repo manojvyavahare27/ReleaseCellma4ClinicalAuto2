@@ -151,6 +151,7 @@ test.describe("Examination Category", () => {
         await recommendationEd.clickOnSaveButton();
         await page.waitForTimeout(500);
        
+        await page.pause()
         //Add Favourites
         await page.waitForTimeout(2000);
         await patientsummary.clickOniconExaminationsCategory();
@@ -178,7 +179,7 @@ test.describe("Examination Category", () => {
       await expect(page.getByText("Examination deleted successfully ")).toHaveText("Examination deleted successfully ");
 
         
-
+await page.pause()
       //Contact History page
       await patientsummary.clickOniconExaminationsCategory();
       await page.waitForTimeout(3000);
@@ -201,7 +202,7 @@ test.describe("Examination Category", () => {
         console.log('\x1bItem was deleted successfully\x1b[0m');
       }
 
-
+await page.pause()
       await examinationhome.searchExamination(jsonData.AddExamination[index].pacr_que_name);
       await examinationhome.clickonAddExaminationButton();
       await page.waitForTimeout(1000);
@@ -279,7 +280,7 @@ test.describe("Examination Category", () => {
       await page.waitForTimeout(7000);
 
       //Check Examination History section
-
+await page.pause()
       await examinationhome.expandExaminationHistory();
       await examinationhome.expandExaminationHistory();
       await page.waitForTimeout(2000);
@@ -305,7 +306,7 @@ test.describe("Examination Category", () => {
       await examinationhome.checkExtradetailsLevel();
 
       //Edit Examination
-     
+     await page.pause()
       await examinationhome.clickOnEditExaminationButton();
       //await page.waitForTimeout(2000)
       // await examinationEd.clickOnExpandExamination();
@@ -316,6 +317,10 @@ test.describe("Examination Category", () => {
      /// await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
      
+      await page.pause()
+      await page.pause()
+      await page.pause()
+      await page.pause()
       await page.getByTestId('Check All').click()
       await page.getByLabel('saveChecklist').click()
       
@@ -369,7 +374,7 @@ test.describe("Examination Category", () => {
 
       console.log("Waiting for SQL result....");
       await page.waitForTimeout(10000);
-
+await page.pause()
       //Delete Examination      
       await examinationhome.clickOnEditExaminationButton();     
       await examinationEd.clickOnDeleteButton();

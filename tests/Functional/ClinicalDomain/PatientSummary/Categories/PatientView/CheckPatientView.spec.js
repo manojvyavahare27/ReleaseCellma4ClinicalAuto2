@@ -71,7 +71,7 @@ test.describe("Patient View Category", () => {
             logger.info("Password enter successfully");
             await loginpage.clickOnLogin();
             logger.info("Clicked on Login button successfully");
-            await homepage.clickOnHomeDashboardIcon();
+           
             await homepage.clickOnPatientIcon();
             logger.info("Clicked on Patient Icon successfully");
             await patientsearch.clickOnSearchButton();
