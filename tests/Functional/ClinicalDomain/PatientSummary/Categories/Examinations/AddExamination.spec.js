@@ -218,8 +218,8 @@ test.describe("Examination Category", () => {
       await examinationExtraDetails.clickOnSaveCheckList()
       //await page.waitForTimeout(500);
 
-      //await page.getByTestId('Check All').click()
-      //await page.getByLabel('saveChecklist').click()
+      await page.getByTestId('Check All').click()
+      await page.getByLabel('saveChecklist').click()
       //await page.waitForTimeout(1000);
       await expect(page.getByText("Examination record added successfully")).toHaveText("Examination record added successfully");
 
@@ -316,8 +316,8 @@ test.describe("Examination Category", () => {
      /// await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
      
-      //await page.getByTestId('Check All').click()
-      //await page.getByLabel('saveChecklist').click()
+      await page.getByTestId('Check All').click()
+      await page.getByLabel('saveChecklist').click()
       
       await expect(page.getByText("Examination record updated successfully")).toHaveText("Examination record updated successfully");
 
