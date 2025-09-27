@@ -212,7 +212,7 @@ test.describe("Diagnosis Category", () => {
       await diagnosisExtraDetails.enterDiagnosedDate(jsonData.AddDiagnosis[index].diag_date_diagnosed.toString());
       //await diagnosisExtraDetails.enterDiagnosis1stSeenDate.fill("");
       await diagnosisExtraDetails.enterDiagnosis1stSeenDate(jsonData.AddDiagnosis[index].diag_date_firstseen)
-      await page.pause()
+      
       await diagnosisExtraDetails.selectSeverity(jsonData.AddDiagnosis[index].diag_severity)
       //await diagnosisExtraDetails.selectStatus(jsonData.AddDiagnosis[index].diag_diagnosis_status)
      
