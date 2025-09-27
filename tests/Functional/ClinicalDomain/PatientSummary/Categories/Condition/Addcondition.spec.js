@@ -163,7 +163,7 @@ test.describe("condition Category", () => {
       const patId = results[0].paa_pat_id;
       console.log("Patient Accessed by User:" + patId);
 
-     await page.pause()
+     //await page.pause()
 
 ////////ADD NEW condition/////
 

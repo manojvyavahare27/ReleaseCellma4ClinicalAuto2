@@ -109,7 +109,7 @@ test.describe("Allergy Category", () => {
       await page.waitForTimeout(1500);
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();
-       await page.pause()
+       //await page.pause()
       // await page.waitForTimeout(3000);      
       // const alertVisible = await page.locator("xpath=//h2[text()='Alerts']").isVisible().catch(() => false);
       // if (alertVisible) {
