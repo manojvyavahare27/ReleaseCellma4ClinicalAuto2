@@ -593,6 +593,7 @@ class ClinicalExtraDetails {
 // Pharmacy Portal
 
 async enterEditMedicationNotes(medi_notes){
+  await this.popUpNotes.fill('');
     await typeText(this.page, this.popUpNotes, medi_notes);
   }
 
@@ -618,19 +619,20 @@ async clickOnPortalSaveBtn() {
 //Riskfactor
 async enterRiskFactorNotes(risk_notes)
 {
-  await this.RfNotes.clear();
+  await this.RfNotes.fill('');
   await this.RfNotes.type(risk_notes);
 }
 //Lifestyle
 async enterLifestyleNotes(life_notes)
 {
+  await this.lifeStyleNotes.fill('')
   await this.lifeStyleNotes.type(life_notes);
 }
 
 //Social
 async enterSocialNotes(soci_notes)
 {
-  await this.socialNotes.clear()
+  await this.socialNotes.fill('')
   await this.socialNotes.type(soci_notes);
 }
 
@@ -704,12 +706,13 @@ async enterSocialNotes(soci_notes)
 
   async enterDiagnosisNotes(diag_notes) {
    // await this.diagnosisNotes.type(diag_notes)
-    await this.diagnosisNotes.clear()
+    await this.diagnosisNotes.fill('')
     await this.diagnosisNotes.type(diag_notes)
   }
 
   async enterInterpretationNotes(inte_notes) {
     // await this.diagnosisNotes.type(diag_notes)
+    await this.interpretationNotes.fill('')
      await this.interpretationNotes.type(inte_notes)
    }
 
@@ -755,6 +758,7 @@ async enterSocialNotes(soci_notes)
     await selectFromDropdown(this.page,this.ReactionSeverity,alrg_reaction_severity);
   }
   async enterallergyTextArea(alrg_notes) {
+    await this.allergyTextArea.fill('')
     await typeText(this.page, this.allergyTextArea, alrg_notes);
   }
 
@@ -815,7 +819,7 @@ async enterSocialNotes(soci_notes)
   }
   async enterProcedureNotes(proc_notes)
   {
-    await this.procedureTextareaNotes.clear()
+    await this.procedureTextareaNotes.fill('')
     await this.procedureTextareaNotes.type(proc_notes)
   }
 

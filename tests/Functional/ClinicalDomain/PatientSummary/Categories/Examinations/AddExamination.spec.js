@@ -166,6 +166,7 @@ test.describe("Examination Category", () => {
       await examinationExtraDetails.clickOnSaveExamFavourites();
       await page.waitForTimeout(1000);
 
+      await page.pause()
       //Delete Favourites
           
       await examinationhome.clickOnEditExaminationButton();     
@@ -218,9 +219,8 @@ await page.pause()
       await examinationExtraDetails.clickOncheckAll()
       await examinationExtraDetails.clickOnSaveCheckList()
       //await page.waitForTimeout(500);
-
-      await page.getByTestId('Check All').click()
-      await page.getByLabel('saveChecklist').click()
+await page.pause()
+     
       //await page.waitForTimeout(1000);
       await expect(page.getByText("Examination record added successfully")).toHaveText("Examination record added successfully");
 
@@ -317,9 +317,7 @@ await page.pause()
      /// await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
      
-      await page.pause()
-      await page.pause()
-      await page.pause()
+     
       await page.pause()
       await page.getByTestId('Check All').click()
       await page.getByLabel('saveChecklist').click()
