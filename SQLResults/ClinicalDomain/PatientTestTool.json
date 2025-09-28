@@ -1,72 +1,132 @@
 [
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "PHQ-9",
-    "pattes_answer": null,
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2294,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "VRA",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "1. Little interest or pleasure in doing things?",
-    "pattes_answer": "Not at all",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2295,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Pure tone",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "2. Feeling down, depressed, or hopeless?",
-    "pattes_answer": "Several days",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2296,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Air Conduction",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "3. Trouble falling or staying asleep, or sleeping too much?",
-    "pattes_answer": "More than half the days",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2297,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Air Conduction",
+    "pattod_var_name": "transducerUsed",
+    "pattod_var_value": "Headphones",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "4. Feeling tired or having little energy?",
-    "pattes_answer": "Nearly every days",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2298,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Play Audiometry",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "5. Poor appetite or overeating?",
-    "pattes_answer": "Not at all",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2299,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Warble",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "6. Feeling bad about yourself - or that you are a failure or have let yourself or your family down?",
-    "pattes_answer": "Several days",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2300,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Bone Conduction",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Bone Conduction",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "7. Trouble concentrating on things, such as reading the newspaper or watching television?",
-    "pattes_answer": "More than half the days",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2301,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Behavioural Observation Audiometry",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "8. Moving or speaking so slowly that other people could have noticed?",
-    "pattes_answer": "Yes",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2302,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "Narrowband noise",
+    "pacr_clinic_date": "28/09/2025"
   },
   {
-    "pattes_test_pacr_id": 184304,
-    "pattes_pat_id": 88350,
-    "pattes_tests_question_que_name": "9. Thoughts that you would be better off dead, or of hurting yourself in some way?",
-    "pattes_answer": "Yes",
-    "pattes_notes": "Add PHQ-9 Test"
+    "pattod_id": 2303,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Unaided Soundfield",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Unaided Soundfield",
+    "pacr_clinic_date": "28/09/2025"
+  },
+  {
+    "pattod_id": 2304,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "testingMethod",
+    "pattod_var_value": "Patient Response Button",
+    "pacr_clinic_date": "28/09/2025"
+  },
+  {
+    "pattod_id": 2305,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "stimulusSignalType",
+    "pattod_var_value": "White noise",
+    "pacr_clinic_date": "28/09/2025"
+  },
+  {
+    "pattod_id": 2306,
+    "patto_tool_pacr_id": 1067280,
+    "pacr_que_name": "Audiogram Tool",
+    "patto_pat_id": 88350,
+    "patto_notes": "Notes on Aided Soundfield",
+    "pattod_var_name": "reliability",
+    "pattod_var_value": "Reliability Aided Soundfield",
+    "pacr_clinic_date": "28/09/2025"
   }
 ]
