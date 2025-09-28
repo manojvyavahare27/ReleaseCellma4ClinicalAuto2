@@ -1,6 +1,15 @@
 [
   {
-    "pacr_que_name": "Diet",
-    "pacr_delete_reason": "Delete for testing"
+    "pacr_id": 1067321,
+    "pacr_category": "Patient Scan",
+    "pacr_que_name": "Forearm DEXA scan",
+    "pacr_clinic_date": "28/09/2025",
+    "pascn_scan_type_eli_text": "X-rays",
+    "pascn_t_score": "2",
+    "pascn_z_score": "1",
+    "pascn_bmd_score": "1",
+    "pascn_scan_date": "19/06/2024",
+    "pascn_site_name": "Ligament",
+    "pascn_machine_name": "Portable X-ray Machine"
   }
 ]
