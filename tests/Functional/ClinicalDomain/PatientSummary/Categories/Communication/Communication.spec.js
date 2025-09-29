@@ -100,7 +100,16 @@ test.describe("Communication Category", () => {
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
       await page.waitForTimeout(1500);
-      await confirmexisting.clickOnConfirmExistingDetails();    
+      await patientsearch.ClickOnYesConfirmLegitimateRelationship()
+      await confirmexisting.clickOnConfirmExistingDetails();  
+      
+       await page.waitForTimeout(2000);
+      const alertPopup= await page.locator("xpath=//h2[text()='Alerts']").isVisible()      
+      if(alertPopup==true)
+        {       
+          await allergy.closePopUp()
+        }
+      await page.waitForTimeout(2000);
        await contacthistory.clickOnShowFilter()
       await contacthistory.selectServiceFilter("General Medicine Automation");
       await contacthistory.selectContactReasonFilter("Assessments");

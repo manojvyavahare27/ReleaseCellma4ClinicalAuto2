@@ -321,7 +321,7 @@ test.describe("Investigations Category", () => {
      ///////// Deleting Item ////////////
 await page.pause()
       //await Investigations.clickOnItemEdit();
-       await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
+       await this.page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
       await InvestigationsExtraDetails.clickOnDelete();
       await InvestigationsExtraDetails.clickOnCancelDelete();
       await InvestigationsExtraDetails.clickOnDelete();

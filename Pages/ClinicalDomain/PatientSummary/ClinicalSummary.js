@@ -46,8 +46,9 @@ class ClinicalSummary {
         // this.favouriteName = "xpath=//h1[text()='Conditions Favourites']//..//..//button[@aria-label='Condyloma latum']"
         this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Mental Health')]")
         this.FavouriteItemDipression=page.locator("xpath=//a[@aria-label='Depression']")
-        this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Mental Health (MH)']")
-        this.favouriteItemExamination=page.locator("xpath=//a[@aria-label='Beck depression inventory']")
+        //this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Mental Health (MH)']")
+        this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Skin']")
+        this.favouriteItemExamination=page.locator("xpath=//a[@aria-label='vasculitis']")
         this.favouriteQueMedication=page.locator("xpath=//div[contains(text(),'Antibiotics')]")
         this.favouriteItemMedication=page.locator("xpath=//a[@aria-label='Erythromycin']")
 

@@ -152,6 +152,7 @@ test.describe("Examination Category", () => {
         await page.waitForTimeout(500);
        
         await page.pause()
+        await page.pause()
         //Add Favourites
         await page.waitForTimeout(2000);
         await patientsummary.clickOniconExaminationsCategory();
@@ -167,6 +168,8 @@ test.describe("Examination Category", () => {
       await page.waitForTimeout(1000);
 
       await page.pause()
+       await page.getByTestId('Check All').click()
+      await page.getByLabel('saveChecklist').click()
       //Delete Favourites
           
       await examinationhome.clickOnEditExaminationButton();     
@@ -189,6 +192,7 @@ await page.pause()
         // await diagnosis.clickOnItemReview(jsonData.AddDiagnosis[index].pacr_que_name);
         //console.log("Item reviewed before deleting");
         await examinationhome.clickOnEditExaminationButton()
+
         //await examination.clickOnItemEdit(jsonData.AddExamination[index].pacr_que_name);
         await examinationEd.clickOnDeleteButton();
         await examinationEd.clickOnCancelExamination();
@@ -216,9 +220,11 @@ await page.pause()
       await examinationEd.EnterNotes(jsonData.AddExamination[index].exam_notes);   
       //await page.pause()
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
-      await examinationExtraDetails.clickOncheckAll()
-      await examinationExtraDetails.clickOnSaveCheckList()
+      // await examinationExtraDetails.clickOncheckAll()
+      // await examinationExtraDetails.clickOnSaveCheckList()
       //await page.waitForTimeout(500);
+      await page.getByTestId('Check All').click()
+      await page.getByLabel('saveChecklist').click()
 await page.pause()
      
       //await page.waitForTimeout(1000);
@@ -308,6 +314,8 @@ await page.pause()
       //Edit Examination
      await page.pause()
       await examinationhome.clickOnEditExaminationButton();
+      await page.getByTestId('Check All').click()
+      await page.getByLabel('saveChecklist').click()
       //await page.waitForTimeout(2000)
       // await examinationEd.clickOnExpandExamination();
       await page.waitForTimeout(3000)
