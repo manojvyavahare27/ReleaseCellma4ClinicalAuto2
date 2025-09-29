@@ -44,8 +44,8 @@ class ClinicalSummary {
         this.orderSetNameAutismSpectrumDisorder = page.locator("xpath=//div[contains(text(),'Autism Spectrum Disorder')]")
         this.orderSetItemmyocardialinfarction =page.locator("xpath=//a[@aria-label='myocardial infarction']")
         // this.favouriteName = "xpath=//h1[text()='Conditions Favourites']//..//..//button[@aria-label='Condyloma latum']"
-        this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Mental Health')]")
-        this.FavouriteItemDipression=page.locator("xpath=//a[@aria-label='Depression']")
+        this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Endocrine')]")
+        this.FavouriteItemDipression=page.locator("xpath=//a[@aria-label='Hypothyroidism']")
         //this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Mental Health (MH)']")
         this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Skin']")
         this.favouriteItemExamination=page.locator("xpath=//a[@aria-label='vasculitis']")
