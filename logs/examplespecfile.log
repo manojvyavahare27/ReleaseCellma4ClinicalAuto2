@@ -21907,3 +21907,10 @@
 {"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-09-29T04:12:38.612Z"}
 {"level":"info","message":"Given Name entered successfully","timestamp":"2025-09-29T04:12:39.159Z"}
 {"level":"info","message":"Family Name entered successfully","timestamp":"2025-09-29T04:12:39.579Z"}
+{"level":"info","message":"Username enter successfully","timestamp":"2025-09-29T04:31:57.737Z"}
+{"level":"info","message":"Password enter successfully","timestamp":"2025-09-29T04:31:57.936Z"}
+{"level":"info","message":"Clicked on Login button successfully","timestamp":"2025-09-29T04:31:58.143Z"}
+{"level":"info","message":"Clicked on Patient Icon successfully","timestamp":"2025-09-29T04:32:01.411Z"}
+{"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-09-29T04:32:05.853Z"}
+{"level":"info","message":"Given Name entered successfully","timestamp":"2025-09-29T04:32:06.371Z"}
+{"level":"info","message":"Family Name entered successfully","timestamp":"2025-09-29T04:32:06.809Z"}

@@ -37,7 +37,7 @@ async function compareJsons(jsonFilePath1, jsonFilePath2 = null, customJson = nu
   );
 
   // Find the intersection of all common keys
-  const commonKeys = commonKeysArray.reduce((acc, keys) =>
+  const commonKeys = commonKeysArray?.reduce((acc, keys) =>
     acc.filter(key => keys.includes(key))
   );
 

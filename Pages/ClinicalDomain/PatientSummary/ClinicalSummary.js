@@ -49,8 +49,8 @@ class ClinicalSummary {
         //this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Mental Health (MH)']")
         this.favouriteQueExamination=page.locator("xpath=//button[@data-testid='Skin']")
         this.favouriteItemExamination=page.locator("xpath=//a[@aria-label='vasculitis']")
-        this.favouriteQueMedication=page.locator("xpath=//div[contains(text(),'Antibiotics')]")
-        this.favouriteItemMedication=page.locator("xpath=//a[@aria-label='Erythromycin']")
+        this.favouriteQueMedication=page.locator("xpath=//div[contains(text(),'Statins ')]")
+        this.favouriteItemMedication=page.locator("xpath=//a[@aria-label='Lovastatin']")
 
 
 
