@@ -151,8 +151,7 @@ test.describe("Examination Category", () => {
         await recommendationEd.clickOnSaveButton();
         await page.waitForTimeout(500);
        
-        await page.pause()
-        await page.pause()
+       
         //Add Favourites
         await page.waitForTimeout(2000);
         await patientsummary.clickOniconExaminationsCategory();
@@ -167,7 +166,7 @@ test.describe("Examination Category", () => {
       await examinationExtraDetails.clickOnSaveExamFavourites();
       await page.waitForTimeout(1000);
 
-      await page.pause()
+    
        await page.getByTestId('Check All').click()
       await page.getByLabel('saveChecklist').click()
       //Delete Favourites
@@ -183,7 +182,7 @@ test.describe("Examination Category", () => {
       await expect(page.getByText("Examination deleted successfully ")).toHaveText("Examination deleted successfully ");
 
         
-await page.pause()
+
       //Contact History page
       await patientsummary.clickOniconExaminationsCategory();
       await page.waitForTimeout(3000);
@@ -207,7 +206,7 @@ await page.pause()
         console.log('\x1bItem was deleted successfully\x1b[0m');
       }
 
-await page.pause()
+
       await examinationhome.searchExamination(jsonData.AddExamination[index].pacr_que_name);
       await examinationhome.clickonAddExaminationButton();
       await page.waitForTimeout(1000);
@@ -225,7 +224,7 @@ await page.pause()
       //await page.waitForTimeout(500);
       await page.getByTestId('Check All').click()
       await page.getByLabel('saveChecklist').click()
-await page.pause()
+
      
       //await page.waitForTimeout(1000);
       await expect(page.getByText("Examination record added successfully")).toHaveText("Examination record added successfully");
@@ -286,7 +285,7 @@ await page.pause()
       await page.waitForTimeout(7000);
 
       //Check Examination History section
-await page.pause()
+
       await examinationhome.expandExaminationHistory();
       await examinationhome.expandExaminationHistory();
       await page.waitForTimeout(2000);
