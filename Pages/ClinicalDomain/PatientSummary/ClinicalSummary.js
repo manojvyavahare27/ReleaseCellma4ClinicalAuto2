@@ -41,8 +41,8 @@ class ClinicalSummary {
         
         // Favourites & Order sets
         // this.orderSetName = "xpath=//h1[text()='Conditions Order Sets']//..//..//button[@aria-label='Condyloma latum']"
-        this.orderSetNameAutismSpectrumDisorder = page.locator("xpath=//div[contains(text(),'Autism Spectrum Disorder')]")
-        this.orderSetItemmyocardialinfarction =page.locator("xpath=//a[@aria-label='myocardial infarction']")
+        this.orderSetNameAutismSpectrumDisorder = page.locator("xpath=//div[contains(text(),'Serum neutralisation test')]")
+        this.orderSetItemmyocardialinfarction =page.locator("xpath=//a[@aria-label='Testicular cancer']")
         // this.favouriteName = "xpath=//h1[text()='Conditions Favourites']//..//..//button[@aria-label='Condyloma latum']"
         this.favouriteNameMentalHealth = page.locator("xpath=//div[contains(text(),'Endocrine')]")
         this.FavouriteItemDipression=page.locator("xpath=//a[@aria-label='Hypothyroidism']")

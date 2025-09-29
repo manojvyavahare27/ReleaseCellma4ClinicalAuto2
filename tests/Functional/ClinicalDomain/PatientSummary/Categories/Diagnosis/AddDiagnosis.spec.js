@@ -155,7 +155,7 @@ test.describe("Diagnosis Category", () => {
       await diagnosisExtraDetails.selectActivity(jsonData.EditDiagnosis[index].diag_activity)
       await diagnosisExtraDetails.enterDiagnosisNotes(jsonData.EditDiagnosis[index].diag_notes);
       await diagnosisExtraDetails.clickOnSaveFavourites();
-        await diagnosis.clickOnItemEdit('myocardial infarction');
+        await diagnosis.clickOnItemEdit('Testicular cancer');
         await diagnosisExtraDetails.clickOnDelete();
         await diagnosisExtraDetails.clickOnConfirmDelete();
         await diagnosisExtraDetails.enterDeleteReason('Deleted Existing item');

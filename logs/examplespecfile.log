@@ -21928,3 +21928,6 @@
 {"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-09-29T04:42:49.813Z"}
 {"level":"info","message":"Given Name entered successfully","timestamp":"2025-09-29T04:42:50.290Z"}
 {"level":"info","message":"Family Name entered successfully","timestamp":"2025-09-29T04:42:50.676Z"}
+{"level":"info","message":"Username enter successfully","timestamp":"2025-09-29T04:43:35.145Z"}
+{"level":"info","message":"Password enter successfully","timestamp":"2025-09-29T04:43:35.268Z"}
+{"level":"info","message":"Clicked on Login button successfully","timestamp":"2025-09-29T04:43:35.480Z"}
