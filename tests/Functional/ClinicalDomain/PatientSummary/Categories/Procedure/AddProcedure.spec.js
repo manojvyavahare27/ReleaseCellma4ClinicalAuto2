@@ -114,7 +114,7 @@ test.describe("Procedure Category", () => {
       await Procedures.clickOnPinContactItemsMenu();
       await Procedures.selectCategoryFromList("Procedures");
       await page.waitForTimeout(2000)
-      await page.pause()
+      
        ////////REVIEW EXISTING ITEM AND DELETE/////
        if(await Procedures.checkItemOnHistoryTable(jsonData.AddProcedure[index].pacr_que_name)){
         await Procedures.clickOnItemReview(jsonData.AddProcedure[index].pacr_que_name);
