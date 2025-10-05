@@ -78,7 +78,7 @@ test.describe("Test and Tool Category", () => {
             logger.info("Clicked on Search button successfully");
             await patientsearch.enterGivenName(data.pat_firstname);
             logger.info("Given Name entered successfully");
-            //await page.pause()
+            
             await patientsearch.enterFamilyName(data.pat_surname);
             logger.info("Family Name entered successfully");
             //await patientsearch.selectSexAtBirth(data.pat_sex);
@@ -140,7 +140,7 @@ test.describe("Test and Tool Category", () => {
             const patId = results[0].paa_pat_id;
             console.log("Patient Accessed by User:" + patId);
 
-            //await page.pause()
+           
             // Add New Test Pressure Ulcer Test
             await SummaryPage.selectTestToolItem(jsonData.AddTest[index].pattes_tests_question_que_name);
             await SummaryPage.clickOnAddButton()
@@ -233,7 +233,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.clickOnEditIcon();
             await TestTool.enterReviewDate(jsonData.EditTest[index].pattes_review_date);
             await TestTool.enterLastReviewedDate(jsonData.EditTest[index].pattes_last_reviewed);
-            //await page.pause()
+           
             await TestTool.selectSensoryPerception(jsonData.EditTest[index].pattes_answer_0);
             await TestTool.selectMoisture(jsonData.EditTest[index].pattes_answer_1);
             await TestTool.selectActivityTest(jsonData.EditTest[index].pattes_answer_2);
@@ -347,7 +347,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.clickOnOkPopup();
             await TestTool.enterDeleteDeviceReason(jsonData.EditTest[index].pacr_delete_reason);
             await TestTool.clickOnSaveDeleteReason();
-            //await page.pause()
+            
 
             //assert device deleted - Device deleted successfully
             //await expect.soft(page.getByText("Device deleted successfully")).toHaveText("Device deleted successfully");
@@ -568,7 +568,7 @@ test.describe("Test and Tool Category", () => {
             await TestTool.clickOnOkPopup();
             await TestTool.enterDeleteDeviceReason(jsonData.EditTest[index].pacr_delete_reason);
             await TestTool.clickOnSaveDeleteReason();
-            //await page.pause()
+           
 
             //assert device deleted - Device deleted successfully
             //await expect.soft(page.getByText("Device deleted successfully")).toHaveText("Device deleted successfully");
@@ -683,7 +683,7 @@ test.describe("Test and Tool Category", () => {
               );
             }
             await page.waitForTimeout(5000);
-await page.pause()
+
             // Edit Test Falls Risk Assessment Scale
             await TestTool.clickOnEditIcon();
             await TestTool.enterReviewDate(jsonData.EditTest[index].pattes_review_date);
@@ -787,7 +787,7 @@ await page.pause()
             await TestTool.clickOnOkPopup();
             await TestTool.enterDeleteDeviceReason(jsonData.EditTest[index].pacr_delete_reason);
             await TestTool.clickOnSaveDeleteReason();
-            //await page.pause()
+            
 
             //assert device deleted - Device deleted successfully
             //await expect.soft(page.getByText("Device deleted successfully")).toHaveText("Device deleted successfully");
@@ -1062,7 +1062,7 @@ await page.pause()
             await TestTool.clickOnOkPopup();
             await TestTool.enterDeleteDeviceReason(jsonData.EditTest[index].pacr_delete_reason);
             await TestTool.clickOnSaveDeleteReason();
-            //await page.pause()
+         
 
             //assert device deleted - Device deleted successfully
             //await expect.soft(page.getByText("Device deleted successfully")).toHaveText("Device deleted successfully");
