@@ -165,7 +165,7 @@ test.describe("Medications Category", () => {
       await MedicationsExtraDetails.selectSideEffects(jsonData.AddMedication[index].mse_text)  
       await MedicationsExtraDetails.selectIndication(jsonData.AddMedication[index].meded_value) 
       await MedicationsExtraDetails.selectStoppedReason(jsonData.AddMedication[index].medi_stopped_reason_eli_text)
-      await page.pause()
+     // await page.pause()
       await MedicationsExtraDetails.selectPGDPSD(jsonData.AddMedication[index].meded_value_PGD) 
       await MedicationsExtraDetails.enterMedicationGradeForAdministrator(jsonData.AddMedication[index].meded_value_Administrator)
       await MedicationsExtraDetails.selectMaxReffills(jsonData.AddMedication[index].meded_value_MaxReffills)    

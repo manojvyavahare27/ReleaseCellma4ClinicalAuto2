@@ -94,7 +94,7 @@ test.describe("Communication Category", () => {
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);
  
-      await page.pause()
+      //await page.pause()
     await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
@@ -103,13 +103,9 @@ test.describe("Communication Category", () => {
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
       await confirmexisting.clickOnConfirmExistingDetails();  
       
-       await page.waitForTimeout(2000);
-      const alertPopup= await page.locator("xpath=//h2[text()='Alerts']").isVisible()      
-      if(alertPopup==true)
-        {       
-          await allergy.closePopUp()
-        }
-      await page.waitForTimeout(2000);
+       
+      await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
+     
        await contacthistory.clickOnShowFilter()
       await contacthistory.selectServiceFilter("General Medicine Automation");
       await contacthistory.selectContactReasonFilter("Assessments");
@@ -121,8 +117,9 @@ test.describe("Communication Category", () => {
       await Communications.clickOnViewContactItemsMenu();
       await Communications.clickOnPinContactItemsMenu();
       await Communications.selectCategoryFromList("Communication");
+       
      
-      await page.pause()
+     
  
          
        //////Fetch Patient Details/////////
@@ -147,6 +144,7 @@ test.describe("Communication Category", () => {
       await CommunicationExtraDetails.sendToPatientCheckbox()
       await CommunicationExtraDetails.clickOnSendComm()
       await page.waitForTimeout(5000)
+      await page.pause()
       await CommunicationExtraDetails.clickOnTextEmailBtn()
       await page.waitForTimeout(5000)
       await CommunicationExtraDetails.selectTypeOfCom('Email')
@@ -172,6 +170,8 @@ test.describe("Communication Category", () => {
       await page.waitForTimeout(2000)
       await CommunicationExtraDetails.clickOnCellma()
       await page.waitForTimeout(3000)
+       await page.pause()
+       await page.getByRole('button', { name: 'myCommunication Communication' }).click()
       await CommunicationExtraDetails.clickOnCommunicationDiv()
       await page.waitForTimeout(3000)
       await page.waitForTimeout(2000)

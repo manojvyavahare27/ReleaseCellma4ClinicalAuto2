@@ -117,7 +117,7 @@ class PatientSummary
         
         //Communication
 
-        this.btnTextEmail= page.locator("xpath=//button[@aria-label='Text/Email']")
+        this.btnTextEmail= page.locator("xpath=//button[@data-testid='Text/Email']")
         this.typeOfComm = page.locator("xpath=//input[@id='typeOfCommunication']")
         this.emailHeader= page.locator("xpath=//input[@data-testid='Email Header']")
         this.stdContent= page.locator("xpath=//input[@id='standard']")
