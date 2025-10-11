@@ -131,7 +131,7 @@ test.describe("LifeStyle Category", () => {
         }
        
        
-        await page.pause()
+        
         //////Fetch Patient Details/////////
    var sqlQuery =
    "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username + 
