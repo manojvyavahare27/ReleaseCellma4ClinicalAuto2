@@ -167,8 +167,8 @@ test.describe("Examination Category", () => {
       await page.waitForTimeout(1000);
 
     
-       await page.getByTestId('Check All').click()
-      await page.getByLabel('saveChecklist').click()
+      //  await page.getByTestId('Check All').click()
+      // await page.getByLabel('saveChecklist').click()
       //Delete Favourites
           
       await examinationhome.clickOnEditExaminationButton();     
@@ -311,10 +311,10 @@ test.describe("Examination Category", () => {
       await examinationhome.checkExtradetailsLevel();
 
       //Edit Examination
-     await page.pause()
+    // await page.pause()
       await examinationhome.clickOnEditExaminationButton();
-      await page.getByTestId('Check All').click()
-      await page.getByLabel('saveChecklist').click()
+      // await page.getByTestId('Check All').click()
+      // await page.getByLabel('saveChecklist').click()
       //await page.waitForTimeout(2000)
       // await examinationEd.clickOnExpandExamination();
       await page.waitForTimeout(3000)
@@ -325,7 +325,7 @@ test.describe("Examination Category", () => {
       await examinationExtraDetails.clickOnextraDetailsSaveButton();
      
      
-      await page.pause()
+      // await page.pause()
       await page.getByTestId('Check All').click()
       await page.getByLabel('saveChecklist').click()
       
@@ -379,7 +379,7 @@ test.describe("Examination Category", () => {
 
       console.log("Waiting for SQL result....");
       await page.waitForTimeout(10000);
-await page.pause()
+
       //Delete Examination      
       await examinationhome.clickOnEditExaminationButton();     
       await examinationEd.clickOnDeleteButton();

@@ -154,7 +154,7 @@ test.describe("Allergy Category", () => {
       console.log("Patient Accessed by User:" + patId);
 
 
-
+await page.pause()
       ////////ADD NEW Allergy/////
       await page.waitForTimeout(2000);    
       await allergy.selectandAddClinicalItem(jsonData.AddAllergy[index].pacr_que_name); //This searches item and clicks on add button
@@ -173,8 +173,9 @@ test.describe("Allergy Category", () => {
       await allergyExtraDetails.enterallergyTextArea(jsonData.AddAllergy[index].alrg_notes)   
      
       await allergyExtraDetails.clickOnSaveExtraDetails();
-      await page.getByLabel('saveChecklist').click()
+      // await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(500);      
+      await page.pause()
       sqlQuery = "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk,  alrg_start_date, alrg_end_date, alrg_notes" +
         " from patient_clinical_records join patient_clinical_records_details on pacr_id=pacrd_pacr_id join allergies on pacr_id=alrg_pacr_id where pacr_record_status='approved'" +
         " and pacr_pat_id=" + patId + " and pacrd_record_status='approved' and alrg_record_status='approved' and pacr_que_name='" + jsonData.AddAllergy[index].pacr_que_name +
@@ -211,7 +212,7 @@ test.describe("Allergy Category", () => {
       await allergyExtraDetails.enterAllergyEndDate(jsonData.EditAllergy[index].alrg_end_date)      
       await allergyExtraDetails.enterallergyTextArea(jsonData.EditAllergy[index].alrg_notes)
       await allergyExtraDetails.clickOnSaveExtraDetails();
-      await page.getByLabel('saveChecklist').click()
+    //  await page.getByLabel('saveChecklist').click()
       await page.waitForTimeout(1000);
       await expect(page.getByText('Allergy record updated successfully')).toHaveText('Allergy record updated successfully')
 
