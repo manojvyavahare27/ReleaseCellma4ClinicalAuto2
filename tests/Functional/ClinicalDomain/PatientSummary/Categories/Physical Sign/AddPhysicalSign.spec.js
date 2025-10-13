@@ -115,7 +115,7 @@ test.describe("Physical Sign Category", () => {
       //await contacthistory.enterContactWith("Dr Sathya");
       await contacthistory.clickOnAddContact();
       
-     // await page.pause()
+      await page.pause()
       await Physical.selectCategoryFromList("Physical Signs");
       await page.waitForTimeout(2000)
 

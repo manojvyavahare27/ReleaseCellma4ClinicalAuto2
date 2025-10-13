@@ -87,7 +87,7 @@ test.describe("Overview Category", () => {
         logger.info("Clicked on Search button successfully");
         await patientsearch.enterGivenName(data.pat_firstname);
         logger.info("Given Name entered successfully");
-        await page.pause()
+       // await page.pause()
         await patientsearch.enterFamilyName(data.pat_surname);
         logger.info("Family Name entered successfully");
         //await patientsearch.selectSex(data.pat_sex);
@@ -141,7 +141,7 @@ test.describe("Overview Category", () => {
        const patId = results[0].paa_pat_id;
 
        console.log("Patient Accessed by User:" + patId);
-
+       await page.waitForTimeout(2000);
            ////////ADD NEW OVERVIEW/////
         await overview.selectandAddOverview();//This searches item and clicks on add button
         await page.waitForTimeout(2000)

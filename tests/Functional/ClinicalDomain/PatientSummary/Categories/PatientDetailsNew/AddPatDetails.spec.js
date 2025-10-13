@@ -183,7 +183,7 @@ test.describe("Excel Conversion Patient Details Category", () => {
       await patientDetailshome.riskFilters4();
       
  ////// Database comparison- Patient Clinical Records - ADDING NEW Patient details/////////
-await page.pause()
+//await page.pause()
  sqlQuery="select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, " +
  "pad_notes,pad_updated from patient_clinical_records join patient_clinical_records_details"+
  " on pacr_id=pacrd_pacr_id join patient_details on pacr_id=pad_pacr_id where pacr_record_status='approved'"+
