@@ -22145,3 +22145,20 @@
 {"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-10-11T14:08:12.287Z"}
 {"level":"info","message":"Given Name entered successfully","timestamp":"2025-10-11T14:08:12.772Z"}
 {"level":"info","message":"Family Name entered successfully","timestamp":"2025-10-11T14:08:13.124Z"}
+{"level":"info","message":"Username enter successfully","timestamp":"2025-10-13T10:05:58.910Z"}
+{"level":"info","message":"Password enter successfully","timestamp":"2025-10-13T10:05:59.056Z"}
+{"level":"info","message":"Clicked on Login button successfully","timestamp":"2025-10-13T10:05:59.286Z"}
+{"level":"info","message":"Username enter successfully","timestamp":"2025-10-13T10:18:25.311Z"}
+{"level":"info","message":"Password enter successfully","timestamp":"2025-10-13T10:18:25.446Z"}
+{"level":"info","message":"Clicked on Login button successfully","timestamp":"2025-10-13T10:18:25.660Z"}
+{"level":"info","message":"Clicked on Patient Icon successfully","timestamp":"2025-10-13T10:18:31.766Z"}
+{"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-10-13T10:18:34.140Z"}
+{"level":"info","message":"Given Name entered successfully","timestamp":"2025-10-13T10:18:34.667Z"}
+{"level":"info","message":"Family Name entered successfully","timestamp":"2025-10-13T10:18:35.048Z"}
+{"level":"info","message":"Username enter successfully","timestamp":"2025-10-18T10:39:04.300Z"}
+{"level":"info","message":"Password enter successfully","timestamp":"2025-10-18T10:39:04.416Z"}
+{"level":"info","message":"Clicked on Login button successfully","timestamp":"2025-10-18T10:39:05.071Z"}
+{"level":"info","message":"Clicked on Patient Icon successfully","timestamp":"2025-10-18T10:39:08.153Z"}
+{"level":"info","message":"Clicked on Search button successfully","timestamp":"2025-10-18T10:39:11.809Z"}
+{"level":"info","message":"Given Name entered successfully","timestamp":"2025-10-18T10:39:12.232Z"}
+{"level":"info","message":"Family Name entered successfully","timestamp":"2025-10-18T10:39:12.828Z"}

@@ -139,7 +139,7 @@ test.describe("Medical Certificate", () => {
       // await page.waitForTimeout(1000)
       // await expect(page.getByText("Medical certificate deleted successfully")).toHaveText("Medical certificate deleted successfully");
       // }        
-     // await page.pause()
+      await page.pause()
       await page.waitForTimeout(2000)
       await MedicalCertificate.ClickOnAddMedicalCertificateButton()
       await page.waitForTimeout(1000)
