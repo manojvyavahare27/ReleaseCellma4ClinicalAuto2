@@ -297,7 +297,7 @@ test.describe("Medications Category", () => {
        await MedicationsExtraDetails.selectMaxReffills(jsonData.EditMedication[index].meded_value_MaxReffills)     
     
      await MedicationsExtraDetails.selectCurrentLocation(jsonData.EditMedication[index].pcl_location_name)      
-      await MedicationsExtraDetails.enterMedicationNotes(jsonData.EditMedication[index].medi_notes) 
+     // await MedicationsExtraDetails.enterMedicationNotes(jsonData.EditMedication[index].medi_notes) 
       //await page.pause()
       await MedicationsExtraDetails.clickOnextraDetailsSaveButton();      
       await page.waitForTimeout(1500);     

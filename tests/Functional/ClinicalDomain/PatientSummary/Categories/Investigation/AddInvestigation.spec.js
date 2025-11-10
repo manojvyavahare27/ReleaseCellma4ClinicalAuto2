@@ -147,16 +147,20 @@ test.describe("Investigations Category", () => {
        await Investigations.selectandAddClinicalItem(jsonData.AddInvestigation[index].pacr_que_name); 
     //  await InvestigationsExtraDetails.clickOnClincialItemCollapsable();
       await page.waitForTimeout(1000);
+      await page.pause()
      // await InvestigationsExtraDetails.selectClinicalItemSubcategory(jsonData.AddInvestigation[index].eli_text);
       await InvestigationsExtraDetails.selectInvStatus(jsonData.AddInvestigation[index].status);
       await page.waitForTimeout(500)
+      await page.pause()
       await page.getByRole('checkbox', { name: 'Private record' }).click()
      // await //page.getByRole('checkbox', { name: 'Set as default' }).click()
       //await InvestigationsExtraDetails.selectInvOutstanding(jsonData.AddInvestigation[index].outstanding);
       await InvestigationsExtraDetails.selectInvReason(jsonData.AddInvestigation[index].reason);
       await InvestigationsExtraDetails.enterInvResult(jsonData.AddInvestigation[index].result);
+      await page.pause()
       await InvestigationsExtraDetails.selectInvOutcome(jsonData.AddInvestigation[index].outcome);
       await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
+      await page.pause()
       await InvestigationsExtraDetails.enterInvDateOfUpload(jsonData.AddInvestigation[index].date);
       await InvestigationsExtraDetails.selectInvPatLocation(jsonData.AddInvestigation[index].location);
       //await page.pause()
@@ -246,8 +250,11 @@ test.describe("Investigations Category", () => {
       await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']").click()
       //await InvestigationsExtraDetails.clickOnClincialItemCollapsable();
       await InvestigationsExtraDetails.selectInvStatus(jsonData.EditInvestigation[index].status);
+      await page.pause()
       await InvestigationsExtraDetails.enterInvResult(jsonData.EditInvestigation[index].result);      
+      await page.pause()
       await InvestigationsExtraDetails.enterInvCompletedDate(jsonData.EditInvestigation[index].dateCompleted);
+      await page.pause()
       await InvestigationsExtraDetails.enterInvNotes(jsonData.EditInvestigation[index].notes);
       await InvestigationsExtraDetails.clickShowSubtest()
       //await page.getByTestId('Show Sub-Tests').click();

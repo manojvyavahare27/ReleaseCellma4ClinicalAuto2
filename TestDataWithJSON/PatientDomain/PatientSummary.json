@@ -272,7 +272,7 @@
       "pacr_category": "Allergies",
       "pacr_que_name": "Coal dust",
       "alrg_reaction_severity": "Moderate",
-      "pacr_clinic_date": "21/09/2025",
+      "pacr_clinic_date": "01/11/2025",
       "alrg_notes": "Add for Notes",
       "eli_text": "Rash",
       "alrg_start_date": "08/05/2024",
@@ -284,7 +284,7 @@
       "pacr_category": "Allergies",
       "pacr_que_name": "Coal dust",
       "alrg_reaction_severity": "Moderate",
-      "pacr_clinic_date": "21/09/2025",
+      "pacr_clinic_date": "01/11/2025",
       "alrg_notes": "Edit for Notes",
       "eli_text": "Rash",
       "alrg_start_date": "20/05/2024",
@@ -320,7 +320,7 @@
     {
       "pacr_category": "Procedure",
       "pacr_que_name": "Hysteroscopy",
-      "proc_procedure_date": 45921,
+      "proc_procedure_date": 45962,
       "proc_site": "Left",
       "proc_type": "High",
       "proc_notes": "Add Procedure Notes",
@@ -516,7 +516,7 @@
       "eli_text": "Subcategory 1",
       "reason": "Borderline",
       "result": "Pending",
-      "outcome": "Abnormal",
+      "outcome": "Normal",
       "critical": "Yes",
       "date": "11/09/2024",
       "location": "Cardio Location",
@@ -683,7 +683,7 @@
   "Alerts": [
     {
       "Alert_Start_Date": "01-04-2025",
-      "Alert_End_Date": "21/09/2025",
+      "Alert_End_Date": "01/11/2025",
       "Priority_Any_Priority": "Any Priority",
       "Priority_Very_High": "Very High",
       "Priority_High": "High",
@@ -727,7 +727,7 @@
     {
       "dev_name": "Cochlear Osia OSI200",
       "dev_type": "Device",
-      "dev_procedure_name": "Cochlear Implantation",
+      "dev_procedure_name": "Cochlear Implantation (01/08/2025, Left)",
       "dev_manufacturer": "Cochlear",
       "dev_expiry_date": "28/02/2025",
       "ded_type": "primary",
@@ -740,6 +740,12 @@
       "ded_status": "implanted",
       "ded_status_entry": "Implanted",
       "dev_serial_number": "913748362"
+    },
+    {
+      "dev_procedure_name": "Cochlear Implantation (7/31/2025, left)"
+    },
+    {
+      "dev_procedure_name": "Cochlear Implantation"
     }
   ],
   "EditDevice": [

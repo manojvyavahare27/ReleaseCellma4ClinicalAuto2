@@ -95,7 +95,7 @@ test.describe("New Patient", () => {
       const MedicationsExtraDetails = new ClinicalExtraDetails(page);
       const pharmacyHomePage = new PharmacyHome(page);
 
-      await page.pause()
+      
       await page.goto(environment.PharmacyPortal);
       await portalhome.clickOnPharmacyPortalButton();
       await page.waitForTimeout(1500)
@@ -117,7 +117,7 @@ test.describe("New Patient", () => {
 
       await findPatient.enterSex(data.pat_sex);
       await findPatient.enterBorn(jsonData.addPatient[index].pat_dob);
-await page.pause()
+
       await findPatient.clickOnSearchButton();
       await page.waitForTimeout(5000);
       await findPatient.clickOnAddPatientButton();
@@ -135,12 +135,17 @@ await page.pause()
       await findPatient.selectSex(jsonData.addPatient[index].pat_sex);
       await page.waitForTimeout(2000);
       await findPatient.clickOnCreatePatientButton();
-await page.pause()
+      await page.pause()
+      // await Medications.selectandAddClinicalItem(jsonData.AddMedication[index].pacr_que_name)
+      await page.locator("xpath=//input[@name='search']").fill(jsonData.AddMedication[index].pacr_que_name);
       await Medications.selectAndAddMedication(jsonData.AddMedication[index].pacr_que_name);
       await page.waitForTimeout(2000);
-      await page.getByLabel("cancelIcon").click();
+      //await page.getByLabel("cancelIcon").click();
       //await MedicationsExtraDetails.clickOnClincialItemCollapsable();
-      await Medications.selectAndAddMedication(jsonData.AddMedication[index].pacr_que_name);
+      // await Medications.selectandAddClinicalItem(jsonData.AddMedication[index].pacr_que_name)
+      // await page.waitForTimeout(1000);   
+      //await Medications.selectAndAddMedication(jsonData.AddMedication[index].pacr_que_name);
+      //await page.locator("xpath=//input[@name='search']").fill(jsonData.AddMedication[index].pacr_que_name);
       await page.waitForTimeout(1000);
 
       //await MedicationsExtraDetails.selectClinicalItemSubcategory(jsonData.AddMedication[index].eli_text);
@@ -230,11 +235,14 @@ await page.pause()
 
       //await expect(page.getByText(`${clinicaCatergory} Record Added Successfully`)).toHaveText(`${clinicaCatergory} Record Added Successfully`);
 
+      await page.pause()
       //////Fetch Patient Details/////////
       var sqlQuery =
-        "select pat_id, pat_firstname, pat_surname, pat_sex_at_birth, pat_dob, pat_use_created_by from patients where pat_use_created_by ='" +
-        jsonData.loginDetails[0].username +
-        "' and pat_est_id = 2 order by 1 desc limit 1";
+        // "select pat_id, pat_firstname, pat_surname, pat_sex_at_birth, pat_dob, pat_use_created_by from patients where pat_use_created_by ='" +
+        // jsonData.loginDetails[0].username +
+        // "' and pat_est_id = 2 order by 1 desc limit 1";
+        "select pat_id, pat_firstname, pat_surname, pat_sex_at_birth, pat_dob, pat_use_created_by from patients order by 1 desc limit 1;"
+         console.log("Fetch Patient Details:  " + sqlQuery);
       var sqlFilePath = "SQLResults/PharmacyPortal/PatientData.json";
       var results = await executeQuery(sqlQuery, sqlFilePath);
       console.log("\n Patient Details stored into the database: \n", results);
@@ -243,13 +251,21 @@ await page.pause()
 
       ////// Database comparison- Patient Clinical Records - ADDING NEW Medications/////////
       sqlQuery =
-        "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, medi_notes" +
-        " from patient_clinical_records join patient_clinical_records_details on pacr_id=pacrd_pacr_id join Medications on pacr_id=medi_pacr_id where pacr_record_status='approved'" +
-        " and pacr_pat_id=" +
-        patId +
-        " and pacr_record_status='approved' and pacr_que_name='" +
-        jsonData.AddMedication[index].pacr_que_name +
-        "' and pacr_category='Medication' order by 1 desc limit 1";
+        // "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, medi_notes" +
+        // " from patient_clinical_records join patient_clinical_records_details on pacr_id=pacrd_pacr_id join Medications on pacr_id=medi_pacr_id where pacr_record_status='approved'" +
+        // " and pacr_pat_id=" +
+        // patId +
+        // " and pacr_record_status='approved' and pacr_que_name='" +
+        // jsonData.AddMedication[index].pacr_que_name +
+        // "' and pacr_category='Medication' order by 1 desc limit 1";
+       "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk, medi_notes" +
+" from patient_clinical_records join patient_clinical_records_details on pacr_id=pacrd_pacr_id " +
+"join Medications on pacr_id=medi_pacr_id where pacr_record_status='approved' " +
+"and pacr_pat_id=" + (patId - 1) +
+" and pacr_record_status='approved' and pacr_que_name='" + jsonData.AddMedication[index].pacr_que_name +
+"' and pacr_category='Medication' order by 1 desc limit 1";
+
+        
 
       console.log("Manoj add Medications:  " + sqlQuery);
       sqlFilePath = "SQLResults/ClinicalDomain/patientClinicalRecord.json";

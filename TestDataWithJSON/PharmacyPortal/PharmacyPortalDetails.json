@@ -1,15 +1,19 @@
 {
   "loginDetails": [
     {
+      "username": "release.manoj",
+      "password": "Manoj@2025"
+    },
+    {
       "username": "s.d",
       "password": "Saurabh@2025"
     }
   ],
   "addPatient": [
     {
-      "pat_hospital_ref": "href05Reco019",
+      "pat_hospital_ref": "href05Reco037",
       "pat_title": "Mr",
-      "pat_firstname": "PharmPatientBO",
+      "pat_firstname": "PharmPatientCI",
       "pat_surname": "Test",
       "pat_sex": "Male",
       "pat_dob": "23/06/1982",
@@ -44,7 +48,7 @@
       "pacr_que_name": "Paracetamol 500mg tablets",
       "medi_dose": "2",
       "medi_form": "tablet",
-      "medi_frequency": "At Afternoon",
+      "medi_frequency": "twice daily",
       "medi_method": "Oral",
       "medi_route": "Oral",
       "medi_duration": "2",
@@ -56,9 +60,9 @@
       "pcl_location_name": "Cardio Location",
       "pacr_que_name_Diagnosis": "Asthma",
       "medi_notes": "Added notes for testing",
-      "medi_stopped_reason_eli_text": "Adverse Reaction",
-      "mse_text": "Nausea",
-      "paprd_endorsement": "5",
+      "medi_stopped_reason_eli_text": "Side Effect",
+      "mse_text": "Drowsiness",
+      "paprd_endorsement": "Yes",
       "paprd_cost": "10",
       "meded_value_Price_check_quantity": "2",
       "meded_value_Administrator": "Prescriber",
@@ -80,22 +84,34 @@
       "pacr_que_name": "Paracetamol 500mg tablets",
       "medi_dose": "3",
       "medi_form": "tablet",
-      "medi_frequency": "Twice a  day",
-      "medi_method": "Orally",
-      "medi_route": "Orally",
-      "meded_value": "Right",
-      "medi_duration": "3",
-      "medi_start_date": "12/06/2026",
-      "medi_stop_date": "14/06/2026",
-      "medi_status": "Prescribed",
-      "medi_prescribed_by": "Hospital consultant",
-      "medi_notes": "Updated notes for testing",
-      "eli_text": "Antibacterial",
-      "mse_text": "Insomnia",
+      "medi_frequency": "twice daily",
+      "medi_method": "Oral",
+      "medi_route": "Oral",
+      "medi_duration": "2",
+      "meded_value": "Left",
+      "medi_start_date": "06/07/2025",
+      "medi_stop_date": "08/07/2025",
+      "pacr_status": "Current",
+      "medi_prescribed_by": "GP",
+      "pcl_location_name": "Cardio Location",
+      "pacr_que_name_Diagnosis": "Asthma",
+      "medi_notes": "Added notes for testing",
+      "medi_stopped_reason_eli_text": "Side Effect",
+      "mse_text": "Giddiness",
+      "paprd_endorsement": "Yes",
+      "paprd_cost": "10",
+      "meded_value_Price_check_quantity": "2",
+      "meded_value_Administrator": "Prescriber",
+      "meded_value_PGD": "PGD",
+      "meded_value_MaxReffills": "5",
+      "meded_value_Unit": "Tab",
       "meded_value_Quantity": "3",
-      "meded_value_MaxReffills": "4",
-      "meded_value_PGD": "PSD",
-      "pcl_location_name": "Cardio 2"
+      "meded_value_MaxReffills_1": 5,
+      "meded_value_Adherent": "Adherent",
+      "eli_text": "Antibacterial",
+      "que_display_text": "Dirty living conditions",
+      "question_name": "Notes",
+      "medadt_medication_status": "given"
     }
   ],
   "DeleteMedication": [
@@ -108,7 +124,7 @@
   "AddPrescription": [
     {
       "papre_code": "12348765",
-      "pre_type": "OP prescription",
+      "pre_type": "General",
       "pre_notes": "add for testing"
     }
   ]

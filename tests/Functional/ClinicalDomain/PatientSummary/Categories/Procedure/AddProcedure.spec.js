@@ -115,6 +115,7 @@ test.describe("Procedure Category", () => {
       await Procedures.selectCategoryFromList("Procedures");
       await page.waitForTimeout(2000)
       
+      
        ////////REVIEW EXISTING ITEM AND DELETE/////
        if(await Procedures.checkItemOnHistoryTable(jsonData.AddProcedure[index].pacr_que_name)){
         await Procedures.clickOnItemReview(jsonData.AddProcedure[index].pacr_que_name);
@@ -127,7 +128,7 @@ test.describe("Procedure Category", () => {
         console.log('\x1bItem was deleted successfully\x1b[0m');
         }
         await page.waitForTimeout(2000)
-       
+          
        //////Fetch Patient Details/////////
       var sqlQuery =
       "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username + 
@@ -137,7 +138,7 @@ test.describe("Procedure Category", () => {
       console.log("\n Patient Details stored into the database: \n", results);
       const patId = results[0].paa_pat_id;
       console.log("Patient Accessed by User:" + patId);
-
+  
       ////////Check Remove and Restore Question from Customizable view/////
       
       // await Procedures.selectandAddClinicalItem(jsonData.AddProcedure[index].pacr_que_name); //This searches item and clicks on add button
@@ -190,7 +191,7 @@ test.describe("Procedure Category", () => {
       await ProceduresExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
      // await page.waitForTimeout(2000);     
-      await page.getByLabel('saveChecklist').click() 
+      //await page.getByLabel('saveChecklist').click() 
      // await page.pause()    
       await page.waitForTimeout(500);
       await expect(page.getByText("Procedure record added successfully")).toHaveText("Procedure record added successfully");
