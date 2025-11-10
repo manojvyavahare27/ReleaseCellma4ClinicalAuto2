@@ -79,7 +79,7 @@ test.describe("Device Category", () => {
             logger.info("Clicked on Search button successfully");
             await patientsearch.enterGivenName(data.pat_firstname);
             logger.info("Given Name entered successfully");
-            await page.pause()
+           
             await patientsearch.enterFamilyName(data.pat_surname);
             logger.info("Family Name entered successfully");
            // await patientsearch.selectSexAtBirth(data.pat_sex);
@@ -110,7 +110,7 @@ test.describe("Device Category", () => {
           await allergy.closePopUp()
         }
       await page.waitForTimeout(2000);
-      await page.pause()
+     
       //  await contacthistory.clickOnShowFilter()  
       // await contacthistory.selectServiceFilter("General Medicine Automation");
       // await contacthistory.selectContactReasonFilter("Assessments");      
@@ -204,7 +204,7 @@ test.describe("Device Category", () => {
               count++
             }
       
-            await page.pause()
+          
             if (ded_laterality){
               await expect.soft(Devices.deviceLaterality).toContainText(jsonData.AddDevice[index].ded_laterality);
               console.log('Displayed device laterality matched: ' + jsonData.AddDevice[index].ded_laterality)
