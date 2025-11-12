@@ -159,7 +159,7 @@ test.describe("Investigations Category", () => {
       await InvestigationsExtraDetails.enterInvResult(jsonData.AddInvestigation[index].result);
       await page.pause()
       await InvestigationsExtraDetails.selectInvOutcome(jsonData.AddInvestigation[index].outcome);
-      await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
+     /// await InvestigationsExtraDetails.selectInvCritical(jsonData.AddInvestigation[index].critical);
       await page.pause()
       await InvestigationsExtraDetails.enterInvDateOfUpload(jsonData.AddInvestigation[index].date);
       await InvestigationsExtraDetails.selectInvPatLocation(jsonData.AddInvestigation[index].location);
@@ -177,6 +177,7 @@ test.describe("Investigations Category", () => {
       await page.waitForTimeout(1000)
       await InvestigationsExtraDetails.selectForLabRequest()
       await page.waitForTimeout(1000)
+      await page.pause()
       //await InvestigationsExtraDetails.deselectForLabRequest()
       //await page.waitForTimeout(500)
       //await InvestigationsExtraDetails.selectShareOnPortal()
@@ -192,30 +193,34 @@ test.describe("Investigations Category", () => {
       await page.waitForTimeout(1000);
       await page.getByRole('button', { name: 'cancelIcon' }).click()
       await page.waitForTimeout(2000);
+      await page.pause()
       await InvestigationsExtraDetails.selectlinks()
       await page.waitForTimeout(1000);
       await InvestigationsExtraDetails.LabRequestLink()
       await page.waitForTimeout(1000);
+      await page.pause()
       await InvestigationsExtraDetails.selectLabRequestCheckbox()
       await page.waitForTimeout(1000);
       //await InvestigationsExtraDetails.selectAddCreateLabRequest()
       await page.waitForTimeout(1000);
 
-      
+      await page.pause()
       //await page.getByLabel('', { exact: true }).click();
       await InvestigationsExtraDetails.collectSampleCheckbox()
       await page.waitForTimeout(1000);
       await InvestigationsExtraDetails.selectCollectSample()
       await page.waitForTimeout(1000);
+      await page.pause()
       await page.getByRole('checkbox', { name: 'hideLabel' }).click();
       await page.waitForTimeout(1000);
       await page.locator('button').filter({ hasText: 'Take Samples & Print All' }).click();
       await page.waitForTimeout(2500);
-      await InvestigationsExtraDetails.selectSendSample()
-      await page.waitForTimeout(3000);
+      await page.pause()
+      // await InvestigationsExtraDetails.selectSendSample()
+      // await page.waitForTimeout(3000);
       //await page.getByLabel('cancelIcon').click();
       await page.getByRole('button', { name: 'cancelIcon' }).click()
-      
+      await page.pause()
       
 
       //await expect(page.getByText("Investigation record added successfully")).toHaveText("Investigation record added successfully");
@@ -245,6 +250,7 @@ test.describe("Investigations Category", () => {
    
     await Investigations.toggleSearchSection(); //Close the search section
       
+    await page.pause()
       //await Investigations.clickOnItemDiv(jsonData.EditInvestigation[index].pacr_que_name);
       ////await Investigations.clickOnItemEdit();
       await page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']").click()
@@ -269,7 +275,7 @@ test.describe("Investigations Category", () => {
       await InvestigationsExtraDetails.clickOnextraDetailsSaveButton();
       //await expect(page.getByText("Investigation record updated successfully")).toHaveText("Investigation record updated successfully");
       await page.waitForTimeout(1000);
-
+await page.pause()
        ////// Database comparison - Patient Clinical Records - UPDATE Investigations/////////
   //    sqlQuery =
   //    "select pacr_id, pacr_category, pacr_que_name, pacr_clinic_date, pacr_risk,inte_outcome_eli_text, inte_notes"+
@@ -327,8 +333,8 @@ test.describe("Investigations Category", () => {
 
      ///////// Deleting Item ////////////
 await page.pause()
-      //await Investigations.clickOnItemEdit();
-       await this.page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
+      await Investigations.clickOnItemEdit();
+       //await this.page.locator("xpath=//div[@id='historyTable']//*[text()='RFT(Renal Function Tests)']//../..//button[@aria-label='editIconButton']".click())
       await InvestigationsExtraDetails.clickOnDelete();
       await InvestigationsExtraDetails.clickOnCancelDelete();
       await InvestigationsExtraDetails.clickOnDelete();
