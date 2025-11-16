@@ -128,7 +128,7 @@ test.describe("Examination Category", () => {
       await page.waitForTimeout(2000);
       await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
       await page.waitForTimeout(2000);  
-      //await page.pause()
+      await page.pause()
       //Add Recommendation
       //const flag = false;
       //await patientsummary.clickOniconRecommendation();
@@ -171,6 +171,7 @@ test.describe("Examination Category", () => {
       // await page.getByLabel('saveChecklist').click()
       //Delete Favourites
           
+      await page.pause()
       await examinationhome.clickOnEditExaminationButton();     
       await examinationEd.clickOnDeleteButton();
       await examinationEd.clickOnCancelExamination();
@@ -222,8 +223,8 @@ test.describe("Examination Category", () => {
       // await examinationExtraDetails.clickOncheckAll()
       // await examinationExtraDetails.clickOnSaveCheckList()
       //await page.waitForTimeout(500);
-      await page.getByTestId('Check All').click()
-      await page.getByLabel('saveChecklist').click()
+      // await page.getByTestId('Check All').click()
+      // await page.getByLabel('saveChecklist').click()
 
      
       //await page.waitForTimeout(1000);
@@ -326,8 +327,8 @@ test.describe("Examination Category", () => {
      
      
       // await page.pause()
-      await page.getByTestId('Check All').click()
-      await page.getByLabel('saveChecklist').click()
+      // await page.getByTestId('Check All').click()
+      // await page.getByLabel('saveChecklist').click()
       
       await expect(page.getByText("Examination record updated successfully")).toHaveText("Examination record updated successfully");
 
