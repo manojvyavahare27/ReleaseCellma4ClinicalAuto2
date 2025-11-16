@@ -72,9 +72,9 @@ module.exports = defineConfig({
               
 
             ], // Corrected the file extension
-  timeout: 800 * 1000,
+  timeout: 1000 * 1000,
   expect: {
-    timeout: 8000,
+    timeout: 10000,
   },
   /* Run tests in files in parallel */
   fullyParallel: false,

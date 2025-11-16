@@ -324,7 +324,7 @@ test.describe("Medications Category", () => {
      console.log("\n Update Patient Clinical Records Comparision Edit Medications: Parameters from both JSON files do not match!\n");
    }
 
-   //await page.pause()
+   await page.pause()
    ////////AUTO UPDATE RISK AFTER UPDATING OUTCOME /////
       await Medications.clickOnItemHistory();
       await Medications.clickOnHistoryItemDiv();
