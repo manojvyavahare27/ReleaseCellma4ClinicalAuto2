@@ -181,7 +181,7 @@ test.describe("Care Plan Category", () => {
       
       await carePlanExtraDetails.clickOnSaveExtraDetails();
       await page.waitForTimeout(2000)
-      Care Plans record added successfully
+      //Care Plans record added successfully
 
       await expect(page.getByText('Care Plans record added successfully')).toHaveText('Care Plans record added successfully')      
            
