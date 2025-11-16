@@ -135,6 +135,10 @@ class PatientSummary
         this.expandComm= page.getByRole('cell', { name: 'expandRowIconundefined' }).first()
         this.expandComm2= page.getByRole('cell', { name: 'expandRowIconundefined' }).nth(1)
 
+        this.communicationtab=page.locator("xpath=//span[@class='MuiTypography-root MuiTypography-body1 mui-1r7eoig' and text()='Communication']")
+        this.communicationIcon=page.locator("xpath=//img[@class='MuiAvatar-img mui-45do71' and @alt='communication']")
+        this.SearchButton=page.locator("xpath=//button[@data-testid='Search']")
+
 
     }
 
@@ -322,9 +326,25 @@ class PatientSummary
     //////Methods for communications
  
 ///////*****Communication*****
+
+async clickOnCommunicationDiv()
+{
+    await clickElement(this.page,this.communicationtab)
+
+}
+
+async clickOnCommunicationIcon()
+{
+    await clickElement(this.page,this.communicationIcon)
+}
     async clickOnTextEmailBtn()
     {
         await clickElement(this.page, this.btnTextEmail)
+    }
+
+    async clickOnSearchButton()
+    {
+        await clickElement(this.page, this.SearchButton)
     }
     async selectTypeOfCom(csd_communication_medium_type)
     {

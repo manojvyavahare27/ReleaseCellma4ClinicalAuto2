@@ -122,6 +122,7 @@ test.describe("Communication Category", () => {
      
  
          
+
        //////Fetch Patient Details/////////
     //   var sqlQuery =
     //   "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username +
@@ -137,6 +138,7 @@ test.describe("Communication Category", () => {
 //ADD NEW Recommendations/////
       await CommunicationExtraDetails.clickOnTextEmailBtn()
       await page.waitForTimeout(5000)
+      //await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
       await CommunicationExtraDetails.selectTypeOfCom('Text')
       //await CommunicationExtraDetails.enterEmailHeader('Test Text')
       await CommunicationExtraDetails.selectStdContent('This is an Appointment Email from Cellma')
@@ -144,7 +146,7 @@ test.describe("Communication Category", () => {
       await CommunicationExtraDetails.sendToPatientCheckbox()
       await CommunicationExtraDetails.clickOnSendComm()
       await page.waitForTimeout(5000)
-      await page.pause()
+     
       await CommunicationExtraDetails.clickOnTextEmailBtn()
       await page.waitForTimeout(5000)
       await CommunicationExtraDetails.selectTypeOfCom('Email')
@@ -171,7 +173,7 @@ test.describe("Communication Category", () => {
       await CommunicationExtraDetails.clickOnCellma()
       await page.waitForTimeout(3000)
        await page.pause()
-       await page.getByRole('button', { name: 'myCommunication Communication' }).click()
+      // await page.getByRole('button', { name: 'myCommunication Communication' }).click()
       await CommunicationExtraDetails.clickOnCommunicationDiv()
       await page.waitForTimeout(3000)
       await page.waitForTimeout(2000)
