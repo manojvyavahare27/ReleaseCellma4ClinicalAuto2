@@ -99,7 +99,7 @@ test.describe("Excel Conversion Patient Details Category", () => {
       //await patientsearch.selectSex(data.pat_sex);
 
       await patientsearch.selectBornDate(data.pat_dob.toString());
-      //await page.pause()
+      await page.pause()
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();

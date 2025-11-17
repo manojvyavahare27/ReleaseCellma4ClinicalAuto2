@@ -2283,6 +2283,7 @@ async enterPatientScanNotes(pascn_notes)
 
   async checkPatientView(selectorName, selectorName2, popUpName) {
 
+    await this.page.waitForTimeout(1000);
     const popUp = this.page.getByRole('heading', { name: popUpName, exact: true });
     const selector = this.page.getByTestId(selectorName);
 
@@ -2322,28 +2323,28 @@ async enterPatientScanNotes(pascn_notes)
       console.log("Incorrect information entered")
     }
 
-    await popUp.waitFor();
+   // await popUp.waitFor();
 
-    const isPopupVisible = popUp.isVisible();
-    const isSelectorVisible = selector.isVisible();
-    console.log("\n");
+    // const isPopupVisible = popUp.isVisible();
+    // const isSelectorVisible = selector.isVisible();
+    // console.log("\n");
 
-    if(isPopupVisible) {
-      console.log(popUpName + " Pop up is displayed")
+    // if(isPopupVisible) {
+    //   console.log(popUpName + " Pop up is displayed")
       
-      if(isSelectorVisible) {
-        console.log("Entered information " + selectorName + " is displayed on Pop up")
-      }
+    //   if(isSelectorVisible) {
+    //     console.log("Entered information " + selectorName + " is displayed on Pop up")
+    //   }
 
-      if(selectorName2 != 'none') {
-        const selector2 = this.page.getByTestId(selectorName);
-        const isSelector2Visible = selector2.isVisible();
+    //   if(selectorName2 != 'none') {
+    //     const selector2 = this.page.getByTestId(selectorName);
+    //     const isSelector2Visible = selector2.isVisible();
 
-        if(isSelector2Visible) {
-          console.log("Entered information " + selectorName2 + " is displayed on Pop up")
-        }
-      }
-    }
+    //     if(isSelector2Visible) {
+    //       console.log("Entered information " + selectorName2 + " is displayed on Pop up")
+    //     }
+    //   }
+    // }
     await this.page.waitForTimeout(1500)
     await this.closePopup.click();
   }

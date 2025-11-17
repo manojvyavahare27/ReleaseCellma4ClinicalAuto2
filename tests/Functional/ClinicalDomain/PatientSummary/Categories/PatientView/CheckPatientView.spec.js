@@ -102,6 +102,7 @@ test.describe("Patient View Category", () => {
 
               for (let section of jsonData.PatientViewSections) {
 
+               
                 ////////// Checking function call
                 await PatientViewDetails.checkPatientView(section.selector, section.selector2, section.popUp)
 
