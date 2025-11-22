@@ -28,11 +28,18 @@ class PatientSummary
         this.iconPregnanciesCategory=page.locator("xpath=//img[@alt='Pregnancies Image Avatar']")
         this.iconOutcomeCategory=page.locator("xpath=//img[@alt='Outcomes Image Avatar']")
         this.iconInterpretationsCategory=page.locator("xpath=//img[@alt='Interpretations Image Avatar']")
-        this.iconRecommendationsCategory=page.locator("xpath=//img[@alt='Recommendations Image Avatar']")
+        this.iconRecommendationsCategory=page.locator("xpath=//div[contains(@class,'MuiGrid2-root')]//h1[contains(text(),'Recommendations')]")
         this.iconCommunicationCategory=page.locator("xpath=//img[@alt='Communication Image Avatar']")
         this.iconOverviewCategory=page.locator("xpath=//img[@alt='Overview Image Avatar']")
 
         this.allCategory=page.locator("xpath=//input[@name='allCategory']")
+
+        //patient summary sidebar links
+        this.TaskWorklistPathways=page.locator("xpath=//span[contains(text(), 'Task, Worklist & Pathways')]")
+        this.ExaminationsTab=page.locator("xpath=//span[contains(text(), 'Examinations')]")
+        this.TaskProgressNotesPlanning=page.locator("xpath=//span[contains(text(), 'Progress Notes & Planning')]")
+
+        //this.RecommendationLink=page.locator("xpath=//div[contains(@class,'MuiGrid2-root')]//h1[contains(text(),'Recommendations')]")
 
         //Top Icons on Patient Summary page
         this.topIconHome=page.locator("xpath=//div[contains(text(),'Home')]")
@@ -142,6 +149,24 @@ class PatientSummary
 
 
     }
+
+
+    //patient summary sidebar links.
+    async clickOnTaskWorklistPathwayLink()
+    {
+        await this.TaskWorklistPathways.click()
+    }
+
+    async clickOnTaskProgressNotesPlanningLink()
+    {
+        await this.TaskProgressNotesPlanning.click()
+    }
+
+    async clickOnExaminationTab()
+    {
+        await this.ExaminationsTab.click()
+    }
+
 
 
 

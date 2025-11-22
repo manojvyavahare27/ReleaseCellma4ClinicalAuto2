@@ -117,7 +117,7 @@
   "MedicationEDS": [],
   "AddExamination": [
     {
-      "pacr_category": "Examination",
+      "pacr_category": "Examinations",
       "pacr_subcategory": "Physical Examination",
       "pacr_que_name": "Skin lesion",
       "pacr_que_name_recommendation": "Rectoplasty",
@@ -130,7 +130,7 @@
   ],
   "EditExamination": [
     {
-      "pacr_category": "Examination",
+      "pacr_category": "Examinations",
       "pacr_que_name": "Skin lesion",
       "pacr_que_name_recommendation": "Rectoplasty",
       "exam_outcome": "Abnormal",
@@ -140,7 +140,7 @@
   ],
   "DeleteExamination": [
     {
-      "pacr_category": "Examination",
+      "pacr_category": "Examinations",
       "pacr_delete_reason": "Delete for testing"
     }
   ],

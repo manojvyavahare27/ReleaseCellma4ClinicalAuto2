@@ -116,24 +116,34 @@ test.describe("Examination Category", () => {
       await patientsearch.enterFamilyName(data.pat_surname);
       logger.info("Family Name entered successfully");
       //await patientsearch.selectSex(data.pat_sex);
-
+await page.pause()
       await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);
       //await patientsearch.selectBornDate(formattedDate);
       await patientsearch.clickOnSearchButton();
       await patientsearch.clickOnSearchPatientLink();
-      await page.waitForTimeout(1000);
-      
+     await page.waitForTimeout(2000);
       await patientsearch.ClickOnYesConfirmLegitimateRelationship()
-      await confirmexisting.clickOnConfirmExistingDetails();
+      await confirmexisting.clickOnConfirmExistingDetails();   
+     await page.pause()
       await page.waitForTimeout(2000);
       await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
-      await page.waitForTimeout(2000);  
+      await page.waitForTimeout(2000);
+      // await diagnosis.clickOnSavePopup()  
+      await contacthistory.clickOnShowFilter()  
+      await contacthistory.selectServiceFilter("General Medicine Automation");
+      await contacthistory.selectContactReasonFilter("Assessments");
+     // await contacthistory.enterContactDate("26/04/2024");
+      await contacthistory.selectContactReason("Assessments");
+      await contacthistory.selectContactLocation("Cardio Location");
       await page.pause()
-      //Add Recommendation
-      //const flag = false;
-      //await patientsummary.clickOniconRecommendation();
-       await patientsummary.clickOniconExaminationsCategory();
-       await patientsummary.clickOnallCategory()
+      //await contacthistory.enterContactWith("Dr Sathya");
+      await contacthistory.clickOnAddContact();   
+      
+      await patientsummary.clickOnTaskProgressNotesPlanningLink()
+       //await examination.selectCategoryFromList(jsonData.AddRecommendations[index].pacr_category);
+      await patientsummary.clickOniconRecommendation();
+      //  await recommendationhome.clickOniconExaminationsCategory();
+      //  await patientsummary.clickOnallCategory()
         await recommendationhome.searchRecommendation(jsonData.AddRecommendations[index].pacr_que_name);
 
       await page.waitForTimeout(3000);      
@@ -154,6 +164,10 @@ test.describe("Examination Category", () => {
        
         //Add Favourites
         await page.waitForTimeout(2000);
+       
+
+           await patientsummary.clickOnExaminationTab()
+
         await patientsummary.clickOniconExaminationsCategory();
         await page.waitForTimeout(1000);
         await examination.clickOnFavouriteQueExam();
