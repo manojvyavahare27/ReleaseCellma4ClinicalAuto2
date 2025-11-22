@@ -120,7 +120,7 @@ test.describe("Diagnosis Category", () => {
       //await contacthistory.enterContactWith("Dr Sathya");
       await contacthistory.clickOnAddContact();    
       
-      await page.pause()
+      
 
        await diagnosis.selectCategoryFromList(jsonData.AddDiagnosis[index].pacr_category);
      // await page.locator("xpath=//h1[normalize-space()='Diagnosis']").click()
