@@ -98,6 +98,7 @@ test.describe("Test and Tool Category", () => {
       await page.waitForTimeout(2000);
 
 
+      await page.pause()
            
 
             const alert = await page.getByRole('heading', { name: 'Alerts', exact: true }).isVisible()

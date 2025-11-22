@@ -178,8 +178,9 @@ test.describe("condition Category", () => {
       await conditionExtraDetails.enterPreviousCondition(jsonData.AddCondition[0].con_previous);
       await conditionExtraDetails.enterCoditionNotes(jsonData.AddCondition[0].cond_notes);               
        
+      await page.pause()
       await conditionExtraDetails.clickOnextraDetailsSaveButton();      
-      await expect(page.getByText("Condition record added successfully")).toHaveText("Condition record added successfully");
+      await expect(page.getByText("Past Medical History record added successfully")).toHaveText("Past Medical History record added successfully");
           
       ////// Database comparison- Patient Clinical Records - ADDING Conditions /////////
       sqlQuery =
@@ -224,7 +225,7 @@ test.describe("condition Category", () => {
       //await page.locator("xpath=//button[@aria-label='saveExtraDetails']").click()
       await conditionExtraDetails.clickOnextraDetailsSaveButton();
       
-      //await expect(page.getByText('condition record updated successfully')).toHaveText('condition record updated successfully')
+      await expect(page.getByText('Past Medical History record updated successfully')).toHaveText('Past Medical History record updated successfully')
       
        ////// Database comparison - Patient Clinical Records - UPDATE condition/////////
     sqlQuery =
@@ -294,7 +295,9 @@ test.describe("condition Category", () => {
       await conditionExtraDetails.clickOnConfirmDelete();
       await conditionExtraDetails.enterDeleteReason(jsonData.DeleteCondition[index].pacr_delete_reason);
       await conditionExtraDetails.clickOnSaveDeleteReason();
-await expect(page.getByText("Condition deleted successfully")).toHaveText("Condition deleted successfully");
+      
+
+await expect(page.getByText("Past Medical History deleted successfully")).toHaveText("Past Medical History deleted successfully");
           
       await page.waitForTimeout(1000)   
 

@@ -53,7 +53,8 @@ class PatientSummary
         this.buttonSearch= page.locator("xpath=//button[@aria-label='Search']")
         //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment Regular Checkup Patient Yes - No No' }).getByTestId('Select')
         //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment - Regular Checkup Patient Yes - No' }).getByTestId('Select')
-        this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment Regular Checkup Patient Yes - No No' }).getByTestId('Select').nth(0)
+        //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment Regular Checkup Patient Yes - No No' }).getByTestId('Select').nth(0)
+        this.selectTask=page.getByRole('option', { name: 'Freezer Monitoring' })
 
         
         //Add/Edit task 

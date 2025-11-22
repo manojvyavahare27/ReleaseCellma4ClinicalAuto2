@@ -124,7 +124,7 @@ module.exports = defineConfig({
 
         launchOptions:{
          // slowMo:1000
-        args: ['--window-size=1920,900'],
+        args: ['--window-size=1920,1080'],
         }
       }
     },

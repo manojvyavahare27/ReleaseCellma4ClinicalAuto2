@@ -93,14 +93,12 @@ test.describe("Task Category", () => {
         await patientsearch.enterGivenName(data.pat_firstname);
         logger.info("Given Name entered successfully");
         //await page.pause()
+         await page.pause()
         await patientsearch.enterFamilyName(data.pat_surname);
         logger.info("Family Name entered successfully");
         await patientsearch.selectSex(data.pat_sex);
   
-        await patientsearch.selectBornDate(
-          jsonData.PatientDetails[index].pat_dob
-        );
-      
+        await patientsearch.selectBornDate(jsonData.PatientDetails[index].pat_dob);      
         //await patientsearch.selectBornDate(formattedDate);
         await patientsearch.clickOnSearchButton();
   
@@ -111,7 +109,6 @@ test.describe("Task Category", () => {
         await page.waitForTimeout(2000);
       await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
       await page.waitForTimeout(2000);
-
 
          //////Fetch Patient Details/////////
    var sqlQuery =
@@ -131,12 +128,12 @@ test.describe("Task Category", () => {
         await contacthistory.clickOnAddContact();
         //await problems.clickOnViewContactItemsMenu();
         //await problems.clickOnPinContactItemsMenu();
-        await page.pause()
+       
         await page.waitForTimeout(1000);
         await patientsummary.clickOnAddToTask();
         await page.waitForTimeout(1000);
         await patientsummary.selectTasklink();
-        await page.waitForTimeout(1000);
+        await page.waitForTimeout(1000);        
         await patientsummary.clickOnSearchTask();
         await page.waitForTimeout(1500);
         await patientsummary.selectTaskTemplate();
@@ -179,15 +176,11 @@ const pacrId = results[0].pacr_id;
 console.log("\n Patient Clinical Records stored into the database: \n", results);
 var match = await compareJsons(sqlFilePath, null, jsonData.AddTask[index]);
 if (match) {
-  console.log(
-    "\n Patient Clinical Records Comparision Add Problems: Parameters from both JSON files match!\n"
-  );
+  console.log("\n Patient Clinical Records Comparision Add Problems: Parameters from both JSON files match!\n");
 } else {
-  console.log(
-    "\n Patient Clinical Records Comparision: Parameters from both JSON files do not match!\n"
-  );
+  console.log("\n Patient Clinical Records Comparision: Parameters from both JSON files do not match!\n");
 } 
-await page.pause()    
+
 
         //Edit & Complete Task
         await patientsummary.clickTaskIcon();
@@ -228,8 +221,7 @@ await page.pause()
          await page.waitForTimeout(1500);
          await patientsummary.selectTaskTemplate();
          await page.waitForTimeout(5000);
-         await patientsummary.selectAssignTaskUser(jsonData.AddTask[index].task_username);
-         await page.pause()
+         await patientsummary.selectAssignTaskUser(jsonData.AddTask[index].task_username);         
          await patientsummary.selectTaskDueDate(jsonData.EditTask[index].due_date);
          await patientsummary.selectTaskDueTime(jsonData.EditTask[index].due_time);
          await patientsummary.selectSendAlertTo();
@@ -279,7 +271,6 @@ await page.pause()
         await page.getByLabel('saveReason').click();
         await page.waitForTimeout(4500);
         await page.getByLabel('cancelIcon').click();
-
       }
       });
     })
