@@ -188,6 +188,7 @@ test.describe("Procedure Category", () => {
       await ProceduresExtraDetails.selectProcedureCheckboxPrivateRecord()  
                 
       await ProceduresExtraDetails.enterProcedureNotes(jsonData.AddProcedure[index].proc_notes) 
+      await page.pause()
       await ProceduresExtraDetails.clickOnextraDetailsSaveButton();
       //await page.getByLabel('saveChecklist').click()
      // await page.waitForTimeout(2000);     
