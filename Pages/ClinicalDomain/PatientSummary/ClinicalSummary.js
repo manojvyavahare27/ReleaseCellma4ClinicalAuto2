@@ -59,7 +59,7 @@ class ClinicalSummary {
         // this.favouriteItem = "xpath=//a[text()='Metformin 500mg tablets']//..//..//input[@class='PrivateSwitchBase-input css-1m9pwf3']"
        // this.favouriteItem = "xpath=//a[text()='placeholder1']//..//..//input[@class='placeholder2']"
 
-       this.checkAllCheckboxCheckList=page.locator("xpath=//button[@data-testid='Check All']")
+       this.checkAllCheckboxCheckList=page.locator("xpath=//div[@class='MuiStack-root mui-jj2ztu']//button[@data-testid='Check All']")
         //RiskLevel dropdown
         this.riskLevel = page.locator("xpath=//input[@id='riskLevel']");
 

@@ -119,7 +119,7 @@ test.describe("Medications Category", () => {
       await Medications.clickOnPinContactItemsMenu();
       await Medications.selectCategoryFromList("Medications");
       await page.waitForTimeout(2000);
-      //await page.pause();
+      await page.pause();
        ////////REVIEW EXISTING ITEM AND DELETE/////
        if(await Medications.checkItemOnHistoryTable(jsonData.AddMedication[index].pacr_que_name)){
         //await Medications.clickOnItemReview(jsonData.AddMedication[index].pacr_que_name);

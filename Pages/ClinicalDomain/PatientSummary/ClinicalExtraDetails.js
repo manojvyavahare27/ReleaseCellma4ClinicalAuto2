@@ -141,7 +141,7 @@ class ClinicalExtraDetails {
 
     this.checkAllButton=page.locator("xpath=//button[@data-testid='Check All']")
     ////div[@class="MuiGrid2-root MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 MuiGrid2-grid-sm-12 MuiGrid2-grid-md-12 mui-kqf8ps"]//button[@data-testid='Save']
-    this.saveCheckListButton=page.locator("xpath=//div[@class='MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-12 mui-n0wno2']//button[@data-testid='Save']")
+    this.saveCheckListButton=page.locator("xpath=//div[@class='MuiStack-root mui-jj2ztu']//button[@data-testid='Save']")
     this.saveFavourites=page.locator("xpath=//div[@role='dialog']//button[normalize-space()='Save']")
     this.delete = page.locator("xpath=//button[@data-testid='Delete']");
     this.deleteCertificate = page.locator("xpath=//button[@aria-label='Delete']");
