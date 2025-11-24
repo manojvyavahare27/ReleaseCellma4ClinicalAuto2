@@ -92,8 +92,7 @@ test.describe("Task Category", () => {
         logger.info("Clicked on Search button successfully");
         await patientsearch.enterGivenName(data.pat_firstname);
         logger.info("Given Name entered successfully");
-        //await page.pause()
-         await page.pause()
+        
         await patientsearch.enterFamilyName(data.pat_surname);
         logger.info("Family Name entered successfully");
         await patientsearch.selectSex(data.pat_sex);
@@ -133,11 +132,18 @@ test.describe("Task Category", () => {
         await patientsummary.clickOnAddToTask();
         await page.waitForTimeout(1000);
         await patientsummary.selectTasklink();
-        await page.waitForTimeout(1000);        
+        await page.waitForTimeout(1000);       
+        await page.pause() 
         await patientsummary.clickOnSearchTask();
         await page.waitForTimeout(1500);
-        await patientsummary.selectTaskTemplate();
+        await patientsummary.selectExistingcategory()
+        //await patientsummary.selectTaskTemplate();
         await page.waitForTimeout(5000);
+        await patientsummary.clickOnAddButton()
+
+       // await patientsummary.selectExistingcategory()
+        //  await patientsummary.clickOnSearchTask();
+        await patientsummary.EnterInSearchbox('Aspirin 100mg capsules')
         await patientsummary.selectAssignTaskUser(jsonData.AddTask[index].task_username);
         await patientsummary.selectTaskDueDate(jsonData.AddTask[index].task_due_date);
         await patientsummary.selectTaskDueTime(jsonData.AddTask[index].task_due_time);

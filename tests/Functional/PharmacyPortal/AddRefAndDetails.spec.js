@@ -220,9 +220,9 @@ test.describe("New Patient", () => {
 
       //await MedicationsExtraDetails.selectForCondition(jsonData.AddMedication[index].que_display_text)
       // await MedicationsExtraDetails.enterPriceCheckQuantity(jsonData.AddMedication[index].meded_value_Price_check_quantity)
-      await MedicationsExtraDetails.enterMedicationNotes(
-        jsonData.AddMedication[index].medi_notes
-      );
+      // await MedicationsExtraDetails.enterMedicationNotes(
+      //   jsonData.AddMedication[index].medi_notes
+      // );
 
       await page.waitForTimeout(2000);
       //await MedicationsExtraDetails.clickOnPortalSaveBtn();

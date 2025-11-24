@@ -57,11 +57,14 @@ class PatientSummary
         //Links in Add to dropdown
 
         this.linkTask=page.locator("xpath=//li[@aria-label='Task']")
-        this.buttonSearch= page.locator("xpath=//button[@aria-label='Search']")
+        this.buttonSearch= page.locator("xpath=//button[@data-testid='Search']")
+        this.Searchtxtbox=page.locator("xpath=//input[@id='searchExistingTaskAndQuestion']")
         //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment Regular Checkup Patient Yes - No No' }).getByTestId('Select')
         //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment - Regular Checkup Patient Yes - No' }).getByTestId('Select')
         //this.selectTask= page.getByRole('row', { name: 'expandRowIconundefined Arrange Appointment Regular Checkup Patient Yes - No No' }).getByTestId('Select').nth(0)
         this.selectTask=page.getByRole('option', { name: 'Freezer Monitoring' })
+        this.extstingType=page.locator("xpath=//input[@id='existingTaskType']")
+        this.AddButton=page.getByTestId('CommonCellmaPopup').locator('form').getByTestId('Add')
 
         
         //Add/Edit task 
@@ -185,11 +188,6 @@ class PatientSummary
         await this.page.getByRole('option', { name: 'Recommendations' }).click()
     }
  
-
-
-
-
-
     async clickOniconPatientDetailsCategory()
     {
         await this.iconPatientDetailsCategory.click()
@@ -207,10 +205,24 @@ class PatientSummary
     {
         await clickElement(this.page, this.buttonSearch)
     }
+    async EnterInSearchbox()
+    {
+        await this.Searchtxtbox.fill('')
+    }
     async selectTaskTemplate()
     {
         await clickElement(this.page, this.selectTask)
     }
+    async selectExistingcategory()
+    {
+        await this.extstingType.click()
+        await this.page.getByRole('option', { name: 'Medication' }).click()
+    }
+    async clickOnAddButton()
+    {
+        await this.AddButton.click()
+    }
+
 
     async selectAssignTaskGroup(task_groupname)
     {
