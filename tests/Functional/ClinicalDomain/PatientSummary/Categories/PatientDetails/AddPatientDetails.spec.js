@@ -108,10 +108,12 @@ test.describe("Excel Conversion Patient Details Category", () => {
       await confirmexisting.clickOnConfirmExistingDetails();
      await page.waitForTimeout(2000);
       await page.locator("xpath=//button[@aria-label='cancelIcon']").click()
+     // await page.pause()
       await page.waitForTimeout(2000);
       await patientDetailshome.addContact();
       await patientDetailshome.clickOnAddContact()
 
+      await page.getByRole('button', { name: 'Patient Details' }).click()
        //Add Patient Details
      //await patientsummary.clickOniconPatientDetailsCategory();
      //const addedLifestylelocator = page.getByRole("heading", {name: "Smoking Status"});      
@@ -119,7 +121,7 @@ test.describe("Excel Conversion Patient Details Category", () => {
 
       //Contact History page
 
-        await page.pause()
+      //  await page.pause()
                   //////Fetch Patient Details/////////
       var sqlQuery =
       "select * from patient_audit where paa_use_username='" + jsonData.loginDetails[0].username + 
@@ -176,7 +178,7 @@ test.describe("Excel Conversion Patient Details Category", () => {
       
       
       await patientDetailshome.expandLevels();
-      await patientDetailshome.reviewRecords();
+      //await patientDetailshome.reviewRecords();
       await page.waitForTimeout(1000);
       await patientDetailshome.riskFilters1();
       await page.waitForTimeout(1000);
